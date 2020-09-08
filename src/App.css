@@ -20,11 +20,12 @@ text-align: center;
   margin: 1em;
   transition: background-color 0.5s ease-in-out;
   outline: none;
-  background-image: url(./assets/images/graf3.png);
-background-size: contain;
-
-  
+  background-image: url(./assets/images/graf3.svg);
+background-size: contain; 
+background-repeat: no-repeat;
 }
+
+
 .btn {
   padding: 2em;
   width: 10em;
