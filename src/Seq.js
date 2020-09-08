@@ -29,6 +29,12 @@ const initialPattern = [
   [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 ]
 
+const clickStyle = (color) => {
+  document.getElementById("sq").style.background = color;
+   
+
+}
+
 const synth = new Tone.Sampler({
    D1, D2,D3, D4, D5, D6, D7
 }).toMaster()
@@ -38,7 +44,6 @@ const Sequencer = () => {
   const [ playState, setPlayState ] = useState(Tone.Transport.state)
   const [ activeColumn, setColumn ] = useState(0)
   const [ pattern, updatePattern ] = useState(initialPattern)
-  
 
   useEffect(
     () => {
@@ -96,18 +101,22 @@ const Sequencer = () => {
 }
 
 const Square = ({ active, value, onClick }) => (
-  <div
+  <div id="sq"
     style={{
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      borderRadius: active ? "" : "10%",
       width: 30,
       height: 30,
-      background: value ? "#0999" : "",
-      border: active ? "1px solid #999" : "1px solid #eee",
+      background: value ? "pink" : "blue",
+      border: active ? "1px solid rgba(133, 65, 243, 0.1)" : "1px solid #eee",
+      background: active ? "rgba(133, 65, 243, 0.3)" : "",
+      color: value ? "blue" : "pink"
       
     }}
     onClick={onClick}
+  
   >
     {value}
   </div>
