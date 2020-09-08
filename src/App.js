@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import Sequencer from './Seq'
 
 
-import A1 from "./assets/S2.wav";
-import A2 from "./assets/S3.wav";
-import A3 from "./assets/S4.wav";
-import A4 from "./assets/S5.wav";
-import A5 from "./assets/S6.wav";
+import A1 from "./assets/S1.wav";
+import A2 from "./assets/S2.wav";
+import A3 from "./assets/S3.wav";
+import A4 from "./assets/S6.wav";
+import A5 from "./assets/S7.wav";
 
 
 import './App.css'

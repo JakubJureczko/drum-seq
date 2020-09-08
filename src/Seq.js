@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react"
 import * as Tone from "tone"
+import  "./Seq.css"
 
 import D1 from "./assets/bd1.mp3";
 import D2 from "./assets/bd2.mp3";
@@ -35,7 +36,7 @@ const clickStyle = (color) => {
 
 }
 
-const synth = new Tone.Sampler({
+const seq = new Tone.Sampler({
    D1, D2,D3, D4, D5, D6, D7
 }).toMaster()
 
@@ -57,7 +58,7 @@ const Sequencer = () => {
             // If active
             if (row[col]) {
               // Play based on which row
-              synth.triggerAttackRelease(drums[noteIndex], "8n", time)
+              seq.triggerAttackRelease(drums[noteIndex], "8n", time)
             }
           })
         },
@@ -84,6 +85,7 @@ const Sequencer = () => {
   return (
     <div>
       {pattern.map((row, y) => (
+        <div className="outter">
         <div key={y} style={{ display: "flex", justifyContent: "center" }}>
           {row.map((value, x) => (
             <Square
@@ -93,6 +95,7 @@ const Sequencer = () => {
               onClick={() => setPattern({ x, y, value })}
             />
           ))}
+        </div>
         </div>
       ))}
       <button onClick={() => toggle()}>{playState}</button>
