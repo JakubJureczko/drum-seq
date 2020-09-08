@@ -1,16 +1,23 @@
 import React, { useCallback, useState, useEffect } from "react"
 import * as Tone from "tone"
 
-const notes = [
-  "C#4",
-  "D#4",
-  "F#4",
-  "G#4",
-  "A#4",
-  "C#5",
-  "D#5",
-  "F#5"
-].reverse()
+import D1 from "./assets/bd1.mp3";
+import D2 from "./assets/bd2.mp3";
+import D3 from "./assets/sd1.mp3";
+import D4 from "./assets/ch1.mp3";
+import D5 from "./assets/ch2.mp3";
+import D6 from "./assets/ch2.mp3";
+import D7 from "./assets/oh.mp3";
+
+const drums = [
+  "D1",
+  "D2",
+  "D3",
+  "D4",
+  "D5",
+  "D6",
+  'D7'
+]
 
 const initialPattern = [
   [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
@@ -22,13 +29,16 @@ const initialPattern = [
   [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 ]
 
-const synth = new Tone.MonoSynth().toMaster()
+const synth = new Tone.Sampler({
+   D1, D2,D3, D4, D5, D6, D7
+}).toMaster()
 
 const Sequencer = () => {
   
   const [ playState, setPlayState ] = useState(Tone.Transport.state)
   const [ activeColumn, setColumn ] = useState(0)
   const [ pattern, updatePattern ] = useState(initialPattern)
+  
 
   useEffect(
     () => {
@@ -42,7 +52,7 @@ const Sequencer = () => {
             // If active
             if (row[col]) {
               // Play based on which row
-              synth.triggerAttackRelease(notes[noteIndex], "8n", time)
+              synth.triggerAttackRelease(drums[noteIndex], "8n", time)
             }
           })
         },
@@ -80,7 +90,7 @@ const Sequencer = () => {
           ))}
         </div>
       ))}
-      <div onClick={() => toggle()}>{playState}</div>
+      <button onClick={() => toggle()}>{playState}</button>
     </div>
   )
 }
@@ -94,7 +104,8 @@ const Square = ({ active, value, onClick }) => (
       width: 30,
       height: 30,
       background: value ? "#0999" : "",
-      border: active ? "1px solid #999" : "1px solid #eee"
+      border: active ? "1px solid #999" : "1px solid #eee",
+      
     }}
     onClick={onClick}
   >

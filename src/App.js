@@ -3,6 +3,7 @@ import { Sampler } from "tone";
 import styled from 'styled-components';
 import Sequencer from './Seq'
 
+
 import A1 from "./assets/S2.wav";
 import A2 from "./assets/S3.wav";
 import A3 from "./assets/S4.wav";
@@ -11,6 +12,7 @@ import A5 from "./assets/S6.wav";
 
 
 import './App.css'
+import DrumPads from './Pady';
 
 function App() {
   const [isLoaded, setLoaded] = useState(false);
