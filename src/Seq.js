@@ -112,7 +112,7 @@ const Square = ({ active, value, onClick }) => (
       background: value ? "pink" : "blue",
       border: active ? "1px solid rgba(133, 65, 243, 0.1)" : "1px solid #eee",
       background: active ? "rgba(133, 65, 243, 0.3)" : "",
-      color: value ? "blue" : "pink"
+      
       
     }}
     onClick={onClick}
