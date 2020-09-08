@@ -42,7 +42,7 @@ const seq = new Tone.Sampler({
 
 const Sequencer = () => {
   
-  const [ playState, setPlayState ] = useState(Tone.Transport.state)
+  const [ playState, setPlayState ] = useState(false)
   const [ activeColumn, setColumn ] = useState(0)
   const [ pattern, updatePattern ] = useState(initialPattern)
 
@@ -73,7 +73,7 @@ const Sequencer = () => {
   // Toggle playing / stopped
   const toggle = useCallback(() => {
     Tone.Transport.toggle()
-    setPlayState(Tone.Transport.state)
+    setPlayState(!playState)
   }, [])
 
   // Update pattern by making a copy and inverting the value
@@ -98,7 +98,7 @@ const Sequencer = () => {
         </div>
         </div>
       ))}
-      <button onClick={() => toggle()}>{playState}</button>
+      <button onClick={() => toggle()}>{playState ? "on" : "off"}</button>
     </div>
   )
 }
