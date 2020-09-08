@@ -9,6 +9,8 @@ import A3 from "./assets/S3.wav";
 import A4 from "./assets/S6.wav";
 import A5 from "./assets/S7.wav";
 
+
+import graf from "./assets/images/graf3.png"
 import "./App.css";
 import DrumPads from "./Pady";
 
@@ -114,22 +116,25 @@ function App() {
 
   return (
     <div className="app">
-      <button id="btn" disabled={!isLoaded} onClick={handleClick}>
+      <div className="btnContainer">
+      <button className="btn2"></button>
+      <button className="btn" disabled={!isLoaded} onClick={handleClick}>
         BD/D
       </button>
 
-      <button id="btn" disabled={!isLoaded} onClick={handleClick2}>
+      <button className="btn" disabled={!isLoaded} onClick={handleClick2}>
         SD/F
       </button>
-      <button id="btn" disabled={!isLoaded} onClick={handleClick4}>
+      <button className="btn" disabled={!isLoaded} onClick={handleClick4}>
         CH/J
       </button>
-      <button id="btn" disabled={!isLoaded} onClick={handleClick5}>
+      <button className="btn" disabled={!isLoaded} onClick={handleClick5}>
         OH/K
       </button>
-      <button id="btn" disabled={!isLoaded} onClick={handleClick3}>
+      <button className="btn" disabled={!isLoaded} onClick={handleClick3}>
         SMPL/L
       </button>
+      </div>
       <Sequencer />
     </div>
   );

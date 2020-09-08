@@ -1,9 +1,31 @@
 .app  {
 text-align: center;
 }
+.app img {
+  width: 10%;
+}
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn2 {
+  padding: 2em;
+  width: 10em;
+  height: 10em;
+  cursor: pointer;
+  border-radius: 10%;
+  border: none;
+  background-color: transparent;
+  margin: 1em;
+  transition: background-color 0.5s ease-in-out;
+  outline: none;
+  background-image: url(./assets/images/graf3.png);
+background-size: contain;
 
-
-#btn {
+  
+}
+.btn {
   padding: 2em;
   width: 10em;
   height: 10em;
@@ -18,7 +40,7 @@ text-align: center;
 }
 
 /* box-shadow: 5px 5px rgba(133, 65, 243, 0.8);*/
-#btn:active { 
+.btn:active { 
   
   background-color: rgba(133, 65, 243, 0.8);
   box-shadow: 3px 3px rgba(133, 65, 243, 0.8);
