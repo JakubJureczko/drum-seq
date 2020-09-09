@@ -90,7 +90,7 @@ const Sequencer = () => {
   }
 
   function handleBpm() {
-    setBpm(Tone.Transport.bpm.value);
+    
   }
   // Toggle playing / stopped
   const toggle = useCallback(() => {
