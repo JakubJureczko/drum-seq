@@ -49,6 +49,12 @@ const Sequencer = () => {
   const [activeColumn, setColumn] = useState(0);
   const [pattern, updatePattern] = useState(initialPattern);
 
+  useEffect(() => {
+    document.addEventListener("keypress", (e) => {
+      handleKeyPress(e.code);
+    })
+  },[]);
+
   useEffect(
     () => {
       const loop = new Tone.Sequence(
@@ -75,6 +81,15 @@ const Sequencer = () => {
 
   function handleStart() {
     setPlayState(!playState);
+  }
+  
+
+  function handleKeyPress(keyCode) {
+    if(keyCode === "Space") {
+      toggle();
+      handleStart();  
+    }
+    
   }
 
   // Toggle playing / stopped
@@ -109,6 +124,7 @@ const Sequencer = () => {
       ))}
       <button
         className="startBtn"
+        onKeyPress={handleKeyPress}
         onClick={() => {
           toggle();
           handleStart();
@@ -145,6 +161,8 @@ const getColor = (row) => {
       return "yellow";
   }
 };
+
+
 
 const Square = ({ active, row, selected, onClick }) => {
   return (
