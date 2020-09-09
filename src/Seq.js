@@ -85,7 +85,7 @@ const Sequencer = () => {
   function handleKeyPress(keyCode) {
     if(keyCode === "Space") {
       toggle();
-      handleStart();  
+      handleStart(); 
     }
     
   }
@@ -160,17 +160,25 @@ const getColor = (row) => {
     case 3:
       return "rgb(186,255,201)";
     case 4:
-      return "rgb(255,255,186)"
+      return "rgb(255,255,186)";
     case 5: 
-    return "rgba(255,223,186)"
+    return "rgba(255,223,186)";
     default:
-      return "rgba(255,179,186)"
+      return "rgba(255,179,186)";
   }
 };
+const getColumnColor = (key) => {
+  switch (key) {
+    case 0: 
+    return "black";
+    default:
+      return "inherit"
+  }
+}
 
 
 
-const Square = ({ active, row, selected, onClick }) => {
+const Square = ({ active, row, selected, onClick, }) => {
   return (
     <div
       
@@ -182,8 +190,10 @@ const Square = ({ active, row, selected, onClick }) => {
         width: 30,
         height: 30,
         border: active ? "1px solid rgb(167, 167, 167)" : "1px solid #eee",
-        background: active ? "rgba(133, 65, 243, 0.9)" : "black",
-        background: selected && getColor(row),
+        background: active ? "rgba(133, 65, 243, 0.9)" : "",
+        background: selected ? getColor(row) : "",
+       
+
         
       }}
       onClick={onClick}
