@@ -61,7 +61,7 @@ const Sequencer = () => {
             // If active
             if (row[col]) {
               // Play based on which row
-              seq.triggerAttackRelease(drums[noteIndex], time);
+              seq.triggerAttackRelease(drums[noteIndex],"8n", time);
             }
           });
         },
