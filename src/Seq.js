@@ -8,13 +8,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import D1 from "./assets/bd1.mp3";
-import D2 from "./assets/bd2.mp3";
-import D3 from "./assets/sd1.mp3";
-import D4 from "./assets/ch1.mp3";
-import D5 from "./assets/ch2.mp3";
-import D6 from "./assets/ch2.mp3";
-import D7 from "./assets/oh.mp3";
+import D1 from "./assets/drums/bd1.mp3";
+import D2 from "./assets/drums/bd2.mp3";
+import D3 from "./assets/drums/sd1.mp3";
+import D4 from "./assets/drums/ch1.mp3";
+import D5 from "./assets/drums/ch2.mp3";
+import D6 from "./assets/drums/ch2.mp3";
+import D7 from "./assets/drums/oh.mp3";
 
 const drums = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"];
 

@@ -3,11 +3,11 @@ import { Sampler } from "tone";
 import styled from "styled-components";
 import Sequencer from "./Seq";
 
-import A1 from "./assets/S1.wav";
-import A2 from "./assets/S2.wav";
-import A3 from "./assets/S3.wav";
-import A4 from "./assets/S6.wav";
-import A5 from "./assets/S7.wav";
+import A1 from "./assets/samples/S1.wav";
+import A2 from "./assets/samples/S2.wav";
+import A3 from "./assets/samples/S3.wav";
+import A4 from "./assets/samples/S6.wav";
+import A5 from "./assets/samples/S7.wav";
 
 
 import graf from "./assets/images/graf3.png"
