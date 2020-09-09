@@ -23,6 +23,7 @@
   background-image: url(./assets/images/graf3.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  background-color: salmon;
 }
 
 .btn {

@@ -90,7 +90,7 @@ const Sequencer = () => {
   }
 
   function handleBpm() {
-    
+    setBpm(Tone.Transport.bpm.value + 1);
   }
   // Toggle playing / stopped
   const toggle = useCallback(() => {
@@ -107,21 +107,23 @@ const Sequencer = () => {
   console.log(pattern);
   return (
     <div>
-      {pattern.map((row, y) => (
-        <div className="outter">
-          <div key={y} style={{ display: "flex", justifyContent: "center" }}>
-            {row.map((value, x) => (
-              <Square
-                key={x}
-                row={y}
-                active={activeColumn === x}
-                selected={value}
-                onClick={() => setPattern({ x, y, value })}
-              />
-            ))}
+      <div className="seqBorder">
+        {pattern.map((row, y) => (
+          <div className="outter">
+            <div key={y} style={{ display: "flex", justifyContent: "center" }}>
+              {row.map((value, x) => (
+                <Square
+                  key={x}
+                  row={y}
+                  active={activeColumn === x}
+                  selected={value}
+                  onClick={() => setPattern({ x, y, value })}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
       <button
         className="startBtn"
         onKeyPress={handleKeyPress}
