@@ -28,9 +28,7 @@ const initialPattern = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ];
 
-const clickStyle = (color) => {
-  document.getElementById("sq").style.background = color;
-};
+
 
 // Tone.Transport.state
 
@@ -154,11 +152,19 @@ const Sequencer = () => {
 const getColor = (row) => {
   switch (row) {
     case 0:
-      return "#7FFED1";
+      return "#a374d5";
     case 1:
-      return "pink";
+      return "#be97dc";
+    case 2:
+      return "rgb(186,225,255)";
+    case 3:
+      return "rgb(186,255,201)";
+    case 4:
+      return "rgb(255,255,186)"
+    case 5: 
+    return "rgba(255,223,186)"
     default:
-      return "yellow";
+      return "rgba(255,179,186)"
   }
 };
 
@@ -167,17 +173,18 @@ const getColor = (row) => {
 const Square = ({ active, row, selected, onClick }) => {
   return (
     <div
-      id="sq"
+      
       style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        borderRadius: active ? "" : "10%",
+        borderRadius: active ? "10%" : "10%",
         width: 30,
         height: 30,
-        border: active ? "1px solid rgba(133, 65, 243, 0.1)" : "1px solid #eee",
-        background: active ? "rgba(133, 65, 243, 0.3)" : "",
+        border: active ? "1px solid rgb(167, 167, 167)" : "1px solid #eee",
+        background: active ? "rgba(133, 65, 243, 0.9)" : "black",
         background: selected && getColor(row),
+        
       }}
       onClick={onClick}
     />

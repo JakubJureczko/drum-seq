@@ -1,13 +1,11 @@
 .outter {
- 
   margin: 0 auto;
   width: 35%;
- 
 }
 
 .startBtn {
   padding: 2em;
-  
+
   cursor: pointer;
   border-radius: 10%;
   border: transparent;
@@ -15,7 +13,4 @@
   margin: 1em;
   outline: none;
   background-image: url(./assets/images/turn1.svg);
- 
-  
-  
 }
