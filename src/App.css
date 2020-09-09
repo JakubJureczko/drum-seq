@@ -1,3 +1,16 @@
+/* @font-face {
+  font-family: 'atlant';
+  font-style: normal;
+  font-weight: 400;
+ 
+  src: 
+       
+       url('./assets/fonts/atlandsketchesbb_reg.ttf') format('truetype'), 
+       
+} */
+
+
+
 .app {
   text-align: center;
 }
@@ -37,6 +50,7 @@
   margin: 1em;
   transition: background-color 0.5s ease-in-out;
   outline: none;
+  
 }
 
 /* box-shadow: 5px 5px rgba(133, 65, 243, 0.8);*/
