@@ -10,20 +10,18 @@ import A4 from "./assets/samples/S6.wav";
 import A5 from "./assets/samples/S7.wav";
 
 
-import graf from "./assets/images/graf3.png"
+
 import "./App.css";
-import DrumPads from "./Pady";
+
 
 function App() {
   const [isLoaded, setLoaded] = useState(false);
   const sampler = useRef(null);
   const [currentSampler, setCurrentSampler] = useState();
 
-  const [color, setColor] = useState("");
+  
 
-  const Title = styled.button`
-    background-color: green;
-  `;
+
 
   useEffect(() => {
     sampler.current = new Sampler(
@@ -52,11 +50,7 @@ function App() {
   const handleClick5 = () => sampler.current.triggerAttack("A5");
   const handleClickX = () => sampler.current.triggerAttack("");
 
-  const changeColorsssss = (e) => {
-    styled.button`
-      background-color: green;
-    `;
-  };
+  
 
   // useEffect(() =>
   //   document.addEventListener("keydown", (e) => {
@@ -82,10 +76,6 @@ function App() {
   }
   const btn = document.getElementById("btn");
 
-  function colorFunction() {
-    changeColor("yellow");
-    btn.innerHTML = "";
-  }
 
   function handleKeyPress(keyCode) {
     if (currentSampler) {
