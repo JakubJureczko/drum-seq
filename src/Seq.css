@@ -1,6 +1,9 @@
 .outter {
   margin: 0 auto;
   width: 35%;
+  border: 4px solid black;
+  border-bottom: none;
+  border-top: none;
 }
 
 .startBtn {

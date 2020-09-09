@@ -28,8 +28,6 @@ const initialPattern = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ];
 
-
-
 // Tone.Transport.state
 
 const seq = new Tone.Sampler({
@@ -42,16 +40,19 @@ const seq = new Tone.Sampler({
   D7,
 }).toMaster();
 
+Tone.Transport.bpm.value = 95;
+
 const Sequencer = () => {
   const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, updatePattern] = useState(initialPattern);
+  const [bpm, setBpm] = useState(95);
 
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
       handleKeyPress(e.code);
-    })
-  },[]);
+    });
+  }, []);
 
   useEffect(
     () => {
@@ -65,7 +66,7 @@ const Sequencer = () => {
             // If active
             if (row[col]) {
               // Play based on which row
-              seq.triggerAttackRelease(drums[noteIndex],"8n", time);
+              seq.triggerAttackRelease(drums[noteIndex], "8n", time);
             }
           });
         },
@@ -80,16 +81,17 @@ const Sequencer = () => {
   function handleStart() {
     setPlayState(!playState);
   }
-  
 
   function handleKeyPress(keyCode) {
-    if(keyCode === "Space") {
+    if (keyCode === "Space") {
       toggle();
-      handleStart(); 
+      handleStart();
     }
-    
   }
 
+  function handleBpm() {
+    
+  }
   // Toggle playing / stopped
   const toggle = useCallback(() => {
     Tone.Transport.toggle();
@@ -161,27 +163,24 @@ const getColor = (row) => {
       return "rgb(186,255,201)";
     case 4:
       return "rgb(255,255,186)";
-    case 5: 
-    return "rgba(255,223,186)";
+    case 5:
+      return "rgba(255,223,186)";
     default:
       return "rgba(255,179,186)";
   }
 };
 const getColumnColor = (key) => {
   switch (key) {
-    case 0: 
-    return "black";
+    case 0:
+      return "black";
     default:
-      return "inherit"
+      return "inherit";
   }
-}
+};
 
-
-
-const Square = ({ active, row, selected, onClick, }) => {
+const Square = ({ active, row, selected, onClick }) => {
   return (
     <div
-      
       style={{
         display: "flex",
         alignItems: "center",
@@ -192,9 +191,6 @@ const Square = ({ active, row, selected, onClick, }) => {
         border: active ? "1px solid rgb(167, 167, 167)" : "1px solid #eee",
         background: active ? "rgba(133, 65, 243, 0.9)" : "",
         background: selected ? getColor(row) : "",
-       
-
-        
       }}
       onClick={onClick}
     />
