@@ -9,19 +9,12 @@ import A3 from "./assets/samples/S3.wav";
 import A4 from "./assets/samples/S6.wav";
 import A5 from "./assets/samples/S7.wav";
 
-
-
 import "./App.css";
-
 
 function App() {
   const [isLoaded, setLoaded] = useState(false);
   const sampler = useRef(null);
   const [currentSampler, setCurrentSampler] = useState();
-
-  
-
-
 
   useEffect(() => {
     sampler.current = new Sampler(
@@ -50,8 +43,6 @@ function App() {
   const handleClick5 = () => sampler.current.triggerAttack("A5");
   const handleClickX = () => sampler.current.triggerAttack("");
 
-  
-
   // useEffect(() =>
   //   document.addEventListener("keydown", (e) => {
   //     handleKeyPress(e.code)
@@ -75,7 +66,6 @@ function App() {
     document.button.style.background = color;
   }
   const btn = document.getElementById("btn");
-
 
   function handleKeyPress(keyCode) {
     if (currentSampler) {
@@ -107,23 +97,23 @@ function App() {
   return (
     <div className="app">
       <div className="btnContainer">
-      <button className="btn2"></button>
-      <button className="btn" disabled={!isLoaded} onClick={handleClick}>
-        BD/D
-      </button>
+        <button className="btn2"></button>
+        <button className="btn" disabled={!isLoaded} onClick={handleClick}>
+          BD/D
+        </button>
 
-      <button className="btn" disabled={!isLoaded} onClick={handleClick2}>
-        SD/F
-      </button>
-      <button className="btn" disabled={!isLoaded} onClick={handleClick4}>
-        CH/J
-      </button>
-      <button className="btn" disabled={!isLoaded} onClick={handleClick5}>
-        OH/K
-      </button>
-      <button className="btn" disabled={!isLoaded} onClick={handleClick3}>
-        SMPL/L
-      </button>
+        <button className="btn" disabled={!isLoaded} onClick={handleClick2}>
+          SD/F
+        </button>
+        <button className="btn" disabled={!isLoaded} onClick={handleClick4}>
+          CH/J
+        </button>
+        <button className="btn" disabled={!isLoaded} onClick={handleClick5}>
+          OH/K
+        </button>
+        <button className="btn" disabled={!isLoaded} onClick={handleClick3}>
+          SMPL/L
+        </button>
       </div>
       <Sequencer />
     </div>
