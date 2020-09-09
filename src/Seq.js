@@ -98,6 +98,7 @@ const Sequencer = () => {
             {row.map((value, x) => (
               <Square
                 key={x}
+                row={y}
                 active={activeColumn === x}
                 selected={value}
                 onClick={() => setPattern({ x, y, value })}
@@ -134,7 +135,18 @@ const Sequencer = () => {
   );
 };
 
-const Square = ({ active, selected, onClick }) => {
+const getColor = (row) => {
+  switch (row) {
+    case 0:
+      return "#7FFED1";
+    case 1:
+      return "pink";
+    default:
+      return "yellow";
+  }
+};
+
+const Square = ({ active, row, selected, onClick }) => {
   return (
     <div
       id="sq"
@@ -147,7 +159,7 @@ const Square = ({ active, selected, onClick }) => {
         height: 30,
         border: active ? "1px solid rgba(133, 65, 243, 0.1)" : "1px solid #eee",
         background: active ? "rgba(133, 65, 243, 0.3)" : "",
-        background: selected && '#7FFED1'
+        background: selected && getColor(row),
       }}
       onClick={onClick}
     />
