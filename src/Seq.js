@@ -110,7 +110,7 @@ const Sequencer = () => {
       <div className="seqBorder">
         {pattern.map((row, y) => (
           <div className="outter">
-            <div key={y} style={{ display: "flex", justifyContent: "center" }}>
+            <div key={y} style={{ display: "flex", justifyContent: "center", cursor: "pointer" }}>
               {row.map((value, x) => (
                 <Square
                   key={x}
