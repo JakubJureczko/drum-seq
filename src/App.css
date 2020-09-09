@@ -1,5 +1,5 @@
-.app  {
-text-align: center;
+.app {
+  text-align: center;
 }
 .app img {
   width: 10%;
@@ -21,10 +21,9 @@ text-align: center;
   transition: background-color 0.5s ease-in-out;
   outline: none;
   background-image: url(./assets/images/graf3.svg);
-background-size: contain; 
-background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-
 
 .btn {
   padding: 2em;
@@ -37,17 +36,12 @@ background-repeat: no-repeat;
   margin: 1em;
   transition: background-color 0.5s ease-in-out;
   outline: none;
-  
 }
 
 /* box-shadow: 5px 5px rgba(133, 65, 243, 0.8);*/
-.btn:active { 
-  
+.btn:active {
   background-color: rgba(133, 65, 243, 0.8);
   box-shadow: 3px 3px rgba(133, 65, 243, 0.8);
   transition: 0.2s;
-transform: translateY(4px);
-
-
-
-} 
+  transform: translateY(4px);
+}

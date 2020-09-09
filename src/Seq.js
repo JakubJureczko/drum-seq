@@ -3,8 +3,6 @@ import * as Tone from "tone";
 import "./Seq.css";
 
 import {
-  faPlay,
-  faStop,
   faRecordVinyl,
   faCompactDisc,
 } from "@fortawesome/free-solid-svg-icons";
@@ -63,7 +61,7 @@ const Sequencer = () => {
             // If active
             if (row[col]) {
               // Play based on which row
-              seq.triggerAttackRelease(drums[noteIndex], "8n", time);
+              seq.triggerAttackRelease(drums[noteIndex], time);
             }
           });
         },
@@ -90,6 +88,8 @@ const Sequencer = () => {
     patternCopy[y][x] = +!value;
     updatePattern(patternCopy);
   }
+
+  console.log(pattern);
   return (
     <div>
       {pattern.map((row, y) => (
@@ -134,23 +134,24 @@ const Sequencer = () => {
   );
 };
 
-const Square = ({ active, value, onClick }) => (
-  <div
-    id="sq"
-    style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: active ? "" : "10%",
-      width: 30,
-      height: 30,
-      border: active ? "1px solid rgba(133, 65, 243, 0.1)" : "1px solid #eee",
-      background: active ? "rgba(133, 65, 243, 0.3)" : "",
-    }}
-    onClick={onClick}
-  >
-    {value}
-  </div>
-);
+const Square = ({ active, selected, onClick }) => {
+  return (
+    <div
+      id="sq"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: active ? "" : "10%",
+        width: 30,
+        height: 30,
+        border: active ? "1px solid rgba(133, 65, 243, 0.1)" : "1px solid #eee",
+        background: active ? "rgba(133, 65, 243, 0.3)" : "",
+        background: selected && '#7FFED1'
+      }}
+      onClick={onClick}
+    />
+  );
+};
 
 export default Sequencer;
