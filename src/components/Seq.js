@@ -2,7 +2,8 @@ import React, { useCallback, useState, useEffect } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
 
-
+import SetBpm from "./SetBpm"
+import SetVol from "./SetVol"
 
 import {
   faRecordVinyl,
@@ -48,11 +49,8 @@ const Sequencer = () => {
   const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, updatePattern] = useState(initialPattern);
-  const [bpm, setBpm] = useState(95);
-  const [vol, setVol] = useState(0)
-
-  Tone.Transport.bpm.value = bpm;
-  Tone.Master.volume.value = vol;
+  
+  
   
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
@@ -94,20 +92,7 @@ const Sequencer = () => {
       handleStart();
     }
   }
-  function volUp() {
-    if(vol < 6) {
-      setVol(vol + 1)
-    }else {
-      setVol(vol)
-    }
-  }
-  function volDown(){
-    if(vol > -20) {
-      setVol(vol - 1)
-    }else {
-      setVol(vol)
-    }
-  }
+ 
 
   // Toggle playing / stopped
   const toggle = useCallback(() => {
@@ -166,18 +151,8 @@ const Sequencer = () => {
           />
         )}
       </button>
-      <div>
-        <span>{bpm} bpm</span>
-        <button onClick={() => setBpm(bpm + 1) }>+</button>
-        <button onClick={() => setBpm(bpm - 1)}>-</button>
-      </div>
-      <div>
-        <span>{vol} dB</span>
-        <button onClick={volUp}>
-        +
-        </button>
-        <button onClick={volDown}>-</button>
-      </div>
+      <SetBpm />
+      <SetVol />
     
     </div>
   );
