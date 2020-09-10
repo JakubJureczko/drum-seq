@@ -2,6 +2,8 @@ import React, { useCallback, useState, useEffect } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
 
+
+
 import {
   faRecordVinyl,
   faCompactDisc,
@@ -176,7 +178,7 @@ const Sequencer = () => {
         </button>
         <button onClick={volDown}>-</button>
       </div>
-      
+    
     </div>
   );
 };
