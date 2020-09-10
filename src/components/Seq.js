@@ -92,6 +92,20 @@ const Sequencer = () => {
       handleStart();
     }
   }
+  function volUp() {
+    if(vol < 6) {
+      setVol(vol + 1)
+    }else {
+      setVol(vol)
+    }
+  }
+  function volDown(){
+    if(vol > -20) {
+      setVol(vol - 1)
+    }else {
+      setVol(vol)
+    }
+  }
 
   // Toggle playing / stopped
   const toggle = useCallback(() => {
@@ -157,17 +171,10 @@ const Sequencer = () => {
       </div>
       <div>
         <span>{vol} dB</span>
-        <button onClick={() => {
-          if(vol < 1) {
-            setVol(vol + 1)
-          }else {
-            setVol(vol)
-          }
-        }
-        }>
+        <button onClick={volUp}>
         +
         </button>
-        <button onClick={() => setVol(vol - 1)}>-</button>
+        <button onClick={volDown}>-</button>
       </div>
       
     </div>
