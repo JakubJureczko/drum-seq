@@ -40,14 +40,16 @@ const seq = new Tone.Sampler({
   D7,
 }).toMaster();
 
-Tone.Transport.bpm.value = 95;
+
 
 const Sequencer = () => {
   const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, updatePattern] = useState(initialPattern);
-  const [bpm, setBpm] = useState(95);
-
+  const [bpm, setBpm] = useState(200);
+  
+  Tone.Transport.bpm.value = bpm;
+  
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
       handleKeyPress(e.code);
@@ -89,9 +91,6 @@ const Sequencer = () => {
     }
   }
 
-  function handleBpm() {
-    
-  }
   // Toggle playing / stopped
   const toggle = useCallback(() => {
     Tone.Transport.toggle();
@@ -151,8 +150,8 @@ const Sequencer = () => {
       </button>
       <div>
         <span>{bpm}</span>
-        <button onClick={handleBpm}>+</button>
-        <button></button>
+        <button onClick={() => setBpm(bpm + 1)}>+</button>
+        <button onClick={() => setBpm(bpm - 1)}>-</button>
       </div>
       
     </div>
