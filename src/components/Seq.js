@@ -8,13 +8,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import D1 from "./assets/drums/bd1.mp3";
-import D2 from "./assets/drums/bd2.mp3";
-import D3 from "./assets/drums/sd1.mp3";
-import D4 from "./assets/drums/ch1.mp3";
-import D5 from "./assets/drums/ch2.mp3";
-import D6 from "./assets/drums/ch2.mp3";
-import D7 from "./assets/drums/oh.mp3";
+import D1 from "../assets/drums/bd1.mp3";
+import D2 from "../assets/drums/bd2.mp3";
+import D3 from "../assets/drums/sd1.mp3";
+import D4 from "../assets/drums/ch1.mp3";
+import D5 from "../assets/drums/ch2.mp3";
+import D6 from "../assets/drums/ch2.mp3";
+import D7 from "../assets/drums/oh.mp3";
 
 const drums = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"];
 
@@ -46,9 +46,11 @@ const Sequencer = () => {
   const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, updatePattern] = useState(initialPattern);
-  const [bpm, setBpm] = useState(200);
-  
+  const [bpm, setBpm] = useState(95);
+  const [vol, setVol] = useState(0)
+
   Tone.Transport.bpm.value = bpm;
+  Tone.Master.volume.value = vol;
   
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
@@ -149,9 +151,23 @@ const Sequencer = () => {
         )}
       </button>
       <div>
-        <span>{bpm}</span>
-        <button onClick={() => setBpm(bpm + 1)}>+</button>
+        <span>{bpm} bpm</span>
+        <button onClick={() => setBpm(bpm + 1) }>+</button>
         <button onClick={() => setBpm(bpm - 1)}>-</button>
+      </div>
+      <div>
+        <span>{vol} dB</span>
+        <button onClick={() => {
+          if(vol < 1) {
+            setVol(vol + 1)
+          }else {
+            setVol(vol)
+          }
+        }
+        }>
+        +
+        </button>
+        <button onClick={() => setVol(vol - 1)}>-</button>
       </div>
       
     </div>

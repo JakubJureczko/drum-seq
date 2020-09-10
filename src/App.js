@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Sampler } from "tone";
 import styled from "styled-components";
-import Sequencer from "./Seq";
+import Sequencer from "./components/Seq";
 
 import A1 from "./assets/samples/S1.wav";
 import A2 from "./assets/samples/S2.wav";
