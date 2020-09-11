@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import classnames from 'classnames';
 import { Sampler } from "tone";
 import styled from "styled-components";
 import "./SampleBtn.css"
@@ -56,6 +57,7 @@ const sounds = triggers.reduce((acc, {sound, name}) => {
 function SampleBtn() {
   
   const [isLoaded, setLoaded] = useState(false);
+  const [activeButton, setActiveButton] = useState('');
   const sampler = useRef(null);
 
   useEffect(() => {
@@ -71,6 +73,7 @@ function SampleBtn() {
 
   const play = (sound) => {
     sampler.current.releaseAll()
+    setActiveButton(sound)
     sampler.current.triggerAttack(sound)
   };
 
@@ -80,14 +83,9 @@ function SampleBtn() {
     });
 
     document.addEventListener("keyup", (e) => {
-      //sampler.current.releaseAll()
+      setActiveButton('');
     });
   }, []);
-
-  function changeColor(color) {
-    document.button.style.background = color;
-  }
-  const btn = document.getElementById("btn");
 
   function handleKeyPress(keyCode) {
     if (validKeys.indexOf(keyCode) === -1) return;
@@ -101,7 +99,11 @@ function SampleBtn() {
       <div className="btnContainer">
         <button className="btn2"></button>
         {triggers.map(({name, displayName}) => (
-          <button className="btn" disabled={!isLoaded} onClick={() => play(name)}>
+          <button 
+            className={classnames('btn', activeButton === name ? 'active' : '')}
+            disabled={!isLoaded}
+            onMouseDown={() => play(name)}
+            onMouseUp={() => setTimeout(setActiveButton(''), 500)}>
             {displayName}
           </button>
         ))}
