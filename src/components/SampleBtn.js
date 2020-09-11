@@ -11,11 +11,45 @@ import A5 from "../assets/samples/S7.wav";
 
 import "./SampleBtn.css";
 
+const triggers = [
+  {
+    name: 'A1',
+    sound: A1,
+    displayName: 'BD/D',
+    keyCode: 'KeyD'
+  },
+  {
+    name: 'A2',
+    sound: A2,
+    displayName: 'SD/F',
+    keyCode: 'KeyF'
+  },
+  {
+    name: 'A3',
+    sound: A3,
+    displayName: 'CH/J',
+    keyCode: 'KeyJ'
+  },
+  {
+    name: 'A4',
+    sound: A4,
+    displayName: 'OH/K',
+    keyCode: 'KeyK'
+  },
+  {
+    name: 'A5',
+    sound: A5,
+    displayName: 'SMPL/L',
+    keyCode: 'KeyL'
+  }
+];
+
+const validKeys = triggers.map(({ keyCode }) => keyCode)
+
 function SampleBtn() {
   
   const [isLoaded, setLoaded] = useState(false);
   const sampler = useRef(null);
-  const [currentSampler, setCurrentSampler] = useState();
 
   useEffect(() => {
     sampler.current = new Sampler(
@@ -28,38 +62,15 @@ function SampleBtn() {
     ).toDestination();
   }, []);
 
-  const handleClick = () => sampler.current.triggerAttack("A1");
+  const handleClick = (sound) => sampler.current.triggerAttack(sound);
 
-  const handleClick2 = () => {
-    if (currentSampler) {
-      currentSampler.stop();
-    }
-    setCurrentSampler(sampler.current);
-    sampler.current.triggerAttack("A2");
-  };
-
-  const handleClick3 = () => sampler.current.triggerAttack("A3");
-
-  const handleClick4 = () => sampler.current.triggerAttack("A4");
-  const handleClick5 = () => sampler.current.triggerAttack("A5");
-  const handleClickX = () => sampler.current.triggerAttack("");
-
-  // useEffect(() =>
-  //   document.addEventListener("keydown", (e) => {
-  //     handleKeyPress(e.code)
-
-  //   })
-
-  // );
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       handleKeyPress(e.code);
     });
 
     document.addEventListener("keyup", (e) => {
-      if (currentSampler) {
-        currentSampler.stop();
-      }
+ 
     });
   }, []);
 
@@ -69,14 +80,12 @@ function SampleBtn() {
   const btn = document.getElementById("btn");
 
   function handleKeyPress(keyCode) {
-    if (currentSampler) {
-      currentSampler.stop();
+    if (validKeys.indexOf(keyCode) !== -1) {
+      console.log(keyCode)
     }
-
-    switch (keyCode) {
+    /*switch (keyCode) {
       case "KeyD":
         handleClick();
-
         break;
       case "KeyF":
         handleClick2();
@@ -92,7 +101,7 @@ function SampleBtn() {
         break;
       default:
         break;
-    }
+    }*/
   }
 
 
@@ -100,22 +109,11 @@ function SampleBtn() {
     <div className="samplebtn">
       <div className="btnContainer">
         <button className="btn2"></button>
-        <button className="btn" disabled={!isLoaded} onClick={handleClick}>
-          BD/D
-        </button>
-
-        <button className="btn" disabled={!isLoaded} onClick={handleClick2}>
-          SD/F
-        </button>
-        <button className="btn" disabled={!isLoaded} onClick={handleClick4}>
-          CH/J
-        </button>
-        <button className="btn" disabled={!isLoaded} onClick={handleClick5}>
-          OH/K
-        </button>
-        <button className="btn" disabled={!isLoaded} onClick={handleClick3}>
-          SMPL/L
-        </button>
+        {triggers.map(({name, displayName}) => (
+          <button className="btn" disabled={!isLoaded} onClick={() => handleClick(name)}>
+            {displayName}
+          </button>
+        ))}
       </div>
     </div>
   );
