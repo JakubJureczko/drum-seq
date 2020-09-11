@@ -56,6 +56,7 @@ const sounds = triggers.reduce((acc, {sound, name}) => {
 function SampleBtn() {
   
   const [isLoaded, setLoaded] = useState(false);
+  
   const sampler = useRef(null);
 
   useEffect(() => {

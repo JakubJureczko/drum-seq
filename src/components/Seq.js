@@ -87,9 +87,11 @@ const Sequencer = () => {
   }
 
   function handleKeyPress(keyCode) {
+   
     if (keyCode === "Space") {
       toggle();
       handleStart();
+    
     }
   }
  
@@ -127,7 +129,7 @@ const Sequencer = () => {
       </div>
       <button
         className="startBtn"
-        onKeyPress={handleKeyPress}
+        onKeyDown={() => {}}
         onClick={() => {
           toggle();
           handleStart();
