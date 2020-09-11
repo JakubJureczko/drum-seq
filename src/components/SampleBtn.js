@@ -9,7 +9,7 @@ import A3 from "../assets/samples/S3.wav";
 import A4 from "../assets/samples/S6.wav";
 import A5 from "../assets/samples/S7.wav";
 
-import "./SampleBtn.css";
+
 
 const triggers = [
   {
