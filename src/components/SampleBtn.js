@@ -45,6 +45,13 @@ const triggers = [
 ];
 
 const validKeys = triggers.map(({ keyCode }) => keyCode)
+const sounds = triggers.reduce((acc, {sound, name}) => {
+  return {
+    ...acc,
+    [name]: sound
+  }
+}, {})
+
 
 function SampleBtn() {
   
@@ -53,7 +60,7 @@ function SampleBtn() {
 
   useEffect(() => {
     sampler.current = new Sampler(
-      { A1, A2, A3, A4, A5 },
+      sounds,
       {
         onload: () => {
           setLoaded(true);
@@ -80,28 +87,9 @@ function SampleBtn() {
   const btn = document.getElementById("btn");
 
   function handleKeyPress(keyCode) {
-    if (validKeys.indexOf(keyCode) !== -1) {
-      console.log(keyCode)
-    }
-    /*switch (keyCode) {
-      case "KeyD":
-        handleClick();
-        break;
-      case "KeyF":
-        handleClick2();
-        break;
-      case "KeyJ":
-        handleClick4();
-        break;
-      case "KeyK":
-        handleClick5();
-        break;
-      case "KeyL":
-        handleClick3();
-        break;
-      default:
-        break;
-    }*/
+    if (validKeys.indexOf(keyCode) === -1) return;
+    const soundName = triggers.find(trigger => keyCode === trigger.keyCode).name
+    handleClick(soundName)
   }
 
 
