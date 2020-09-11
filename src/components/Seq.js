@@ -48,7 +48,7 @@ const seq = new Tone.Sampler({
 const Sequencer = () => {
   const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
-  const [pattern, updatePattern] = useState(initialPattern);
+  const [pattern, setPattern] = useState(initialPattern);
   
   
   
@@ -100,10 +100,10 @@ const Sequencer = () => {
   }, []);
 
   // Update pattern by making a copy and inverting the value
-  function setPattern({ x, y, value }) {
+  function updatePattern({ x, y, value }) {
     const patternCopy = [...pattern];
     patternCopy[y][x] = +!value;
-    updatePattern(patternCopy);
+    setPattern(patternCopy);
   }
 
   console.log(pattern);
@@ -119,7 +119,7 @@ const Sequencer = () => {
                   row={y}
                   active={activeColumn === x}
                   selected={value}
-                  onClick={() => setPattern({ x, y, value })}
+                  onClick={() => updatePattern({ x, y, value })}
                 />
               ))}
             </div>
