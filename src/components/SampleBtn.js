@@ -69,7 +69,10 @@ function SampleBtn() {
     ).toDestination();
   }, []);
 
-  const handleClick = (sound) => sampler.current.triggerAttack(sound);
+  const play = (sound) => {
+    sampler.current.releaseAll()
+    sampler.current.triggerAttack(sound)
+  };
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -77,7 +80,7 @@ function SampleBtn() {
     });
 
     document.addEventListener("keyup", (e) => {
- 
+      //sampler.current.releaseAll()
     });
   }, []);
 
@@ -89,7 +92,7 @@ function SampleBtn() {
   function handleKeyPress(keyCode) {
     if (validKeys.indexOf(keyCode) === -1) return;
     const soundName = triggers.find(trigger => keyCode === trigger.keyCode).name
-    handleClick(soundName)
+    play(soundName)
   }
 
 
@@ -98,7 +101,7 @@ function SampleBtn() {
       <div className="btnContainer">
         <button className="btn2"></button>
         {triggers.map(({name, displayName}) => (
-          <button className="btn" disabled={!isLoaded} onClick={() => handleClick(name)}>
+          <button className="btn" disabled={!isLoaded} onClick={() => play(name)}>
             {displayName}
           </button>
         ))}
