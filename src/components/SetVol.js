@@ -14,7 +14,7 @@ const SetVol = () => {
     }
   }
   function volDown(){
-    if(vol > -20) {
+    if(vol > -30) {
       setVol(vol - 1)
     }else {
       setVol(vol)
@@ -24,12 +24,12 @@ const SetVol = () => {
   return(
    <div className="setvol">
         <span>{vol} dB</span>
-        <button onClick={volUp}>
+        <button onMouseDown={volUp}>
         +
         </button>
-        <button onClick={volDown}>-</button>
+        <button onMouseDown={volDown}>-</button>
         
-        <input type="range" min="-20" max="6" value="1"  className="slider"id="myRange" />
+        
       </div>
   )
 }
