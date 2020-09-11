@@ -106,7 +106,6 @@ const Sequencer = () => {
     setPattern(patternCopy);
   }
 
-  console.log(pattern);
   return (
     <div>
       <div className="seqBorder">
