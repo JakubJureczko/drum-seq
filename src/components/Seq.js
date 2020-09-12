@@ -86,14 +86,16 @@ const Sequencer = () => {
     setPlayState(!playState);
   }
 
-  function handleKeyPress(keyCode) {
+  function handleKeyPress(e) {
    
-    if (keyCode === "Space") {
+    if (e.keyCode === 32) {
       toggle();
       handleStart();
+      e.preventDefault();
       
     }
   }
+  
  
 
   // Toggle playing / stopped
@@ -130,7 +132,7 @@ const Sequencer = () => {
       </div>
       <button
         className="startBtn"
-        onKeyDown={() => {}}
+        onKeyDown={handleKeyPress}
         onClick={() => {
           toggle();
           handleStart();
