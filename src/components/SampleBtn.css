@@ -33,14 +33,14 @@
   background-color: transparent;
   margin: 1em;
   outline: none;
+  transition: 0.5s ease;
   
 }
 
 .btn.active {
   background-color: rgba(133, 65, 243, 0.8);
-  box-shadow: 3px 3px rgba(133, 65, 243, 0.8);
-  transition: background-color 0.5s;
-  transform: translateY(4px); 
+  transition: 0ms;
+  transform: translateY(2px); 
 }
 /* box-shadow: 5px 5px rgba(133, 65, 243, 0.8);*/
 .btn:active {

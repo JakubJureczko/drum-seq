@@ -78,7 +78,7 @@ function SampleBtn() {
   };
 
   useEffect(() => {
-    document.addEventListener("keydown", (e) => {
+    document.addEventListener("keypress", (e) => {
       handleKeyPress(e.code);
     });
 
