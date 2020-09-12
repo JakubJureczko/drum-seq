@@ -90,6 +90,7 @@ const Sequencer = () => {
     if (keyCode === "Space") {
       toggle();
       handleStart();
+      
     }
   }
  
@@ -97,6 +98,7 @@ const Sequencer = () => {
   // Toggle playing / stopped
   const toggle = useCallback(() => {
     Tone.Transport.toggle();
+    Tone.start();
   }, []);
 
   // Update pattern by making a copy and inverting the value
