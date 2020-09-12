@@ -86,13 +86,20 @@ const Sequencer = () => {
     setPlayState(!playState);
   }
 
-  function handleKeyPress(e) {
+  // function handleKeyPress(e) {
    
-    if (e.keyCode === 32) {
-      toggle();
-      handleStart();
-      e.preventDefault();
+  //   if (e.keyCode === 32) {
+  //     toggle();
+  //     handleStart();
+  //     e.preventDefault();
       
+  //   }
+  // } 
+  function handleKeyPress(keyCode) {
+   
+    if (keyCode === "Space") {
+      toggle();
+      handleStart();    
     }
   }
   
@@ -161,6 +168,7 @@ const Sequencer = () => {
     </div>
   );
 };
+
 
 const getColor = (row) => {
   switch (row) {
