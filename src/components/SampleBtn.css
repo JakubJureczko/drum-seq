@@ -45,7 +45,7 @@
 /* box-shadow: 5px 5px rgba(133, 65, 243, 0.8);*/
 .btn:active {
   background-color: rgba(133, 65, 243, 0.8);
-  box-shadow: 3px 3px rgba(133, 65, 243, 0.8);
+  
   transition: 0.2s;
-  transform: translateY(4px);
+  transform: translateY(2px);
 }

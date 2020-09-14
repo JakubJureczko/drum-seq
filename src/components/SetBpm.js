@@ -7,10 +7,12 @@ const SetBpm = () => {
   Tone.Transport.bpm.value = bpm;
 
   return(
-    <div>
+    <div className="tempo">
         <span>{bpm} bpm</span>
+        <div className='tempobtn'>
         <button onClick={() => setBpm(bpm + 1) }>+</button>
         <button onClick={() => setBpm(bpm - 1)}>-</button>
+        </div>
       </div>
   )
 }

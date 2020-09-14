@@ -2,8 +2,8 @@ import React, { useCallback, useState, useEffect } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
 
-import SetBpm from "./SetBpm"
-import SetVol from "./SetVol"
+import SetBpm from "./SetBpm";
+import SetVol from "./SetVol";
 
 import {
   faRecordVinyl,
@@ -43,15 +43,11 @@ const seq = new Tone.Sampler({
   D7,
 }).toMaster();
 
-
-
 const Sequencer = () => {
   const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
-  
-  
-  
+
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
       handleKeyPress(e.code);
@@ -86,24 +82,21 @@ const Sequencer = () => {
     setPlayState(!playState);
   }
 
-  // function handleKeyPress(e) {
-   
-  //   if (e.keyCode === 32) {
-  //     toggle();
-  //     handleStart();
-  //     e.preventDefault();
-      
-  //   }
-  // } 
-  function handleKeyPress(keyCode) {
-   
-    if (keyCode === "Space") {
+  function handleKeyPress2(e) {
+
+    if (e.keyCode === 32) {
       toggle();
-      handleStart();    
+      handleStart();
+      e.preventDefault();
+
     }
   }
-  
- 
+  function handleKeyPress(keyCode) {
+    if (keyCode === "Space") {
+      toggle();
+      handleStart();
+    }
+  }
 
   // Toggle playing / stopped
   const toggle = useCallback(() => {
@@ -123,7 +116,14 @@ const Sequencer = () => {
       <div className="seqBorder">
         {pattern.map((row, y) => (
           <div className="outter">
-            <div key={y} style={{ display: "flex", justifyContent: "center", cursor: "pointer" }}>
+            <div
+              key={y}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                cursor: "pointer",
+              }}
+            >
               {row.map((value, x) => (
                 <Square
                   key={x}
@@ -137,9 +137,10 @@ const Sequencer = () => {
           </div>
         ))}
       </div>
+
       <button
         className="startBtn"
-        onKeyDown={handleKeyPress}
+        onKeyDown={handleKeyPress2}
         onClick={() => {
           toggle();
           handleStart();
@@ -162,13 +163,13 @@ const Sequencer = () => {
           />
         )}
       </button>
+      <div className="volBpmBtn">
       <SetBpm />
       <SetVol />
-    
+      </div>
     </div>
   );
 };
-
 
 const getColor = (row) => {
   switch (row) {

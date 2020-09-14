@@ -1,0 +1,32 @@
+.tempo {
+  display: flex;
+  
+  margin-right: 1em;
+  width: 4em;
+  height: 3em;
+  
+  border: 4px solid black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+}
+
+.tempobtn button {
+  outline: none;
+  background-color: inherit;
+  border: 0em;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.tempobtn {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0em;
+}
+
+.tempo span {
+  
+  
+  
+}

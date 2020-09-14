@@ -30,11 +30,13 @@ const SetVol = () => {
   };
 
   return (
-    <div className="setvol">
-      <span>{vol} dB</span>
+    <div className="setVol">
+        <span>{vol} db</span>
+      <div className="setVolBtn">
       <button onMouseDown={volUp}>+</button>
       <button onMouseDown={volDown}>-</button>
-      <div>
+      </div>
+      {/* <div>
         <Knob
           name="Vol"
           unit="dB"
@@ -46,7 +48,7 @@ const SetVol = () => {
           transform={(p) => parseInt(p * 30, 10) - 30}
           style={style}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

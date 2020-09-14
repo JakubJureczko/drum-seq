@@ -4,9 +4,6 @@
   border: 4px solid black;
   border-bottom: none;
   border-top: none;
-  
- 
-  
 }
 
 /*
@@ -15,7 +12,6 @@
   
 }
 */
-
 
 .startBtn {
   padding: 2em;
@@ -27,5 +23,10 @@
   margin: 1em;
   outline: none;
   background-image: url(../assets/images/turn1.svg);
-  
+}
+
+.volBpmBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
