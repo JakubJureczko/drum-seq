@@ -6,8 +6,9 @@
   
   
   align-items: center;
-  border-bottom: 4px solid black;
-  border-top: 4px solid black;
+  
+  
+  
   background-image: url('../assets/images/sound.svg');
   background-position: left;
   background-position-y: center;
