@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as Tone from "tone";
 import "./SetVol.css";
 
-import Knob from "react-simple-knob";
+//import Knob from "react-simple-knob";
 
 const SetVol = () => {
   const [vol, setVol] = useState(0);

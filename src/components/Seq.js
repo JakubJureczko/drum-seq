@@ -41,7 +41,7 @@ const seq = new Tone.Sampler({
   D5,
   D6,
   D7,
-}).toMaster();
+}).toDestination();
 
 const Sequencer = () => {
   const [playState, setPlayState] = useState(false);
@@ -56,6 +56,9 @@ const Sequencer = () => {
 
   useEffect(
     () => {
+
+      //Tone.Transport.swing = 0.5;
+      //Tone.Transport.swingSubdivision = '16n';
       const loop = new Tone.Sequence(
         (time, col) => {
           // Update active column for animation
@@ -216,5 +219,10 @@ const Square = ({ active, row, selected, onClick }) => {
     />
   );
 };
+
+
+
+// Tone.Transport.swing = 0.5;
+// Tone.Transport.swingSubdivision = '16n';
 
 export default Sequencer;
