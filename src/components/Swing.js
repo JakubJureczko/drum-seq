@@ -15,7 +15,7 @@ Tone.Transport.swingSubdivision = '16n';
         <div className='swingbtn'>
         <button onClick={() => {
           if(swinger < 1 ) {
-            Math.round(setSwinger(swinger + 0.1)) 
+            setSwinger(swinger + 0.1) 
           }
           }}>+</button>
         <button onClick={() => setSwinger(swinger - 0.1)}>-</button>
