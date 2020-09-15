@@ -51,7 +51,7 @@ const Sequencer = () => {
 
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
-      handleKeyPress(e.code);
+      handleKeyPressStart(e.code);
     });
   }, []);
 
@@ -92,7 +92,7 @@ const Sequencer = () => {
 
     }
   }
-  function handleKeyPress(keyCode) {
+  function handleKeyPressStart(keyCode) {
     if (keyCode === "Space") {
       toggle();
       handleStart();
@@ -138,7 +138,7 @@ const Sequencer = () => {
           </div>
         ))}
       </div>
-
+              
       <button
         className="startBtn"
         onKeyDown={handleKeyPress2}

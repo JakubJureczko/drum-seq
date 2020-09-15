@@ -4,28 +4,35 @@ import "./Swing.css";
 
 const Swing = () => {
   const [swinger, setSwinger] = useState(0);
-  
 
-Tone.Transport.swing = swinger;
-Tone.Transport.swingSubdivision = '16n';
+  Tone.Transport.swing = swinger;
+  Tone.Transport.swingSubdivision = "16n";
 
-  return(
+  function swingUp() {
+    if (swinger < 1) {
+      setSwinger(swinger + 0.5);
+    } else {
+      setSwinger(swinger);
+    }
+  }
+
+  function swingDown() {
+    if (swinger > 0) {
+      setSwinger(swinger - 0.5);
+    } else {
+      setSwinger(swinger);
+    }
+  }
+
+  return (
     <div className="swing">
-        <span>{swinger} swing</span>
-        <div className='swingBtn'>
-        <button onClick={() => {
-          if(swinger < 1 ) {
-            setSwinger(swinger + 0.5) 
-          }
-          }}>+</button>
-        <button onClick={() => {
-          if(swinger > 0 ) {
-            setSwinger(swinger - 0.5)
-          }
-          }}>-</button>
-        </div>
+      <span>{swinger} swing</span>
+      <div className="swingBtn">
+        <button onMouseDown={swingUp}>+</button>
+        <button onMouseDown={swingDown}>-</button>
       </div>
-  )
-}
+    </div>
+  );
+};
 
 export default Swing;

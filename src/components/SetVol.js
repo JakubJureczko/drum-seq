@@ -23,11 +23,11 @@ const SetVol = () => {
     }
   }
 
-  const style = {
-    height: "4em",
-    fontFamily: "Arial",
-    color: "black",
-  };
+  // const style = {
+  //   height: "4em",
+  //   fontFamily: "Arial",
+  //   color: "black",
+  // };
 
   return (
     <div className="setVol">
