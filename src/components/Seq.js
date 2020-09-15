@@ -138,7 +138,7 @@ const Sequencer = () => {
           </div>
         ))}
       </div>
-              
+        <div className="amplifiers">      
       <button
         className="startBtn"
         onKeyDown={handleKeyPress2}
@@ -168,6 +168,7 @@ const Sequencer = () => {
       <SetBpm />
       <SetVol />
       <Swing />
+      </div>
       </div>
     </div>
   );
