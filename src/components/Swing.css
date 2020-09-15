@@ -3,21 +3,21 @@
   justify-content: flex-end;
   width: 6em;
   height: 3em;
-  margin-left: 1em;
-  
-  
-  
-  
-  
+  margin-left: 2em;
+
   align-items: center;
-  
-  
-  background-image: url('../assets/images/park.svg');
+
+  background-image: url("../assets/images/park.svg");
   background-position: left;
   background-position-y: center;
   background-size: 40%;
   background-repeat: no-repeat;
+}
 
+@media screen and (max-width: 760px) {
+  .swing {
+    margin-left: 1em;
+  }
 }
 
 .swingBtn button {
@@ -32,12 +32,9 @@
 .swingBtn {
   display: flex;
   flex-direction: column;
-  
- 
 }
 
 .spanSwing {
   display: flex;
   flex-direction: column;
- 
 }

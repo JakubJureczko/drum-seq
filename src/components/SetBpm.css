@@ -1,7 +1,7 @@
 .tempo {
   display: flex;
 
-  margin-right: 1em;
+  margin-right: 2em;
   width: 6em;
   height: 3em;
 
@@ -17,6 +17,12 @@
   background-position-y: center;
   background-size: 40%;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 760px) {
+  .tempo {
+    margin-right: 1em;
+  }
 }
 
 .tempobtn button {

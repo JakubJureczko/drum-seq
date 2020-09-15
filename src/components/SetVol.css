@@ -3,18 +3,14 @@
   justify-content: flex-end;
   width: 6em;
   height: 3em;
-  
-  
+
   align-items: center;
-  
-  
-  
-  background-image: url('../assets/images/sound.svg');
+
+  background-image: url("../assets/images/sound.svg");
   background-position: left;
   background-position-y: center;
   background-size: 40%;
   background-repeat: no-repeat;
-  
 }
 
 .setVolBtn button {
@@ -29,23 +25,16 @@
 .setVolBtn {
   display: flex;
   flex-direction: column;
-  
+
   position: relative;
 }
 
 .spanVol {
   display: flex;
   flex-direction: column;
-  padding-left: 1em;
   
 }
 
 .dB {
-  
   align-self: flex-end;
 }
-
-
-  
-
-
