@@ -4,6 +4,7 @@ import "./Seq.css";
 
 import SetBpm from "./SetBpm";
 import SetVol from "./SetVol";
+import Swing from './Swing';
 
 import {
   faRecordVinyl,
@@ -56,9 +57,6 @@ const Sequencer = () => {
 
   useEffect(
     () => {
-
-      //Tone.Transport.swing = 0.5;
-      //Tone.Transport.swingSubdivision = '16n';
       const loop = new Tone.Sequence(
         (time, col) => {
           // Update active column for animation
@@ -169,6 +167,7 @@ const Sequencer = () => {
       <div className="volBpmBtn">
       <SetBpm />
       <SetVol />
+      <Swing />
       </div>
     </div>
   );
