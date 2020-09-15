@@ -50,9 +50,11 @@
   background-position: 20%;
 }
 
-.volBpmBtn {
+.mixer {
   background-image: url("../assets/images/amplifier.svg");
   background-size: contain;
   background-repeat: no-repeat;
   
 }
+
+

@@ -8,7 +8,10 @@ const SetBpm = () => {
 
   return(
     <div className="tempo">
-        <span>{bpm} bpm</span>
+      <div className="spanBpm">
+        <span>{bpm}</span>
+        <span>bpm</span>
+      </div>
         <div className='tempobtn'>
         <button onMouseDown={() => setBpm(bpm + 1) }>+</button>
         <button onMouseDown={() => setBpm(bpm - 1)}>-</button>

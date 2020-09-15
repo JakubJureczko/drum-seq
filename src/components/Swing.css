@@ -1,14 +1,22 @@
 .swing {
   display: flex;
-  
-  width: 4em;
+  justify-content: flex-end;
+  width: 6em;
   height: 3em;
   margin-left: 1em;
-  background-color: salmon;
-  border: 4px solid black;
+  
+  border-bottom: 4px solid black;
+  border-top: 4px solid black;
   
   align-items: center;
-  border-radius: 10%;
+  
+  
+  background-image: url('../assets/images/park.svg');
+  background-position: left;
+  background-position-y: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+
 }
 
 .swingBtn button {
@@ -27,6 +35,8 @@
  
 }
 
-.swing span {
+.spanSwing {
+  display: flex;
+  flex-direction: column;
  
 }

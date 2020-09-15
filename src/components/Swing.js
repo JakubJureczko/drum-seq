@@ -26,7 +26,10 @@ const Swing = () => {
 
   return (
     <div className="swing">
-      <span>{swinger} swing</span>
+      <div className="spanSwing">
+      <span>{swinger}</span>
+      <span>swg</span>
+      </div>
       <div className="swingBtn">
         <button onMouseDown={swingUp}>+</button>
         <button onMouseDown={swingDown}>-</button>

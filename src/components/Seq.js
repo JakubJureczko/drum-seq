@@ -4,7 +4,7 @@ import "./Seq.css";
 
 import SetBpm from "./SetBpm";
 import SetVol from "./SetVol";
-import Swing from './Swing';
+import Swing from "./Swing";
 
 import {
   faRecordVinyl,
@@ -84,12 +84,10 @@ const Sequencer = () => {
   }
 
   function handleKeyPress2(e) {
-
     if (e.keyCode === 32) {
       toggle();
       handleStart();
       e.preventDefault();
-
     }
   }
   function handleKeyPressStart(keyCode) {
@@ -138,37 +136,39 @@ const Sequencer = () => {
           </div>
         ))}
       </div>
-        <div className="amplifiers">      
-      <button
-        className="startBtn"
-        onKeyDown={handleKeyPress2}
-        onClick={() => {
-          toggle();
-          handleStart();
-        }}
-      >
-        {playState ? (
-          <FontAwesomeIcon
-            icon={faCompactDisc}
-            size="8x"
-            style={{ color: "rgba(133, 65, 243, 0.8)" }}
-            transform="left-1"
-            spin
-          />
-        ) : (
-          <FontAwesomeIcon
-            icon={faRecordVinyl}
-            size="8x"
-            style={{ color: "rgba(133, 65, 243, 0.8)" }}
-            transform="left-1.1"
-          />
-        )}
-      </button>
-      <div className="volBpmBtn">
-      <SetBpm />
-      <SetVol />
-      <Swing />
-      </div>
+      <div className="amplifiers">
+        <button
+          className="startBtn"
+          onKeyDown={handleKeyPress2}
+          onClick={() => {
+            toggle();
+            handleStart();
+          }}
+        >
+          {playState ? (
+            <FontAwesomeIcon
+              icon={faCompactDisc}
+              size="8x"
+              style={{ color: "rgba(133, 65, 243, 0.8)" }}
+              transform="left-1"
+              spin
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={faRecordVinyl}
+              size="8x"
+              style={{ color: "rgba(133, 65, 243, 0.8)" }}
+              transform="left-1.1"
+            />
+          )}
+        </button>
+        <div className="mixer">
+          <div className="volBpmBtn">
+            <SetBpm />
+            <SetVol />
+            <Swing />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -219,8 +219,6 @@ const Square = ({ active, row, selected, onClick }) => {
     />
   );
 };
-
-
 
 // Tone.Transport.swing = 0.5;
 // Tone.Transport.swingSubdivision = '16n';

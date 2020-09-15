@@ -31,7 +31,10 @@ const SetVol = () => {
 
   return (
     <div className="setVol">
-        <span>{vol} db</span>
+      <div className='spanVol'>
+        <span>{vol}</span>
+        <span className="dB">dB</span>  
+      </div>
       <div className="setVolBtn">
       <button onMouseDown={volUp}>+</button>
       <button onMouseDown={volDown}>-</button>
