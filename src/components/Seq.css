@@ -45,9 +45,9 @@
 
 .amplifiers {
   background-image: url("../assets/images/graf2.svg");
-  background-size: contain;
+  background-size: 15%;
   background-repeat: no-repeat;
-  background-position: 23%;
+  background-position: 20%;
 }
 
 .volBpmBtn {
