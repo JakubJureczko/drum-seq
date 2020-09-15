@@ -1,0 +1,27 @@
+.swing {
+  display: flex;
+  justify-content: flex-start;
+  width: 4em;
+  height: 3em;
+  margin-left: 1em;
+  background-color: salmon;
+  border: 4px solid black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+}
+
+.swingBtn button {
+  outline: none;
+  background-color: inherit;
+  border: 0em;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.swingBtn {
+  display: flex;
+  flex-direction: column;
+  
+  position: relative;
+}

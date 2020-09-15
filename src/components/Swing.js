@@ -12,13 +12,17 @@ Tone.Transport.swingSubdivision = '16n';
   return(
     <div className="swing">
         <span>{swinger} swing</span>
-        <div className='swingbtn'>
+        <div className='swingBtn'>
         <button onClick={() => {
           if(swinger < 1 ) {
-            setSwinger(swinger + 0.1) 
+            setSwinger(swinger + 0.5) 
           }
           }}>+</button>
-        <button onClick={() => setSwinger(swinger - 0.1)}>-</button>
+        <button onClick={() => {
+          if(swinger > 0 ) {
+            setSwinger(swinger - 0.5)
+          }
+          }}>-</button>
         </div>
       </div>
   )
