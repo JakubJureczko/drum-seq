@@ -38,3 +38,7 @@
   display: flex;
   flex-direction: column;
 }
+
+.swg {
+  align-self: flex-end;
+}

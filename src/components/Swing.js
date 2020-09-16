@@ -10,7 +10,7 @@ const Swing = () => {
 
   function swingUp() {
     if (swinger < 1) {
-      setSwinger(swinger + 0.5);
+      setSwinger(swinger + 0.25);
     } else {
       setSwinger(swinger);
     }
@@ -18,7 +18,7 @@ const Swing = () => {
 
   function swingDown() {
     if (swinger > 0) {
-      setSwinger(swinger - 0.5);
+      setSwinger(swinger - 0.25);
     } else {
       setSwinger(swinger);
     }
@@ -28,7 +28,7 @@ const Swing = () => {
     <div className="swing">
       <div className="spanSwing">
       <span>{swinger}</span>
-      <span>swg</span>
+      <span className="swg">swg</span>
       </div>
       <div className="swingBtn">
         <button onMouseDown={swingUp}>+</button>
