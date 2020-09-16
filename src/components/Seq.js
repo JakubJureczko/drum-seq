@@ -196,12 +196,14 @@ const getColumnColor = (key) => {
   switch (key) {
     case 0:
       return "black";
+    case 1:
+      return "pink";
     default:
-      return "inherit";
+      return "#eee";
   }
 };
 
-const Square = ({ active, row, selected, onClick }) => {
+const Square = ({ active, row, selected, onClick, key}) => {
   return (
     <div
       style={{
@@ -211,7 +213,7 @@ const Square = ({ active, row, selected, onClick }) => {
         borderRadius: active ? "10%" : "10%",
         width: 30,
         height: 30,
-        border: active ? "1px solid rgb(167, 167, 167)" : "1px solid #eee",
+        border: active ? "2px solid rgb(167, 167, 167)" : `2px solid ${getColumnColor(key)}`,   //"1px solid #eee"
         background: active ? "rgba(133, 65, 243, 0.9)" : "",
         background: selected ? getColor(row) : "",
       }}
