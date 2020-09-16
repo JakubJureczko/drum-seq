@@ -215,7 +215,7 @@ const Square = ({ active, row, selected, onClick, key}) => {
         height: 30,
         border: active ? "2px solid rgb(167, 167, 167)" : `2px solid ${getColumnColor(key)}`,   //"1px solid #eee"
         background: active ? "rgba(133, 65, 243, 0.9)" : "",
-        background: selected ? getColor(row) : "",
+        //background: selected ? getColor(row) : "",
       }}
       onClick={onClick}
     />
