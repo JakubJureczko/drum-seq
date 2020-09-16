@@ -196,7 +196,7 @@ const getColumnColor = (key) => {
   console.log(key);
   switch (key) {
     case 0:
-      return "rgba(0, 0, 0, 0.4)";
+      return "rgba(133, 65, 243, 0.2)";
     case 4:
       return "rgba(133, 65, 243, 0.2)";
       case 8:
@@ -218,7 +218,8 @@ const Square = ({ active, row, selected, onClick, col }) => {
         borderRadius: active ? "10%" : "10%",
         width: 30,
         height: 30,
-        border: active ? "2px solid rgb(167, 167, 167)" : "2px solid #eee", //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
+        margin: "0.1em",
+        border: active ? "2px solid rgb(167, 167, 167)" : "2px solid rgba(167, 167, 167, 0.3)", //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
         //background: active ? "rgba(133, 65, 243, 0.9)" : "",
         background: selected ? getColor(row) : getColumnColor(col),
         backgroundColor: getColumnColor(col),
