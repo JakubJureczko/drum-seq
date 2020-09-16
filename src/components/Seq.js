@@ -125,7 +125,7 @@ const Sequencer = () => {
             >
               {row.map((value, x) => (
                 <Square
-                  key={x}
+                  col={x}
                   row={y}
                   active={activeColumn === x}
                   selected={value}
@@ -193,17 +193,22 @@ const getColor = (row) => {
   }
 };
 const getColumnColor = (key) => {
+  console.log(key);
   switch (key) {
     case 0:
-      return "black";
-    case 1:
-      return "pink";
+      return "rgba(0, 0, 0, 0.4)";
+    case 4:
+      return "rgba(133, 65, 243, 0.2)";
+      case 8:
+      return "rgba(133, 65, 243, 0.2)";
+    case 12:
+      return "rgba(133, 65, 243, 0.2)";
     default:
-      return "#eee";
+      return "";
   }
 };
 
-const Square = ({ active, row, selected, onClick, key}) => {
+const Square = ({ active, row, selected, onClick, col }) => {
   return (
     <div
       style={{
@@ -213,10 +218,10 @@ const Square = ({ active, row, selected, onClick, key}) => {
         borderRadius: active ? "10%" : "10%",
         width: 30,
         height: 30,
-        border: active ? "2px solid rgb(167, 167, 167)" :  "2px solid #eee",    //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
-        background: active ? "rgba(133, 65, 243, 0.9)" : "",
-        background: selected ? getColor(row) : "",
-        //backgroundColor: getColumnColor(key)
+        border: active ? "2px solid rgb(167, 167, 167)" : "2px solid #eee", //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
+        //background: active ? "rgba(133, 65, 243, 0.9)" : "",
+        background: selected ? getColor(row) : getColumnColor(col),
+        backgroundColor: getColumnColor(col),
       }}
       onClick={onClick}
     />
