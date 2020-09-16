@@ -213,10 +213,10 @@ const Square = ({ active, row, selected, onClick, key}) => {
         borderRadius: active ? "10%" : "10%",
         width: 30,
         height: 30,
-        border: active ? "2px solid rgb(167, 167, 167)" : `2px solid ${getColumnColor(key)}`,   //"1px solid #eee"
+        border: active ? "2px solid rgb(167, 167, 167)" :  "2px solid #eee",    //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
         background: active ? "rgba(133, 65, 243, 0.9)" : "",
         background: selected ? getColor(row) : "",
-        backgroundColor: getColumnColor(key)
+        //backgroundColor: getColumnColor(key)
       }}
       onClick={onClick}
     />
