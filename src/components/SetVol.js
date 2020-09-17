@@ -1,11 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as Tone from "tone";
 import "./SetVol.css";
 
 //import Knob from "react-simple-knob";
 
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
+
+
 const SetVol = () => {
   const [vol, setVol] = useState(0);
+  const [isMousePlus, setMousePlus] = useState(false);
+  const [isMouseMinus, setMouseMinus] = useState(false);
+  
   Tone.Master.volume.value = vol;
 
   function volUp() {
@@ -22,6 +45,8 @@ const SetVol = () => {
       setVol(vol);
     }
   }
+  useInterval(volUp, isMousePlus ? 150 : null);
+  useInterval(volDown, isMouseMinus ? 150 : null);
 
   // const style = {
   //   height: "4em",
@@ -36,8 +61,26 @@ const SetVol = () => {
         <span className="dB">dB</span>  
       </div>
       <div className="setVolBtn">
-      <button onMouseDown={volUp}>+</button>
-      <button onMouseDown={volDown}>-</button>
+      <button onMouseDown={() => {
+        setMousePlus(true);
+        if (vol < 6) {
+          setVol(vol + 1);
+        } else {
+          setVol(vol);
+        }
+        }}
+        onMouseUp={() => setMousePlus(false)}
+        >+</button>
+      <button onMouseDown={() => {
+        setMouseMinus(true);
+        if (vol > -30) {
+          setVol(vol - 1);
+        } else {
+          setVol(vol);
+        }
+        }}
+        onMouseUp={() => setMouseMinus(false)}
+        >-</button>
       </div>
       {/* <div>
         <Knob
