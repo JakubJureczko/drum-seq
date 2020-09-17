@@ -196,7 +196,7 @@ const getColumnColor = (key) => {
   console.log(key);
   switch (key) {
     case 0:
-      return "rgba(0, 0, 0, 0.4)";
+      return "rgba(133, 65, 243, 0.2)";
     case 4:
       return "rgba(133, 65, 243, 0.2)";
       case 8:
