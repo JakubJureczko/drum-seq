@@ -76,7 +76,7 @@ const Sequencer = () => {
       ).start(0);
       return () => loop.dispose();
     },
-    [pattern] // Retrigger when pattern changes
+    []//pattern  // Retrigger when pattern changes
   );
 
   function handleStart() {
