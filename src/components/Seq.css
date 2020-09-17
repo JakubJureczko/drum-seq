@@ -9,17 +9,18 @@
 .seqBorder {
   margin: 0 auto;
   width: 35%;
-  
+  position: relative;
   
 }
 
 /* .seqBorder::after  {
   content: "";
-  background-image: url('../assets/images/speaker.svg');
-  background-size: 20%;
-  background-position: right;
+  background-image: url('../assets/images/poster.svg');
+  background-size: contain;
+  background-position: center;
+  
   background-repeat: no-repeat;
-  opacity: 0.35;
+  opacity: 0.04;
   top: 0;
   left: 0;
   bottom: 0;
