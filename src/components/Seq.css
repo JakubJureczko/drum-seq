@@ -13,19 +13,21 @@
   
 }
 
-.seqBorder::after  {
+/* .seqBorder::after  {
   content: "";
   background-image: url('../assets/images/speaker.svg');
-  
-  background-repeat: space;
-  opacity: 0.04;
+  background-size: 20%;
+  background-position: right;
+  background-repeat: no-repeat;
+  opacity: 0.35;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
   z-index: -1;   
-}
+} */
+
 
 @media screen and (max-width: 1000px) {
   .seqBorder {

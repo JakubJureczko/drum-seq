@@ -13,4 +13,19 @@
 
 .app {
   text-align: center;
+  
+}
+.app::after  {
+  content: "";
+  background-image: url('./assets/images/speaker.svg');
+  background-size: contain;
+  
+  background-repeat: space;
+  opacity: 0.05;
+  top: 0em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
