@@ -1,0 +1,41 @@
+.clear {
+  margin-left: 2em;
+  
+}
+
+.clearbutton  {
+  font-size: medium;
+  font-weight: 700;
+  width: 6em;
+  height: 3em;
+  outline: none;
+  border: none;
+  
+  position: relative;
+  background-color: inherit;
+  background-image: url('../assets/images/eraser.svg');
+  background-size: contain;
+  background-position: center;
+  
+  background-repeat: no-repeat;
+  
+}
+.clearbutton::after  {
+  content: "";
+  background-color: salmon;
+  border-radius: 10%;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+} */
+
+@media screen and (max-width: 760px) {
+  .clear {
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
+}

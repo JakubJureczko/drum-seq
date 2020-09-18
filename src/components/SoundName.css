@@ -5,6 +5,12 @@
   height: 100%;
 }
 
+@media screen and (max-width: 470px) {
+  .soundname {
+    display: none;
+  }
+}
+
 .soundname span {
   border: 2px solid black;
   width: 2em;
@@ -77,4 +83,17 @@
 .closehat:active 
  {
   background-color: inherit;
+  transition: 0s;
+  
+}
+.bass1,
+.bass2,
+.snare,
+.hihat,
+.hihat2,
+.openhat,
+.closehat 
+{
+  cursor: pointer;
+  transition:  ease-in-out 0.4s;
 }
