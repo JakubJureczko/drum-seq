@@ -1,16 +1,18 @@
 .soundname {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 274px;
+  
+  height: 100%;
 }
 
 .soundname span {
   border: 2px solid black;
-  width: 30px;
-  height: 30px;
+  width: 2em;
+  height: 2em;
   margin-right: 0.7em;
   border-radius: 10%;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
 }
 
 @media screen and (max-width: 1000) {
