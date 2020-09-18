@@ -2,13 +2,11 @@ import React, { useCallback, useState, useEffect } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
 
-import SetBpm from "./SetBpm";
-import SetVol from "./SetVol";
-import Swing from "./Swing";
+
 
 import speakerStop from "../assets/images/speakermoze.svg";
 import speakerPlay from "../assets/images/speaker.svg";
-
+import Actions from "./Actions";
 import {
   faRecordVinyl,
   faCompactDisc,
@@ -48,16 +46,8 @@ const seq = new Tone.Sampler({
 }).toDestination();
 
 const Sequencer = () => {
-  const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
-
-  useEffect(() => {
-    document.addEventListener("keydown", (e) => {
-      handleKeyPressStart(e.code);
-    });
-  }, []);
-
 
   useEffect(
     () => {
@@ -83,38 +73,12 @@ const Sequencer = () => {
     [] //pattern  // Retrigger when pattern changes
   );
 
-  function handleStart() {
-    setPlayState((prevPlayState) => !prevPlayState);
-    //setSelectSpeaker(!playState ? speaker.speakerPlay : speaker.speakerStop)
-  }
-
-  function handleKeyPress2(e) {
-    if (e.keyCode === 32) {
-      toggle();
-      handleStart();
-      e.preventDefault();
-    }
-  }
-  function handleKeyPressStart(keyCode) {
-    if (keyCode === "Space") {
-      toggle();
-      handleStart();
-    }
-  }
-
-  // Toggle playing / stopped
-  const toggle = useCallback(() => {
-    Tone.Transport.toggle();
-    Tone.start();
-  }, []);
-
   // Update pattern by making a copy and inverting the value
   function updatePattern({ x, y, value }) {
     const patternCopy = [...pattern];
     patternCopy[y][x] = +!value;
     setPattern(patternCopy);
   }
-  console.log(playState);
 
   return (
     <div>
@@ -144,44 +108,8 @@ const Sequencer = () => {
           ))}
         </div>
       </div>
-      <div className="amplifiers">
-        <div className="turntable">
-          <img src={playState ? speakerPlay : speakerStop} alt="speaker" />
-          <button
-            className="startBtn"
-            onKeyDown={handleKeyPress2}
-            onClick={() => {
-              handleStart();
-              toggle();
-            }}
-          >
-            {playState ? (
-              <FontAwesomeIcon
-                icon={faCompactDisc}
-                size="8x"
-                style={{ color: "rgba(133, 65, 243, 0.8)" }}
-                transform="left-1"
-                spin
-              />
-            ) : (
-              <FontAwesomeIcon
-                icon={faRecordVinyl}
-                size="8x"
-                style={{ color: "rgba(133, 65, 243, 0.8)" }}
-                transform="left-1.1"
-              />
-            )}
-          </button>
-          <img src={playState ? speakerPlay : speakerStop} alt="speaker" />
-        </div>
-        <div className="mixer">
-          <div className="volBpmBtn">
-            <SetBpm />
-            <SetVol />
-            <Swing />
-          </div>
-        </div>
-      </div>
+      
+      
     </div>
   );
 };
