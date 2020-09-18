@@ -157,8 +157,9 @@ const Sequencer = () => {
             className="startBtn"
             onKeyDown={handleKeyPress2}
             onClick={() => {
-              toggle();
               handleStart();
+              toggle();
+              
               
             }}
           >
