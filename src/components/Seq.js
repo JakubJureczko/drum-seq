@@ -1,6 +1,7 @@
 import React, {  useState, useEffect } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
+import SoundName from './SoundName';
 
 
 import D1 from "../assets/drums/bd1.mp3";
@@ -73,6 +74,7 @@ const Sequencer = () => {
   return (
     <div>
       <div className="backseq">
+        <SoundName />
         <div className="seqBorder">
           {pattern.map((row, y) => (
             <div className="outter">

@@ -1,0 +1,20 @@
+.soundname {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 260px;
+  
+}
+
+.soundname span {
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  margin-right: 0.1em;
+  border-radius: 10%; 
+}
+
+.bass1 {
+  background-image: url("../assets/images/bass1.svg");
+  background-size: cover;
+}

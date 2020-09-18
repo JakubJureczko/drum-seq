@@ -47,8 +47,8 @@ const Actions = () => {
         <button
           className="startBtn"
           onMouseDown={() => {
-            handleStart();
             toggle();
+            handleStart();
           }}
         >
           {playState ? (

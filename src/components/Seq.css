@@ -13,9 +13,7 @@
 }
 
 .seqBorder {
-  margin: 2em auto 0 auto;
-  width: 35%;
-  position: relative;
+  justify-self: center;
   
  
 }
@@ -50,3 +48,9 @@
   
 }
 */
+.backseq {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
