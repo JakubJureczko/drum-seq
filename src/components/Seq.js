@@ -6,7 +6,8 @@ import SetBpm from "./SetBpm";
 import SetVol from "./SetVol";
 import Swing from "./Swing";
 
-
+import speakerStop from "../assets/images/speakermoze.svg";
+import speakerPlay from "../assets/images/speaker.svg";
 
 import {
   faRecordVinyl,
@@ -47,22 +48,16 @@ const seq = new Tone.Sampler({
 }).toDestination();
 
 const Sequencer = () => {
-  const speakerStop = require("../assets/images/speakermoze.svg"); 
-  const speakerPlay = require("../assets/images/speaker.svg") ;
-  const speaker = {speakerStop, speakerPlay};
-  
   const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
-  const [selectSpeaker, setSelectSpeaker] = useState(speaker.speakerStop)
-
-  
 
   useEffect(() => {
-    document.addEventListener("keypress", (e) => {
+    document.addEventListener("keydown", (e) => {
       handleKeyPressStart(e.code);
     });
   }, []);
+
 
   useEffect(
     () => {
@@ -89,8 +84,8 @@ const Sequencer = () => {
   );
 
   function handleStart() {
-    setPlayState( !playState);
-    setSelectSpeaker(!playState ? speaker.speakerPlay : speaker.speakerStop)
+    setPlayState((prevPlayState) => !prevPlayState);
+    //setSelectSpeaker(!playState ? speaker.speakerPlay : speaker.speakerStop)
   }
 
   function handleKeyPress2(e) {
@@ -119,8 +114,7 @@ const Sequencer = () => {
     patternCopy[y][x] = +!value;
     setPattern(patternCopy);
   }
-
-  
+  console.log(playState);
 
   return (
     <div>
@@ -152,15 +146,13 @@ const Sequencer = () => {
       </div>
       <div className="amplifiers">
         <div className="turntable">
-          <img src={selectSpeaker} alt="speaker" />
+          <img src={playState ? speakerPlay : speakerStop} alt="speaker" />
           <button
             className="startBtn"
             onKeyDown={handleKeyPress2}
             onClick={() => {
               handleStart();
               toggle();
-              
-              
             }}
           >
             {playState ? (
@@ -180,7 +172,7 @@ const Sequencer = () => {
               />
             )}
           </button>
-          <img src={selectSpeaker} alt="speaker" />
+          <img src={playState ? speakerPlay : speakerStop} alt="speaker" />
         </div>
         <div className="mixer">
           <div className="volBpmBtn">
@@ -213,7 +205,6 @@ const getColor = (row) => {
   }
 };
 const getColumnColor = (key) => {
-  console.log(key);
   switch (key) {
     case 0:
       return "rgba(133, 65, 243, 0.2)";
@@ -227,7 +218,6 @@ const getColumnColor = (key) => {
       return "";
   }
 };
-
 const Square = ({ active, row, selected, onClick, col }) => {
   return (
     <div
