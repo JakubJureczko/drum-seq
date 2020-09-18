@@ -20,6 +20,9 @@
   background-position: center;
    background-color: #a374d5; 
 }
+.bass1:active, .bass2:active, .snare:active, .hihat:active, .hihat2:active, .openhat:active, .closehat:active {
+    background-color: inherit;
+}
 
 .bass2 {
   background-image: url("../assets/images/sound/bass1.svg");
@@ -41,13 +44,13 @@
   background-position: center;
   background-color: rgb(186,255,201);
 }
-.openhat {
+.hihat2 {
   background-image: url("../assets/images/sound/hihat2.svg");
   background-size: cover;
   background-position: center;
   background-color: rgb(255,255,186);
 }
-.openhat2 {
+.openhat {
   background-image: url("../assets/images/sound/hihat1.svg");
   background-size: cover;
   background-position: center;
