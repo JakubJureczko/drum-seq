@@ -68,7 +68,7 @@ const Actions = () => {
             />
           )}
         </button>
-        <img src={playState ? speakerPlay : speakerStop} alt="speaker" />
+        <img src={playState ? speakerPlay : speakerStop} alt="speaker2" />
       </div>
     </div>
   );

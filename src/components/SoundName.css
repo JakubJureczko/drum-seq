@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-around;
   height: 274px;
-  
 }
 
 .soundname span {
@@ -11,54 +10,69 @@
   width: 30px;
   height: 30px;
   margin-right: 0.7em;
-  border-radius: 10%; 
+  border-radius: 10%;
+}
+
+@media screen and (max-width: 1000) {
+  .soundname span {
+    margin-right: 0em;
+  }
 }
 
 .bass1 {
   background-image: url("../assets/images/sound/bass3.svg");
   background-size: cover;
   background-position: center;
-   background-color: #a374d5; 
+  background-color: #a374d5;
 }
-.bass1:active, .bass2:active, .snare:active, .hihat:active, .hihat2:active, .openhat:active, .closehat:active {
-    background-color: inherit;
-}
+
 
 .bass2 {
   background-image: url("../assets/images/sound/bass1.svg");
   background-size: cover;
   background-position: center;
-   background-color: #be97dc; 
+  background-color: #be97dc;
 }
 
 .snare {
   background-image: url("../assets/images/sound/snare.svg");
   background-size: cover;
   background-position: center;
-  background-color: rgb(186,225,255);
+  background-color: rgb(186, 225, 255);
 }
 
 .hihat {
   background-image: url("../assets/images/sound/hihat.svg");
   background-size: cover;
   background-position: center;
-  background-color: rgb(186,255,201);
+  background-color: rgb(186, 255, 201);
 }
 .hihat2 {
   background-image: url("../assets/images/sound/hihat2.svg");
   background-size: cover;
   background-position: center;
-  background-color: rgb(255,255,186);
+  background-color: rgb(255, 255, 186);
 }
 .openhat {
   background-image: url("../assets/images/sound/hihat1.svg");
   background-size: cover;
   background-position: center;
-  background-color: rgba(255,223,186);
+  background-color: rgba(255, 223, 186);
 }
 .closehat {
   background-image: url("../assets/images/sound/hihat3.svg");
   background-size: cover;
   background-position: center;
-  background-color: rgba(255,179,186);
+  background-color: rgba(255, 179, 186);
+}
+
+.bass1:active,
+.bass2:active,
+.snare:active,
+.hihat:active,
+.hihat2:active,
+.openhat:active,
+.closehat:active 
+ {
+  background-color: inherit;
 }

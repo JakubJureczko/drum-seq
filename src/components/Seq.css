@@ -1,22 +1,14 @@
 .backseq {
-  background-image: url("../assets/images/graf2.svg");
-  background-size: 10%;
-  background-repeat: no-repeat;
-  background-position: 21%;
   margin-top: 2em;
 }
 
 .outter {
-  width: 100%;
-  
   border-bottom: none;
   border-top: none;
 }
 
 .seqBorder {
   justify-self: center;
-  
- 
 }
 
 /* .seqBorder::after  {
@@ -35,7 +27,7 @@
   z-index: -1;   
 } */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
   .seqBorder {
     width: 90%;
   }
@@ -54,4 +46,3 @@
   flex-direction: row;
   justify-content: center;
 }
-
