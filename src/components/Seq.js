@@ -6,7 +6,7 @@ import SetBpm from "./SetBpm";
 import SetVol from "./SetVol";
 import Swing from "./Swing";
 
-import speaker from "../assets/images/speaker.svg";
+
 
 import {
   faRecordVinyl,
@@ -47,9 +47,16 @@ const seq = new Tone.Sampler({
 }).toDestination();
 
 const Sequencer = () => {
+  const speakerStop = require("../assets/images/speakermoze.svg"); 
+  const speakerPlay = require("../assets/images/speaker.svg") ;
+  const speaker = {speakerStop, speakerPlay};
+  
   const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
+  const [selectSpeaker, setSelectSpeaker] = useState(speaker.speakerStop)
+
+  
 
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
@@ -82,7 +89,8 @@ const Sequencer = () => {
   );
 
   function handleStart() {
-    setPlayState(!playState);
+    setPlayState( !playState);
+    setSelectSpeaker(!playState ? speaker.speakerPlay : speaker.speakerStop)
   }
 
   function handleKeyPress2(e) {
@@ -111,6 +119,8 @@ const Sequencer = () => {
     patternCopy[y][x] = +!value;
     setPattern(patternCopy);
   }
+
+  
 
   return (
     <div>
@@ -142,13 +152,14 @@ const Sequencer = () => {
       </div>
       <div className="amplifiers">
         <div className="turntable">
-          <img src={speaker} alt="speaker" />
+          <img src={selectSpeaker} alt="speaker" />
           <button
             className="startBtn"
             onKeyDown={handleKeyPress2}
             onClick={() => {
               toggle();
               handleStart();
+              
             }}
           >
             {playState ? (
@@ -168,7 +179,7 @@ const Sequencer = () => {
               />
             )}
           </button>
-          <img src={speaker} alt="speaker" />
+          <img src={selectSpeaker} alt="speaker" />
         </div>
         <div className="mixer">
           <div className="volBpmBtn">
