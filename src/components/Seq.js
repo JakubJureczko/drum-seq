@@ -1,17 +1,7 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, {  useState, useEffect } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
 
-
-
-import speakerStop from "../assets/images/speakermoze.svg";
-import speakerPlay from "../assets/images/speaker.svg";
-import Actions from "./Actions";
-import {
-  faRecordVinyl,
-  faCompactDisc,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import D1 from "../assets/drums/bd1.mp3";
 import D2 from "../assets/drums/bd2.mp3";

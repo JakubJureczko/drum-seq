@@ -1,6 +1,8 @@
 import React, { useCallback, useState, useEffect } from "react";
 import * as Tone from "tone";
 
+import "./Actions.css"
+
 import speakerStop from "../assets/images/speakermoze.svg";
 import speakerPlay from "../assets/images/speaker.svg";
 
@@ -24,12 +26,6 @@ const Actions = () => {
     //setSelectSpeaker(!playState ? speaker.speakerPlay : speaker.speakerStop)
   }
 
-  function handleKeyPress2(e) {
-    if (e.keyCode === 32) {
-      toggle();
-      handleStart();
-    }
-  }
   function handleKeyPressStart(keyCode) {
     if (keyCode === "Space") {
       toggle();
@@ -50,8 +46,7 @@ const Actions = () => {
         <img src={playState ? speakerPlay : speakerStop} alt="speaker" />
         <button
           className="startBtn"
-          onKeyDown={handleKeyPress2}
-          onClick={() => {
+          onMouseDown={() => {
             handleStart();
             toggle();
           }}

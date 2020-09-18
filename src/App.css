@@ -29,3 +29,11 @@
   position: absolute;
   z-index: -1;   
 } */
+
+
+.volBpmBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2em;
+}
