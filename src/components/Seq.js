@@ -6,6 +6,8 @@ import SetBpm from "./SetBpm";
 import SetVol from "./SetVol";
 import Swing from "./Swing";
 
+import speaker from "../assets/images/speaker.svg";
+
 import {
   faRecordVinyl,
   faCompactDisc,
@@ -76,7 +78,7 @@ const Sequencer = () => {
       ).start(0);
       return () => loop.dispose();
     },
-    []//pattern  // Retrigger when pattern changes
+    [] //pattern  // Retrigger when pattern changes
   );
 
   function handleStart() {
@@ -112,56 +114,62 @@ const Sequencer = () => {
 
   return (
     <div>
-      <div className="seqBorder">
-        {pattern.map((row, y) => (
-          <div className="outter">
-            <div
-              key={y}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                cursor: "pointer",
-              }}
-            >
-              {row.map((value, x) => (
-                <Square
-                  col={x}
-                  row={y}
-                  active={activeColumn === x}
-                  selected={value}
-                  onClick={() => updatePattern({ x, y, value })}
-                />
-              ))}
+      <div className="backseq">
+        <div className="seqBorder">
+          {pattern.map((row, y) => (
+            <div className="outter">
+              <div
+                key={y}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+              >
+                {row.map((value, x) => (
+                  <Square
+                    col={x}
+                    row={y}
+                    active={activeColumn === x}
+                    selected={value}
+                    onClick={() => updatePattern({ x, y, value })}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <div className="amplifiers">
-        <button
-          className="startBtn"
-          onKeyDown={handleKeyPress2}
-          onClick={() => {
-            toggle();
-            handleStart();
-          }}
-        >
-          {playState ? (
-            <FontAwesomeIcon
-              icon={faCompactDisc}
-              size="8x"
-              style={{ color: "rgba(133, 65, 243, 0.8)" }}
-              transform="left-1"
-              spin
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={faRecordVinyl}
-              size="8x"
-              style={{ color: "rgba(133, 65, 243, 0.8)" }}
-              transform="left-1.1"
-            />
-          )}
-        </button>
+        <div className="turntable">
+          <img src={speaker} alt="speaker" />
+          <button
+            className="startBtn"
+            onKeyDown={handleKeyPress2}
+            onClick={() => {
+              toggle();
+              handleStart();
+            }}
+          >
+            {playState ? (
+              <FontAwesomeIcon
+                icon={faCompactDisc}
+                size="8x"
+                style={{ color: "rgba(133, 65, 243, 0.8)" }}
+                transform="left-1"
+                spin
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faRecordVinyl}
+                size="8x"
+                style={{ color: "rgba(133, 65, 243, 0.8)" }}
+                transform="left-1.1"
+              />
+            )}
+          </button>
+          <img src={speaker} alt="speaker" />
+        </div>
         <div className="mixer">
           <div className="volBpmBtn">
             <SetBpm />
@@ -199,7 +207,7 @@ const getColumnColor = (key) => {
       return "rgba(133, 65, 243, 0.2)";
     case 4:
       return "rgba(133, 65, 243, 0.2)";
-      case 8:
+    case 8:
       return "rgba(133, 65, 243, 0.2)";
     case 12:
       return "rgba(133, 65, 243, 0.2)";

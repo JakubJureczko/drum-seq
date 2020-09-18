@@ -1,24 +1,23 @@
+.backseq {
+  background-image: url("../assets/images/graf2.svg");
+  background-size: 10%;
+  background-repeat: no-repeat;
+  background-position: 21%;
+}
+
 .outter {
   width: 100%;
-  border: 4px solid black;
+  
   border-bottom: none;
   border-top: none;
-  
 }
 
 .seqBorder {
-  margin: 0 auto;
+  margin: 2em auto 0 auto;
   width: 35%;
   position: relative;
-   box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 8.5px 10px rgba(0, 0, 0, 0.06),
-  0 8.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 8px 33.4px rgba(0, 0, 0, 0.086),
-  0 8px 15px rgba(0, 0, 0, 0.12)
-; 
-
+  
+ 
 }
 
 /* .seqBorder::after  {
@@ -36,7 +35,6 @@
   position: absolute;
   z-index: -1;   
 } */
-
 
 @media screen and (max-width: 1000px) {
   .seqBorder {
@@ -63,35 +61,35 @@
   margin: 1em;
   outline: none;
   background-image: url(../assets/images/turn1.svg);
-  box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 20px 15px rgba(0, 0, 0, 0.12)
-;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 20px 15px rgba(0, 0, 0, 0.12);
 }
 
 .volBpmBtn {
   display: flex;
   flex-direction: row;
   justify-content: center;
- 
+  margin-top: 2em;
 }
 
-.amplifiers {
-  background-image: url("../assets/images/graf2.svg");
-  background-size: 15%;
-  background-repeat: no-repeat;
-  background-position: 20%;
+/* .amplifiers {
+ 
   
  
+} */
+
+.turntable {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.turntable img {
+  margin: 0 4em;
 }
 
 /* .mixer {
  
   
 } */
-
-
