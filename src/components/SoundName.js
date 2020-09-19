@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react'
 import {Sampler} from "tone";
+import * as Tone from "tone";
 import "./SoundName.css"
 import classnames from "classnames";
 
@@ -28,9 +29,16 @@ function SoundName(){
       }
     ).toDestination();
   }, []);
-
+  let reverb = new Tone.Reverb(0.8).connect(Tone.Master);
   const handleClick = (sound) => sampler.current.triggerAttack(sound);
+  const handleClick2 = (sound) => sampler.current.triggerAttack(sound).chain(reverb);
+ 
+  // let [reverb , setReverb] = useState(0)
+
+  // reverb = new Tone.Reverb(0.8).connect(Tone.Master);
   
+  // sampler.current= new Tone.Sampler({ D1, D2, D3, D4, D5, D6, D7 }). chain(reverb)
+ 
 
   return (
     <div className="soundname"> 
