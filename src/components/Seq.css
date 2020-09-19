@@ -46,3 +46,12 @@
   flex-direction: row;
   justify-content: center;
 }
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  margin: 0.1em;
+}
