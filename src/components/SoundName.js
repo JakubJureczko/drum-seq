@@ -31,6 +31,7 @@ function SoundName(){
   }, []);
   // let reverb = new Tone.Reverb(0.8).connect(Tone.Master);
   const handleClick = (sound) => sampler.current.triggerAttack(sound);
+  
   // const handleClick2 = (sound) => sampler.current.triggerAttack(sound).chain(reverb);
  
   // let [reverb , setReverb] = useState(0)

@@ -8,30 +8,20 @@
   font-weight: 700;
   width: 6em;
   height: 3em;
-  outline: none;
-  border: none;
+   outline: none; 
+   border: none; 
   
   position: relative;
   background-color: inherit;
-  background-image: url('../assets/images/eraser.svg');
-  background-size: contain;
-  background-position: center;
+  background-image: url('../assets/images/trash.svg');
+  background-position: left;
   
+  background-size: 40%;
   background-repeat: no-repeat;
   
+  cursor: pointer;
 }
-.clearbutton::after  {
-  content: "";
-  background-color: salmon;
-  border-radius: 10%;
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-} */
+
 
 @media screen and (max-width: 760px) {
   .clear {
@@ -39,3 +29,4 @@
     margin-bottom: 1em;
   }
 }
+

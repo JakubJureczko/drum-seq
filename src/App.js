@@ -24,6 +24,7 @@ function App() {
             <SetBpm />
             <SetVol />
             <Swing />
+            <Clear />
           </div>
         </div>
       </div>
