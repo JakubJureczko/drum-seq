@@ -1,9 +1,9 @@
-import React, {  useState, useEffect } from "react";
+import React, {  useState, useEffect, useContext } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
 import SoundName from './SoundName';
 import Mute from "./Mute"
-
+import {PatternContext} from "../patternContext"
 
 import D1 from "../assets/drums/bd1.mp3";
 import D2 from "../assets/drums/bd2.mp3";
@@ -15,15 +15,6 @@ import D7 from "../assets/drums/oh.mp3";
 
 const drums = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"];
 
-const initialPattern = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-];
 
 // Tone.Transport.state
 
@@ -39,7 +30,9 @@ const seq = new Tone.Sampler({
 
 const Sequencer = () => {
   const [activeColumn, setColumn] = useState(0);
-  const [pattern, setPattern] = useState(initialPattern);
+  const { pattern, updatePattern} = useContext(PatternContext)
+  
+  
 
   useEffect(
     () => {
@@ -66,11 +59,7 @@ const Sequencer = () => {
   );
 
   // Update pattern by making a copy and inverting the value
-  function updatePattern({ x, y, value }) {
-    const patternCopy = [...pattern];
-    patternCopy[y][x] = +!value;
-    setPattern(patternCopy);
-  }
+  
 
   return (
     <div>

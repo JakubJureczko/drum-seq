@@ -2,21 +2,24 @@ import React from "react";
 
 import styled from "styled-components";
 import Sequencer from "./components/Seq";
-import SampleBtn from "./components/SampleBtn"
-import Actions from "./components/Actions"
+import SampleBtn from "./components/SampleBtn";
+import Actions from "./components/Actions";
 import SetBpm from "./components/SetBpm";
 import SetVol from "./components/SetVol";
 import Swing from "./components/Swing";
-import Clear from "./components/Clear"
+import Clear from "./components/Clear";
+
+import PatternContextProvider from "./patternContext";
 
 import "./App.css";
 
 function App() {
-  
   return (
     <div className="app">
       <SampleBtn />
-      <Sequencer />
+      <PatternContextProvider>
+        <Sequencer />
+      </PatternContextProvider>
       <Actions />
       <div>
         <div className="mixer">
@@ -24,7 +27,9 @@ function App() {
             <SetBpm />
             <SetVol />
             <Swing />
-            <Clear />
+            <PatternContextProvider>
+              <Clear />
+            </PatternContextProvider>
           </div>
         </div>
       </div>
