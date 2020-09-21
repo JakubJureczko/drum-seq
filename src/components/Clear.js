@@ -5,17 +5,11 @@ import {PatternContext} from "../patternContext"
 
 const Clear = () => {
 
-  const {initialPattern, setPattern, pattern} = useContext(PatternContext)
-  console.log(initialPattern)
-  console.log(pattern)
+  const { clearPattern } = useContext(PatternContext)
 
   return (
     <div className="clear">
-      <button onClick={() => {
-        setPattern(initialPattern);
-        console.log("HIPHOP")
-        
-        }} className="clearbutton"></button>
+      <button onClick={clearPattern} className="clearbutton" />
     </div>
   )
 }

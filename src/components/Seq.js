@@ -60,7 +60,7 @@ const Sequencer = () => {
 
   // Update pattern by making a copy and inverting the value
   
-
+  console.log(pattern, 'from seq')
   return (
     <div>
       <div className="backseq">

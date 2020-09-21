@@ -15,25 +15,23 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="app">
-      <SampleBtn />
-      <PatternContextProvider>
+    <PatternContextProvider>
+      <div className="app">
+        <SampleBtn />
         <Sequencer />
-      </PatternContextProvider>
-      <Actions />
-      <div>
-        <div className="mixer">
-          <div className="volBpmBtn">
-            <SetBpm />
-            <SetVol />
-            <Swing />
-            <PatternContextProvider>
+        <Actions />
+        <div>
+          <div className="mixer">
+            <div className="volBpmBtn">
+              <SetBpm />
+              <SetVol />
+              <Swing />
               <Clear />
-            </PatternContextProvider>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </PatternContextProvider>
   );
 }
 
