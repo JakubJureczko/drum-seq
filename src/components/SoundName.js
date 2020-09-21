@@ -17,7 +17,7 @@ function SoundName(){
   
   const [isLoaded, setLoaded] = useState(false);
   const sampler = useRef(null);
-  const [currentSampler, setCurrentSampler] = useState();
+  // const [currentSampler, setCurrentSampler] = useState();
 
   useEffect(() => {
     sampler.current = new Sampler(
