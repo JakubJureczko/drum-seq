@@ -1,5 +1,6 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useEffect, useContext } from "react";
 import * as Tone from "tone";
+import {PatternContext} from "../patternContext"
 
 import "./Actions.css"
 
@@ -13,7 +14,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Actions = () => {
-  const [playState, setPlayState] = useState(false);
+  const { playState, setPlayState } = useContext(PatternContext)
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -23,7 +24,6 @@ const Actions = () => {
 
   function handleStart() {
     setPlayState((prevPlayState) => !prevPlayState);
-    //setSelectSpeaker(!playState ? speaker.speakerPlay : speaker.speakerStop)
   }
 
   function handleKeyPressStart(keyCode) {
@@ -39,7 +39,6 @@ const Actions = () => {
     Tone.start();
   }, []);
 
-  console.log("action re-rendering");
   return (
     <div className="amplifiers">
       <div className="turntable">

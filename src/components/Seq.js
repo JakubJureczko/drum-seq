@@ -5,62 +5,11 @@ import SoundName from './SoundName';
 import Mute from "./Mute"
 import {PatternContext} from "../patternContext"
 
-import D1 from "../assets/drums/bd1.mp3";
-import D2 from "../assets/drums/bd2.mp3";
-import D3 from "../assets/drums/sd1.mp3";
-import D4 from "../assets/drums/ch1.mp3";
-import D5 from "../assets/drums/ch2.mp3";
-import D6 from "../assets/drums/ch2.mp3";
-import D7 from "../assets/drums/oh.mp3";
-
-const drums = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"];
-
-
-// Tone.Transport.state
-
-const seq = new Tone.Sampler({
-  D1,
-  D2,
-  D3,
-  D4,
-  D5,
-  D6,
-  D7,
-}).toDestination();
-
 const Sequencer = () => {
-  const [activeColumn, setColumn] = useState(0);
-  const { pattern, updatePattern} = useContext(PatternContext)
-  
-  
-
-  useEffect(
-    () => {
-      const loop = new Tone.Sequence(
-        (time, col) => {
-          // Update active column for animation
-          setColumn(col);
-
-          // Loop current pattern
-          pattern.map((row, noteIndex) => {
-            // If active
-            if (row[col]) {
-              // Play based on which row
-              seq.triggerAttackRelease(drums[noteIndex], "8n", time);
-            }
-          });
-        },
-        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-        "16n"
-      ).start(0);
-      return () => loop.dispose();
-    },
-    [] //pattern  // Retrigger when pattern changes
-  );
+  const { pattern, updatePattern, activeColumn } = useContext(PatternContext)
 
   // Update pattern by making a copy and inverting the value
   
-  console.log(pattern, 'from seq')
   return (
     <div>
       <div className="backseq">
@@ -132,13 +81,11 @@ const getColumnColor = (key) => {
 const Square = ({ active, row, selected, onClick, col }) => {
   return (
     <div
-    className="square"
+      className="square"
       style={{
         borderRadius: active ? "10%" : "10%",
         border: active ? "2px solid rgb(167, 167, 167)" : "2px solid rgba(167, 167, 167, 0.4)", //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
-        //background: active ? "rgba(133, 65, 243, 0.9)" : "",
         background: selected ? getColor(row) : getColumnColor(col),
-        backgroundColor: getColumnColor(col),
       }}
       onClick={onClick}
     />
