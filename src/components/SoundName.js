@@ -1,8 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react'
 import {Sampler} from "tone";
-import * as Tone from "tone";
 import "./SoundName.css"
-import classnames from "classnames";
 
 import D1 from "../assets/drums/bd1.mp3";
 import D2 from "../assets/drums/bd2.mp3";

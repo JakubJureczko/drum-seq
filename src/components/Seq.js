@@ -1,5 +1,4 @@
-import React, {  useState, useEffect, useContext } from "react";
-import * as Tone from "tone";
+import React, { useContext } from "react";
 import "./Seq.css";
 import SoundName from './SoundName';
 import Mute from "./Mute"
@@ -9,7 +8,7 @@ const Sequencer = () => {
   const { pattern, updatePattern, activeColumn } = useContext(PatternContext)
 
   // Update pattern by making a copy and inverting the value
-  
+
   return (
     <div>
       <div className="backseq">

@@ -1,6 +1,5 @@
 import React, {createContext, useState, useEffect} from "react"
 import * as Tone from "tone";
-import { equals } from 'ramda';
 
 import D1 from "./assets/drums/bd1.mp3";
 import D2 from "./assets/drums/bd2.mp3";
@@ -38,18 +37,14 @@ const seq = new Tone.Sampler({
 export const PatternContext = createContext({});
 
 const PatternContextProvider = ({ children }) => {
-  const [activeColumn, setColumn] = useState(0);
+  const [activeColumn, setActiveColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
   const [loop, setLoop] = useState();
   const [playState, setPlayState] = useState(false);
 
   useEffect(() => {
-    if (equals(pattern, initialPattern)) {
-      console.log('equals')
-      setLoop()
-    } else {
-      setNewLoop()
-    }
+    if (loop) loop.dispose()
+    setNewLoop()
   }, [pattern])
 
   useEffect(() => {
@@ -60,7 +55,7 @@ const PatternContextProvider = ({ children }) => {
     setLoop(new Tone.Sequence(
       (time, col) => {
         // Update active column for animation
-        setColumn(col);
+        setActiveColumn(col);
 
         // Loop current pattern
         pattern.forEach((row, noteIndex) => {
@@ -92,12 +87,9 @@ const PatternContextProvider = ({ children }) => {
 
 
   const clearPattern = () => {
-    const row =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    setPattern(pattern.map(() => row))
-    setColumn(0)
-    loop.stop()
-    loop.dispose()
-    setLoop()
+    Tone.Transport.stop();
+    setActiveColumn(0)
+    setPattern(initialPattern)
     setPlayState(false)
   }
 

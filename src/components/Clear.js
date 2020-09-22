@@ -9,7 +9,7 @@ const Clear = () => {
 
   return (
     <div className="clear">
-      <button onClick={clearPattern} className="clearbutton" />
+      <button onMouseDown={clearPattern} className="clearbutton" />
     </div>
   )
 }
