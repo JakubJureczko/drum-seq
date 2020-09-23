@@ -76,7 +76,6 @@ const Sequencer = () => {
     <div>
       <div className="backseq">
         <SoundName />
-        <Mute />
         <div className="seqBorder">
           {pattern.map((row, y) => (
             <div className="outter">
