@@ -7,7 +7,6 @@ import Actions from "./components/Actions"
 import SetBpm from "./components/SetBpm";
 import SetVol from "./components/SetVol";
 import Swing from "./components/Swing";
-import Clear from "./components/Clear"
 
 import "./App.css";
 
@@ -24,7 +23,7 @@ function App() {
             <SetBpm />
             <SetVol />
             <Swing />
-            <Clear />
+            
           </div>
         </div>
       </div>
