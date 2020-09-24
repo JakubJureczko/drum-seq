@@ -139,34 +139,38 @@ function SampleBtn() {
       <div className="btnContainer">
         <button className="btn2">
           <div className="btnvol">
-            <button className="volplus"
-              onMouseDown={() => {
-                setMousePlus(true);
-                if (vol < 6) {
-                  setVol(vol + 1);
-                } else {
-                  setVol(vol);
-                }
-              }}
-              onMouseLeave={() => setMousePlus(false)}
-              onMouseUp={() => setMousePlus(false)}
-            >
-              +
-            </button>
-            <button className="volminus"
-              onMouseDown={() => {
-                setMouseMinus(true);
-                if (vol > -30) {
-                  setVol(vol - 1);
-                } else {
-                  setVol(vol);
-                }
-              }}
-              onMouseUp={() => setMouseMinus(false)}
-              onMouseLeave={() => setMouseMinus(false)}
-            >
-             -
-            </button>
+            <div className="plusminus">
+              <button
+                className="volplus"
+                onMouseDown={() => {
+                  setMousePlus(true);
+                  if (vol < 6) {
+                    setVol(vol + 1);
+                  } else {
+                    setVol(vol);
+                  }
+                }}
+                onMouseLeave={() => setMousePlus(false)}
+                onMouseUp={() => setMousePlus(false)}
+              >
+                +
+              </button>
+              <button
+                className="volminus"
+                onMouseDown={() => {
+                  setMouseMinus(true);
+                  if (vol > -30) {
+                    setVol(vol - 1);
+                  } else {
+                    setVol(vol);
+                  }
+                }}
+                onMouseUp={() => setMouseMinus(false)}
+                onMouseLeave={() => setMouseMinus(false)}
+              >
+                -
+              </button>
+            </div>
             <span>{vol}dB</span>
           </div>
         </button>

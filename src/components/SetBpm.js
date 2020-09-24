@@ -65,6 +65,7 @@ const SetBpm = () => {
             
           }}
           onMouseUp={() => setMouseDownPlus(false)}
+          onMouseLeave={() => setMouseDownPlus(false)}
         >
           +
         </button>
@@ -78,6 +79,7 @@ const SetBpm = () => {
             }
           }}
           onMouseUp={() => setMouseDownMinus(false)}
+          onMouseLeave={() => setMouseDownMinus(false)}
         >
           -
         </button>

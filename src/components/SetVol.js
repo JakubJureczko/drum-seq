@@ -70,6 +70,7 @@ const SetVol = () => {
         }
         }}
         onMouseUp={() => setMousePlus(false)}
+        onMouseLeave={() => setMousePlus(false)}
         >+</button>
       <button onMouseDown={() => {
         setMouseMinus(true);
@@ -80,6 +81,7 @@ const SetVol = () => {
         }
         }}
         onMouseUp={() => setMouseMinus(false)}
+        onMouseLeave={() => setMouseMinus(false)}
         >-</button>
       </div>
       {/* <div>
