@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useInterval } from "react";
 import classnames from "classnames";
 import { Sampler } from "tone";
 import styled from "styled-components";
 import "./SampleBtn.css";
-import *as Tone from "tone"
+import * as Tone from "tone";
 import A1 from "../assets/samples/S1.wav";
 import A2 from "../assets/samples/S2.wav";
 import A3 from "../assets/samples/S3.wav";
@@ -54,6 +54,28 @@ const sounds = triggers.reduce((acc, { sound, name }) => {
 function SampleBtn() {
   const [isLoaded, setLoaded] = useState(false);
   const [activeButton, setActiveButton] = useState("");
+  const [vol, setVol] = useState(0);
+  const [isMousePlus, setMousePlus] = useState(false);
+  const [isMouseMinus, setMouseMinus] = useState(false);
+
+  function useInterval(callback, delay) {
+    const savedCallback = useRef();
+
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+      if (delay !== null) {
+        let id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  }
+
   const sampler = useRef(null);
 
   useEffect(() => {
@@ -64,8 +86,8 @@ function SampleBtn() {
     }).toDestination();
   }, []);
 
-   //const rev = new Tone.Reverb(1).toDestination();
-   //const distortion = new Tone.Distortion(0.6).toDestination();
+  //const rev = new Tone.Reverb(1).toDestination();
+  //const distortion = new Tone.Distortion(0.6).toDestination();
   //.connect(distortion, rev)
 
   //const feedbackDelay = new Tone.FeedbackDelay(0.1, 0.2).toDestination();
@@ -75,7 +97,25 @@ function SampleBtn() {
     sampler.current.releaseAll();
     setActiveButton(sound);
     sampler.current.triggerAttack(sound);
+    sampler.current.volume.value = vol;
   };
+
+  function volUp() {
+    if (vol < 6) {
+      setVol(vol + 1);
+    } else {
+      setVol(vol);
+    }
+  }
+  function volDown() {
+    if (vol > -30) {
+      setVol(vol - 1);
+    } else {
+      setVol(vol);
+    }
+  }
+  useInterval(volUp, isMousePlus ? 200 : null);
+  useInterval(volDown, isMouseMinus ? 200 : null);
 
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
@@ -97,7 +137,39 @@ function SampleBtn() {
   return (
     <div className="samplebtn">
       <div className="btnContainer">
-        <button className="btn2"></button>
+        <button className="btn2">
+          <div className="btnvol">
+            <button className="volplus"
+              onMouseDown={() => {
+                setMousePlus(true);
+                if (vol < 6) {
+                  setVol(vol + 1);
+                } else {
+                  setVol(vol);
+                }
+              }}
+              onMouseLeave={() => setMousePlus(false)}
+              onMouseUp={() => setMousePlus(false)}
+            >
+              +
+            </button>
+            <button className="volminus"
+              onMouseDown={() => {
+                setMouseMinus(true);
+                if (vol > -30) {
+                  setVol(vol - 1);
+                } else {
+                  setVol(vol);
+                }
+              }}
+              onMouseUp={() => setMouseMinus(false)}
+              onMouseLeave={() => setMouseMinus(false)}
+            >
+             -
+            </button>
+            <span>{vol}dB</span>
+          </div>
+        </button>
         {triggers.map(({ name, displayName }) => (
           <button
             className={classnames("btn", activeButton === name ? "active" : "")}

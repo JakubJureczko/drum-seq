@@ -7,7 +7,9 @@
   flex-wrap: wrap;
 }
 .btn2 {
-  padding: 2em;
+  display: flex;
+ 
+  
   width: 10em;
   height: 10em;
 
@@ -50,3 +52,31 @@
   transform: translateY(2px);
 }
 
+.btnvol {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  
+ 
+}
+
+.btnvol span {
+  font-size: 1em;
+}
+
+
+
+.volplus  {
+  outline: none;
+  border: none;
+  background-color: inherit;
+  font-size: 1.5em;
+  
+}
+
+.volminus {
+  outline: none;
+  border: none;
+  background-color: inherit;
+  font-size: 1.5em;
+}
