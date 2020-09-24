@@ -3,7 +3,7 @@ import classnames from "classnames";
 import { Sampler } from "tone";
 import styled from "styled-components";
 import "./SampleBtn.css";
-
+import *as Tone from "tone"
 import A1 from "../assets/samples/S1.wav";
 import A2 from "../assets/samples/S2.wav";
 import A3 from "../assets/samples/S3.wav";
@@ -63,6 +63,12 @@ function SampleBtn() {
       },
     }).toDestination();
   }, []);
+
+   //const rev = new Tone.Reverb(1).toDestination();
+   //const distortion = new Tone.Distortion(0.6).toDestination();
+  //.connect(distortion, rev)
+
+  //const feedbackDelay = new Tone.FeedbackDelay(0.1, 0.2).toDestination();
 
   const play = (sound) => {
     console.log("playing");
