@@ -1,0 +1,38 @@
+.recordbtn {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.start  button {
+display: flex;
+justify-content: center;
+align-items: center;
+ outline: none;
+border: none;
+height: 3em;
+width: 3em;
+background-color: transparent;
+margin-right: 0.4em;
+
+}
+
+.start img {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+}
+
+.download button {
+  width: 3em;
+  height: 3em;
+  background-image: url("../assets/images/download.svg");
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  outline: none;
+  border: none;
+  border-radius: 10%;
+  background-color: transparent ; /*rgba(243, 65, 65, 0.8) */
+  cursor: pointer;
+}
