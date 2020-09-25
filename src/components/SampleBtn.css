@@ -21,7 +21,7 @@
   background-image: url(../assets/images/drummachine2.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgba(243, 65, 65, 0.8);
+   background-color: rgba(220, 86, 144, 0.9); /*rgba(243, 65, 65, 0.8); */
 }
 
 .btn {
@@ -51,7 +51,7 @@
   display: flex;
   width: 100%;
   justify-content: space-around;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .btnvol span {
