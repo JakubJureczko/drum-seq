@@ -8,7 +8,7 @@
 }
 .btn2 {
   display: flex;
- 
+ justify-content: center;
 
   width: 10em;
   height: 10em;
@@ -23,6 +23,7 @@
   background-size: cover;
   background-repeat: no-repeat;
    background-color: rgba(243, 65, 65, 0.8); /*rgba(243, 65, 65, 0.8); */ /*rgb(255, 112, 126)     rgba(220, 86, 144, 0.9)*/
+   
 }
 
 .btn {
@@ -48,44 +49,41 @@
   transform: translateY(2px);
 }
 
-.btnvol {
-  display: flex;
+
+.btn2 input {
+  width: 80%;
+}
+
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 0.6em 0;
+  width: 80%;
+  background: transparent;
+  border-radius: 10%;
+  
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  justify-content: space-around;
-  opacity: 0.9;
-}
-
-.btnvol span {
-  font-size: 1em;
-  align-self: center;
-  width: 30%;
-  color: rgba(244, 250, 164, 0.815);
-  font-weight: bold;
-}
-
-.volplus {
-  outline: none;
-  border: none;
-  background-color: inherit;
-  font-size: 1.5em;
+  height: 0.7em;
   cursor: pointer;
-  color: rgba(244, 250, 164, 0.815);
-  font-weight: bold;
-}
+  
 
-.volminus {
-  outline: none;
-  border: none;
-  background-color: inherit;
-  font-size: 1.5em;
+  border-radius: 5%;
+  
+  
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #2c2727;
+  border: 1px solid #fcd248;
+  height: 1em;
+  width: 1em;
+  border-radius: 30%;
+  background: #fcd248;
   cursor: pointer;
-  margin-left: 0.5em;
-  color: rgba(244, 250, 164, 0.815);
-  font-weight: bold;
-  margin-bottom: 0.2em;
-}
-
-.plusminus {
-  display: flex;
-  align-items: center;
+  -webkit-appearance: none;
+  margin-top: -0.3em;
 }

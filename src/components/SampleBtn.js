@@ -55,26 +55,6 @@ function SampleBtn() {
   const [isLoaded, setLoaded] = useState(false);
   const [activeButton, setActiveButton] = useState("");
   const [vol, setVol] = useState(0);
-  const [isMousePlus, setMousePlus] = useState(false);
-  const [isMouseMinus, setMouseMinus] = useState(false);
-
-  function useInterval(callback, delay) {
-    const savedCallback = useRef();
-
-    useEffect(() => {
-      savedCallback.current = callback;
-    }, [callback]);
-
-    useEffect(() => {
-      function tick() {
-        savedCallback.current();
-      }
-      if (delay !== null) {
-        let id = setInterval(tick, delay);
-        return () => clearInterval(id);
-      }
-    }, [delay]);
-  }
 
   const sampler = useRef(null);
 
@@ -97,25 +77,7 @@ function SampleBtn() {
     sampler.current.releaseAll();
     setActiveButton(sound);
     sampler.current.triggerAttack(sound);
-    sampler.current.volume.value = vol;
   };
-
-  function volUp() {
-    if (vol < 6) {
-      setVol(vol + 1);
-    } else {
-      setVol(vol);
-    }
-  }
-  function volDown() {
-    if (vol > -30) {
-      setVol(vol - 1);
-    } else {
-      setVol(vol);
-    }
-  }
-  useInterval(volUp, isMousePlus ? 200 : null);
-  useInterval(volDown, isMouseMinus ? 200 : null);
 
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
@@ -127,6 +89,10 @@ function SampleBtn() {
     });
   }, []);
 
+  useEffect(() => {
+    sampler.current.volume.value = vol;
+  }, [vol]);
+
   function handleKeyPress(keyCode) {
     if (validKeys.indexOf(keyCode) === -1) return;
     const soundName = triggers.find((trigger) => keyCode === trigger.keyCode)
@@ -134,45 +100,24 @@ function SampleBtn() {
     play(soundName);
   }
 
+  const volume = (event) => {
+    setVol(event.target.value);
+  };
+
   return (
     <div className="samplebtn">
       <div className="btnContainer">
         <button className="btn2">
-          <div className="btnvol">
-            <div className="plusminus">
-              <button
-                className="volplus"
-                onMouseDown={() => {
-                  setMousePlus(true);
-                  if (vol < 6) {
-                    setVol(vol + 1);
-                  } else {
-                    setVol(vol);
-                  }
-                }}
-                onMouseLeave={() => setMousePlus(false)}
-                onMouseUp={() => setMousePlus(false)}
-              >
-                +
-              </button>
-              <button
-                className="volminus"
-                onMouseDown={() => {
-                  setMouseMinus(true);
-                  if (vol > -30) {
-                    setVol(vol - 1);
-                  } else {
-                    setVol(vol);
-                  }
-                }}
-                onMouseUp={() => setMouseMinus(false)}
-                onMouseLeave={() => setMouseMinus(false)}
-              >
-                -
-              </button>
-            </div>
-            <span>{vol}dB</span>
-          </div>
+          <input
+            onChange={volume}
+            value={vol}
+            id="volM"
+            type="range"
+            name="vol"
+            min={-30}
+            max={6}
+            step="1"
+          />
         </button>
         {triggers.map(({ name, displayName }) => (
           <button
