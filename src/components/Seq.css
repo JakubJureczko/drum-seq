@@ -60,3 +60,27 @@
     0 1px 1px rgba(0, 0, 0, 0.12); */
 
 }
+
+.seqvol {
+  display: flex;
+  height: 274.4px;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.seqvol input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 1em;
+    height: 60%;
+    margin-left: 0.5em;
+}
+
+ input[type=range][orient=vertical]:focus {
+  outline: none;
+}
+

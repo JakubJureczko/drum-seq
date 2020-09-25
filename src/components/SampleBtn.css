@@ -55,7 +55,7 @@
 }
 
 
-input[type=range] {
+ input[type=range] {
   -webkit-appearance: none;
   margin: 0.6em 0;
   width: 80%;
@@ -63,10 +63,10 @@ input[type=range] {
   border-radius: 10%;
   
 }
-input[type=range]:focus {
+.btn2 input[type=range]:focus {
   outline: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
+.btn2 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 0.7em;
   cursor: pointer;
@@ -76,7 +76,7 @@ input[type=range]::-webkit-slider-runnable-track {
   
   
 }
-input[type=range]::-webkit-slider-thumb {
+.btn2 input[type=range]::-webkit-slider-thumb {
   box-shadow: 1px 1px 1px #2c2727;
   border: 1px solid #fcd248;
   height: 1em;

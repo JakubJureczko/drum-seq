@@ -40,6 +40,7 @@ const seq = new Tone.Sampler({
 const Sequencer = () => {
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
+  const [vol, setVol] = useState(0);
   
 
   useEffect(
@@ -74,6 +75,14 @@ const Sequencer = () => {
     setPattern(patternCopy);
   }
 
+  useEffect(() => {
+    seq.volume.value = vol
+  })
+
+  const volume = (event) => {
+    setVol(event.target.value);
+  };
+
   return (
     <div>
       <div className="backseq">
@@ -102,6 +111,19 @@ const Sequencer = () => {
             </div>
           ))}
         </div>
+        <div className="seqvol">
+        <input className="range vertical-heighest-first round"
+            onChange={volume}
+            value={vol}
+            id="volM"
+            type="range"
+            orient="vertical"
+            name="vol"
+            min={-30}
+            max={2}
+            step="1"
+          />
+          </div>
       </div>
       
       
