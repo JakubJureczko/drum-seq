@@ -13,6 +13,12 @@ const Recorder = () => {
   const [recorder, setRecorder] = useState(null);
 
   useEffect(() => {
+    document.addEventListener("keydown", (e) => {
+      handleKeyRecord(e.code);
+    });
+  }, []);
+
+  useEffect(() => {
     const recorder = new Tone.Recorder();
     setRecorder(recorder);
     Tone.Master.connect(recorder);
@@ -30,6 +36,17 @@ const Recorder = () => {
     }
   }, [isRec]);
 
+
+  function handleStart() {
+    setIsRec((previsRec) => !previsRec);
+    //setSelectSpeaker(!playState ? speaker.speakerPlay : speaker.speakerStop)
+  }
+
+  function handleKeyRecord(keyCode) {
+    if (keyCode === "ShiftLeft") {
+     toggleRec();
+    }
+  }
  
 
   async function stopRecording() {
