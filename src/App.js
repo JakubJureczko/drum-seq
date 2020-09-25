@@ -7,7 +7,7 @@ import Actions from "./components/Actions"
 import SetBpm from "./components/SetBpm";
 import SetVol from "./components/SetVol";
 import Swing from "./components/Swing";
-import SeqVol from "./components/SeqVol";
+
 
 import Recorder from "./components/Recorder";
 
@@ -25,9 +25,6 @@ function App() {
           <div className="volBpmBtn">
             <SetBpm />
             <SetVol />
-            <VolumeContextProvider>
-              <SeqVol/>
-            </VolumeContextProvider>
             <Swing />
             <Recorder />
           </div>
