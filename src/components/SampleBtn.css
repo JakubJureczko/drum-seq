@@ -8,6 +8,7 @@
 }
 .btn2 {
   display: flex;
+ 
 
   width: 10em;
   height: 10em;
@@ -21,7 +22,7 @@
   background-image: url(../assets/images/drummachine2.svg);
   background-size: cover;
   background-repeat: no-repeat;
-   background-color: rgba(220, 86, 144, 0.9); /*rgba(243, 65, 65, 0.8); */
+   background-color: rgba(243, 65, 65, 0.8); /*rgba(243, 65, 65, 0.8); */ /*rgb(255, 112, 126)     rgba(220, 86, 144, 0.9)*/
 }
 
 .btn {
@@ -58,7 +59,7 @@
   font-size: 1em;
   align-self: center;
   width: 30%;
-  color: rgb(252, 210, 72);
+  color: rgba(244, 250, 164, 0.918);
   font-weight: bold;
 }
 
@@ -68,7 +69,7 @@
   background-color: inherit;
   font-size: 1.5em;
   cursor: pointer;
-  color: rgb(252, 210, 72);
+  color: rgba(244, 250, 164, 0.918);
   font-weight: bold;
 }
 
@@ -79,7 +80,7 @@
   font-size: 1.5em;
   cursor: pointer;
   margin-left: 0.5em;
-  color: rgb(252, 210, 72);
+  color: rgba(244, 250, 164, 0.918);
   font-weight: bold;
   margin-bottom: 0.2em;
 }
