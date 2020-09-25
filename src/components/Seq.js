@@ -120,7 +120,7 @@ const Sequencer = () => {
             orient="vertical"
             name="vol"
             min={-30}
-            max={2}
+            max={0}
             step="1"
           />
           </div>
