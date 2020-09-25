@@ -8,6 +8,8 @@ import SetBpm from "./components/SetBpm";
 import SetVol from "./components/SetVol";
 import Swing from "./components/Swing";
 
+import Recorder from "./components/Recorder";
+
 import "./App.css";
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
             <SetBpm />
             <SetVol />
             <Swing />
-            
+            <Recorder />
           </div>
         </div>
       </div>
