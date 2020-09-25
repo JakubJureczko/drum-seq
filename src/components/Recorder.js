@@ -37,11 +37,6 @@ const Recorder = () => {
   }, [isRec]);
 
 
-  function handleStart() {
-    setIsRec((previsRec) => !previsRec);
-    //setSelectSpeaker(!playState ? speaker.speakerPlay : speaker.speakerStop)
-  }
-
   function handleKeyRecord(keyCode) {
     if (keyCode === "ShiftLeft") {
      toggleRec();
