@@ -40,7 +40,7 @@ const seq = new Tone.Sampler({
 const Sequencer = () => {
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
-  const [vol, setVol] = useState(0);
+  
 
   useEffect(
     () => {
@@ -55,7 +55,7 @@ const Sequencer = () => {
             if (row[col]) {
               // Play based on which row
               seq.triggerAttackRelease(drums[noteIndex], "8n", time);
-              seq.volume.value = vol;
+              
             }
           });
         },

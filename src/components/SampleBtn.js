@@ -54,7 +54,7 @@ const sounds = triggers.reduce((acc, { sound, name }) => {
 function SampleBtn() {
   const [isLoaded, setLoaded] = useState(false);
   const [activeButton, setActiveButton] = useState("");
-  const [vol, setVol] = useState(0);
+  const [vol, setVol] = useState(-10);
   const [isMousePlus, setMousePlus] = useState(false);
   const [isMouseMinus, setMouseMinus] = useState(false);
 
