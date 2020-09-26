@@ -76,11 +76,11 @@ const Recorder = () => {
           <img src={isRec ? recon : recoff} alt="record" />
         </button>
       </div>
-      <div className="download">
+      {/* <div className="download">
         <a href="" target="_blank" download>
           <button ></button>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };
