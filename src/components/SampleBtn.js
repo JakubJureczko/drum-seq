@@ -4,43 +4,78 @@ import { Sampler } from "tone";
 import styled from "styled-components";
 import "./SampleBtn.css";
 import * as Tone from "tone";
-import A1 from "../assets/samples/S1.wav";
-import A2 from "../assets/samples/S2.wav";
-import A3 from "../assets/samples/S3.wav";
-import A4 from "../assets/samples/S6.wav";
-import A5 from "../assets/samples/S7.wav";
+import A1 from "../assets/samples/D1.wav";
+import A2 from "../assets/samples/D2.wav";
+import A3 from "../assets/samples/D3.wav";
+import A4 from "../assets/samples/D4.wav";
+import A5 from "../assets/samples/D5.wav";
+import A6 from "../assets/samples/D6.wav";
+import A7 from "../assets/samples/D7.wav";
+import A8 from "../assets/samples/D8.wav";
+import A9 from "../assets/samples/D9.wav";
+import A10 from "../assets/samples/D10.wav";
 
 const triggers = [
   {
     name: "A1",
     sound: A1,
     displayName: "BD/D",
-    keyCode: "KeyD",
+    keyCode: "KeyA",
   },
   {
     name: "A2",
     sound: A2,
     displayName: "SD/F",
-    keyCode: "KeyF",
+    keyCode: "KeyS",
   },
   {
     name: "A3",
     sound: A3,
     displayName: "CH/J",
-    keyCode: "KeyJ",
+    keyCode: "KeyD",
   },
   {
     name: "A4",
     sound: A4,
     displayName: "OH/K",
-    keyCode: "KeyK",
+    keyCode: "KeyF",
   },
   {
     name: "A5",
     sound: A5,
     displayName: "SMPL/L",
+    keyCode: "KeyG",
+  },
+  {
+    name: "A6",
+    sound: A6,
+    displayName: "SMPL/L",
+    keyCode: "KeyH",
+  },
+  {
+    name: "A7",
+    sound: A7,
+    displayName: "SMPL/L",
+    keyCode: "KeyJ",
+  },
+  {
+    name: "A8",
+    sound: A8,
+    displayName: "SMPL/L",
+    keyCode: "KeyK",
+  },
+  {
+    name: "A9",
+    sound: A9,
+    displayName: "SMPL/L",
     keyCode: "KeyL",
   },
+  {
+    name: "A10",
+    sound: A10,
+    displayName: "SMPL/L",
+    keyCode: "Semicolon",
+  }
 ];
 
 const validKeys = triggers.map(({ keyCode }) => keyCode);
