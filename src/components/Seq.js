@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
 import SoundName from "./SoundName";
 import Mute from "./Mute";
+import { VolumeContext } from "../volumeContext";
 
 import D1 from "../assets/drums/bd1.mp3";
 import D2 from "../assets/drums/bd2.mp3";
@@ -39,7 +40,7 @@ const seq = new Tone.Sampler({
 const Sequencer = () => {
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
-  const [vol, setVol] = useState(0);
+  const {vol} = useContext;
 
   useEffect(
     () => {
