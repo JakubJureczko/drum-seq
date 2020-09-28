@@ -1,4 +1,5 @@
 import React, {useContext, useRef, useEffect,useState} from 'react';
+import "./SetVol.css"
 
 import {VolumeContext} from "../volumeContext"
 

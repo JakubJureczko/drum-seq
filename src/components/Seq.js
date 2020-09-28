@@ -40,7 +40,7 @@ const seq = new Tone.Sampler({
 const Sequencer = () => {
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
-  const {vol} = useContext;
+  const { vol } = useContext(VolumeContext);
 
   useEffect(
     () => {
@@ -75,12 +75,9 @@ const Sequencer = () => {
 
   useEffect(() => {
     seq.volume.value = vol;
-  });
+  },[vol]);
 
-  const volume = (event) => {
-    setVol(event.target.value);
-  };
-
+  
   return (
     <div>
       <div className="backseq">
