@@ -19,62 +19,62 @@ const triggers = [
   {
     name: "A1",
     sound: A1,
-    displayName: "BD/D",
-    keyCode: "KeyA",
+    displayName: "E",
+    keyCode: "KeyE",
   },
   {
     name: "A2",
     sound: A2,
-    displayName: "SD/F",
-    keyCode: "KeyS",
+    displayName: "R",
+    keyCode: "KeyR",
   },
   {
     name: "A3",
     sound: A3,
-    displayName: "CH/J",
-    keyCode: "KeyD",
+    displayName: "U",
+    keyCode: "KeyU",
   },
   {
     name: "A4",
     sound: A4,
-    displayName: "OH/K",
-    keyCode: "KeyF",
+    displayName: "I",
+    keyCode: "KeyI",
   },
   {
     name: "A5",
     sound: A5,
-    displayName: "SMPL/L",
-    keyCode: "KeyG",
+    displayName: "O",
+    keyCode: "KeyO",
   },
   {
     name: "A6",
     sound: A6,
-    displayName: "SMPL/L",
-    keyCode: "KeyH",
+    displayName: "D",
+    keyCode: "KeyD",
   },
   {
     name: "A7",
     sound: A7,
-    displayName: "SMPL/L",
-    keyCode: "KeyJ",
+    displayName: "F",
+    keyCode: "KeyF",
   },
   {
     name: "A8",
     sound: A8,
-    displayName: "SMPL/L",
-    keyCode: "KeyK",
+    displayName: "J",
+    keyCode: "KeyJ",
   },
   {
     name: "A9",
     sound: A9,
-    displayName: "SMPL/L",
-    keyCode: "KeyL",
+    displayName: "K",
+    keyCode: "KeyK",
   },
   {
     name: "A10",
     sound: A10,
-    displayName: "SMPL/L",
-    keyCode: "Semicolon",
+    displayName: "L",
+    keyCode: "KeyL",
   }
 ];
 
@@ -142,6 +142,7 @@ function SampleBtn() {
   return (
     <div className="samplebtn">
       <div className="btnContainer">
+        <div className="btnlogo">
         <button className="btn2">
           <input
             onChange={volume}
@@ -154,6 +155,8 @@ function SampleBtn() {
             step="1"
           />
         </button>
+        </div>
+        <div classnames="btnsample">
         {triggers.map(({ name, displayName }) => (
           <button
             className={classnames("btn", activeButton === name ? "active" : "")}
@@ -164,6 +167,7 @@ function SampleBtn() {
             {displayName}
           </button>
         ))}
+        </div>
       </div>
     </div>
   );
