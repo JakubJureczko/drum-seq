@@ -1,9 +1,8 @@
-import React, {  useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
-import SoundName from './SoundName';
-import Mute from "./Mute"
-
+import SoundName from "./SoundName";
+import Mute from "./Mute";
 
 import D1 from "../assets/drums/bd1.mp3";
 import D2 from "../assets/drums/bd2.mp3";
@@ -41,7 +40,6 @@ const Sequencer = () => {
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
   const [vol, setVol] = useState(0);
-  
 
   useEffect(
     () => {
@@ -56,7 +54,6 @@ const Sequencer = () => {
             if (row[col]) {
               // Play based on which row
               seq.triggerAttackRelease(drums[noteIndex], "8n", time);
-              
             }
           });
         },
@@ -76,8 +73,8 @@ const Sequencer = () => {
   }
 
   useEffect(() => {
-    seq.volume.value = vol
-  })
+    seq.volume.value = vol;
+  });
 
   const volume = (event) => {
     setVol(event.target.value);
@@ -111,22 +108,7 @@ const Sequencer = () => {
             </div>
           ))}
         </div>
-        <div className="seqvol">
-        <input className="range vertical-heighest-first round"
-            onChange={volume}
-            value={vol}
-            id="volM"
-            type="range"
-            orient="vertical"
-            name="vol"
-            min={-30}
-            max={0}
-            step="1"
-          />
-          </div>
       </div>
-      
-      
     </div>
   );
 };
@@ -166,10 +148,12 @@ const getColumnColor = (key) => {
 const Square = ({ active, row, selected, onClick, col }) => {
   return (
     <div
-    className="square"
+      className="square"
       style={{
         borderRadius: active ? "10%" : "10%",
-        border: active ? "2px solid rgb(167, 167, 167)" : "2px solid rgba(167, 167, 167, 0.4)", //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
+        border: active
+          ? "2px solid rgb(167, 167, 167)"
+          : "2px solid rgba(167, 167, 167, 0.4)", //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
         //background: active ? "rgba(133, 65, 243, 0.9)" : "",
         background: selected ? getColor(row) : getColumnColor(col),
         backgroundColor: getColumnColor(col),
