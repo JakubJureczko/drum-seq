@@ -140,13 +140,41 @@
     width: 80%;
   }
 }
-@media screen and (max-width: 799px) and (min-width: 700px) {
+@media screen and (max-width: 799px) and (min-width: 699px) {
   .btnContainer {
     width: 90%;
   }
 }
-@media screen and (max-width: 699px)  {
+@media screen and (max-width: 699px) and (min-width: 628px)  {
   .btnContainer {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 628px) {
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+     flex-wrap: wrap; 
+    width: 100%;
+}
+}
+
+@media screen and (min-width: 1600px) {
+ .btnContainer{
+   width: 40%;
+ }
+}
+@media screen and (min-width: 1800px) {
+  .btnContainer{
+    width: 35%;
+  }
+ }
+ @media screen and (min-width: 2100px) {
+  .btnContainer{
+    width: 30%;
+  }
+  .btn2 {
+    margin-right: 1em;
+  }
+ }
