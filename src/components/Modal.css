@@ -5,8 +5,8 @@
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(243, 65, 65);
-  opacity: .5;
+  background-color: rgb(214, 63, 63);
+  opacity: 0.3;
 }
 
 .modal-wrapper {
@@ -23,10 +23,10 @@
 
 .modal {
   z-index: 100;
-  background:rgba(235, 247, 247, 0.966);
+  background: rgba(235, 247, 247, 0.966);
   position: relative;
-  margin: 1.75em auto;
-  border-radius: 3px;
+  margin: 12em auto;
+
   max-width: 30em;
   padding: 0.5em;
   background-image: url("../assets/images/graf3.svg");
@@ -34,6 +34,18 @@
   background-position-x: 0.6em;
   background-size: 20%;
   background-repeat: no-repeat;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
+    0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 15px 13px rgba(0, 0, 0, 0.12);
+  border: 3px solid black;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 760px) {
+  .modal {
+    margin: 2em auto
+  }
 }
 
 /* .modal::after{
@@ -46,15 +58,10 @@
   width: 80%;
   margin: 0 auto;
   padding-top: 1em;
-
 }
 .modal-header h3 {
   margin-top: 0em;
 }
-
-
-
-
 
 .modal-close-button {
   width: 2em;
@@ -63,9 +70,9 @@
   background-size: 70%;
   background-position: center;
   background-repeat: no-repeat;
- outline: none;
- background-color: transparent;
-  
+  outline: none;
+  background-color: transparent;
+
   cursor: pointer;
   border: none;
 }
@@ -88,7 +95,7 @@
   border: 3px solid black;
   background-color: transparent;
   outline: none;
-  
+
   transition: 0.5s ease;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
