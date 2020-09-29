@@ -165,3 +165,9 @@ const Square = ({ active, row, selected, onClick, col }) => {
 // Tone.Transport.swingSubdivision = '16n';
 
 export default Sequencer;
+
+
+
+// synth.harmonicity.value = 0.2;
+//         const synth = new Tone.AMSynth().toDestination();
+// synth.triggerAttackRelease("C2", "16n");
