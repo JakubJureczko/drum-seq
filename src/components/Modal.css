@@ -23,15 +23,16 @@
 
 .modal {
   z-index: 100;
-  background:rgba(226, 231, 231, 0.966);
+  background:rgba(235, 247, 247, 0.966);
   position: relative;
   margin: 1.75em auto;
   border-radius: 3px;
   max-width: 30em;
-  padding: 1em;
+  padding: 0.5em;
   background-image: url("../assets/images/graf3.svg");
-  background-position: center;
-  background-size: 60%;
+  background-position: bottom;
+  background-position-x: 0.6em;
+  background-size: 20%;
   background-repeat: no-repeat;
 }
 
@@ -42,8 +43,10 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
+  padding-top: 1em;
+
 }
 .modal-header h3 {
   margin-top: 0em;
@@ -70,9 +73,10 @@
 .modalbtn {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 90%;
   margin: 0 auto;
-  padding-top: 2em;
+  padding-top: 1em;
   padding-bottom: 2em;
 }
 .modalbtn button {
