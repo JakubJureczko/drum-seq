@@ -29,10 +29,11 @@ function App() {
               <SetVol />
               <Swing />
               <Recorder />
-              <button className="uploadbtn" onMouseDown={toggle}>
-                show
-              </button>
-              <Modal isShowing={isShowing} hide={toggle} />
+              <div className="uploadbtn">
+                <button onMouseDown={toggle}></button>
+                <Modal isShowing={isShowing} hide={toggle} />
+              </div>
+              
             </div>
           </div>
         </div>

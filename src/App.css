@@ -9,11 +9,8 @@
        
 } */
 
-
-
 .app {
   text-align: center;
-  
 }
 /* .app::after  {
   content: "";
@@ -30,14 +27,13 @@
   z-index: -1;   
 } */
 
-
 .volBpmBtn {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 2em;
-  align-items:  center;
+  align-items: center;
 }
 
 @media screen and (max-width: 760px) {
@@ -46,19 +42,31 @@
   }
 }
 
-
-
+.uploadbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 3em;
+}
 
 .uploadbtn button {
-  font-size: .9rem;
-  font-weight: 700;
+  background-image: url("./assets/images/upload2.svg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: none;
   border: none;
-  border-radius: 3px;
-  padding: .3rem 1rem;
-  margin-left: .5rem;
+  height: 3em;
+  width: 4em;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.uploadbtn {
-  background: #247BA0;
-  color: #fff;
+.uploadbtn button:hover {
+  background-image: url("./assets/images/upload3.svg");
 }
+
+
+
+
