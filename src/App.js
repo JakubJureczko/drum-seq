@@ -7,13 +7,15 @@ import Actions from "./components/Actions";
 import SetBpm from "./components/SetBpm";
 import SetVol from "./components/SetVol";
 import Swing from "./components/Swing";
-
 import Recorder from "./components/Recorder";
+import Modal from "./components/Modal";
+import useModal from "./components/useModal";
 
 import "./App.css";
 import VolumeContextProvider from "./volumeContext";
 
 function App() {
+  const { isShowing, toggle } = useModal();
   return (
     <div className="app">
       <VolumeContextProvider>
@@ -27,6 +29,10 @@ function App() {
               <SetVol />
               <Swing />
               <Recorder />
+              <button className="uploadbtn" onMouseDown={toggle}>
+                show
+              </button>
+              <Modal isShowing={isShowing} hide={toggle} />
             </div>
           </div>
         </div>

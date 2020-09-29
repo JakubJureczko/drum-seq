@@ -1,0 +1,99 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(243, 65, 65);
+  opacity: .5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background:rgba(226, 231, 231, 0.966);
+  position: relative;
+  margin: 1.75em auto;
+  border-radius: 3px;
+  max-width: 30em;
+  padding: 1em;
+  background-image: url("../assets/images/graf3.svg");
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+/* .modal::after{
+  
+} */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+}
+.modal-header h3 {
+  margin-top: 0em;
+}
+
+
+
+
+
+.modal-close-button {
+  width: 2em;
+  height: 2em;
+  background-image: url("../assets/images/left-arrow.svg");
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+ outline: none;
+ background-color: transparent;
+  
+  cursor: pointer;
+  border: none;
+}
+
+.modalbtn {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.modalbtn button {
+  width: 4em;
+  height: 4em;
+  margin: 1em;
+  cursor: pointer;
+  border-radius: 10%;
+  border: 3px solid black;
+  background-color: transparent;
+  outline: none;
+  
+  transition: 0.5s ease;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
+    0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 15px 13px rgba(0, 0, 0, 0.12);
+}
+
+.modalbtn button:hover {
+  background-color: rgba(133, 65, 243, 0.8);
+  transition: 0ms;
+  transform: translateY(1px);
+}
