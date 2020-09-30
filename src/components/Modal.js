@@ -15,16 +15,18 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
           </button>
         </div>
         <div className="modalbtn">
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
+        <button>E</button>
+        <button>R</button>
+        <button>T</button>
+        <button>U</button>
+        <button>I</button>
+        <button>O</button>
+        <button>D</button>
+        <button>F</button>
+        <button>G</button>
+        <button>J</button>
+        <button>K</button>
+        <button>L</button>
         </div>
       </div>
     </div>

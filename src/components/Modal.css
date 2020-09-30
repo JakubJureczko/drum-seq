@@ -23,7 +23,7 @@
 
 .modal {
   z-index: 100;
-  background: 	rgb(255, 249, 231);
+  background: 	rgb(255, 255, 255);
   opacity: 0.9;
   position: relative;
   margin: 12em auto;
@@ -56,7 +56,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   padding-top: 1em;
 }
@@ -82,7 +82,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   padding-top: 1em;
   padding-bottom: 2em;
