@@ -9,7 +9,7 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
     <div className="modal-wrapper">
       <div className="modal">
         <div className="modal-header">
-          <h3>Upload your samples</h3>
+          <h3>Upload samples:</h3>
           <button type="button" className="modal-close-button" data-dismiss="modal"  onClick={hide}>
             
           </button>
