@@ -5,8 +5,8 @@
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(214, 63, 63);
-  opacity: 0.3;
+  background-color: rgb(236, 69, 90);
+  opacity: 0.7;
 }
 
 .modal-wrapper {
@@ -23,7 +23,8 @@
 
 .modal {
   z-index: 100;
-  background: rgba(243, 231, 236, 0.788);
+  background: 	rgb(255, 249, 231);
+  opacity: 0.8;
   position: relative;
   margin: 12em auto;
 
@@ -38,7 +39,7 @@
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
     0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
     0 15px 13px rgba(0, 0, 0, 0.12);
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 3px;
 }
 
