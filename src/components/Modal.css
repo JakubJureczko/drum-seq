@@ -23,18 +23,14 @@
 
 .modal {
   z-index: 100;
-  background: 	rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
   opacity: 0.9;
   position: relative;
   margin: 12em auto;
 
   max-width: 30em;
   padding: 0.5em;
-  background-image: url("../assets/images/graf2.svg");
-  background-position: top;
-  background-position-x: center;
-  background-size: 20%;
-  background-repeat: no-repeat;
+
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
     0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
@@ -45,7 +41,7 @@
 
 @media screen and (max-width: 760px) {
   .modal {
-    margin: 2em auto
+    margin: 2em auto;
   }
 }
 @media screen and (max-width: 400px) {
@@ -65,6 +61,23 @@
   margin: 0 auto;
   padding-top: 1em;
 }
+.modal-header span {
+  width: 3em;
+  height: 3em;
+  background-image: url("../assets/images/break-dance.svg");
+  background-size: 85%;
+
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal-header span:hover {
+  background-image: url("../assets/images/bboy1.svg");
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+
 .modal-header h3 {
   margin-top: 0em;
 }

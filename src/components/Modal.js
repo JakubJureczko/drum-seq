@@ -10,9 +10,10 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
       <div className="modal">
         <div className="modal-header">
           <h3>Upload samples:</h3>
-          <button type="button" className="modal-close-button" data-dismiss="modal"  onClick={hide}>
+          <span onClick={hide}></span>
+          {/* <button type="button" className="modal-close-button" data-dismiss="modal"  >
             
-          </button>
+          </button> */}
         </div>
         <div className="modalbtn">
         <button>E</button>
