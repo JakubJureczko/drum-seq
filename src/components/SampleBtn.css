@@ -101,19 +101,143 @@
   margin-top: -0.3em;
 }
 
+@media screen  and (max-width: 467px) {
+  .btnContainer {
+    flex-wrap: wrap;
+    width: 100%;
+    
+  }
+  .btn {
+    margin: 1em;
+  }
+}
+@media screen  and (min-width: 467px) and (max-width: 593px) {
+  .btnContainer {
+    flex-wrap: wrap;
+    width: 90%;
+    
+  }
+  .btn {
+    margin: 1em 1.5em ;
+  }
+}
+@media screen  and (min-width: 593px) and (max-width: 667px) {
+  .btnContainer {
+    flex-wrap: wrap;
+    width: 90%;
+    
+  }
+  .btn {
+    margin: 1em 2em ;
+  }
+}
+@media screen  and (min-width: 667px) and (max-width: 712px) {
+  .btnContainer {
+    flex-wrap: wrap;
+    width: 85%;
+    
+  }
+  .btn {
+    margin: 1em 2.5em ;
+  }
+}
 
 
 
+@media screen and (min-width: 712px) and (max-width: 799px) {
+  .btnContainer {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 888px) {
+  .btnContainer {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 889px) and (max-width: 984px) {
+  .btnContainer {
+    width: 72%;
+  }
+}
+
+@media screen and (min-width: 985px) and (max-width: 1067px) {
+  .btnContainer {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width: 1067px) and (max-width: 1164px) {
+  .btnContainer {
+    width: 60%;
+  }
+}
+
+
+@media screen and (min-width: 1164px) and (max-width: 1280px) {
+  .btnContainer {
+    width: 55%;
+  }
+}
+
+
+@media screen and (min-width: 1280px) and (max-width: 1422px) {
+  .btnContainer {
+    width: 50%;
+  }
+}
 
 @media screen and (min-width: 1600px) and (max-width: 1799px) {
   .btnContainer {
     width: 40%;
   }
 }
+@media screen and (min-width: 1800px) and (max-width: 1829px) {
+  .btnContainer {
+    width: 38%;
+  }
+}
 
 
-@media screen and (min-width: 1830px) and (max-width: 2000px) {
+@media screen and (min-width: 1830px) and (max-width: 1999px) {
   .btnContainer {
     width: 35%;
   }
 }
+
+@media screen and (min-width: 2000px) and (max-width: 2199px) {
+  .btnContainer {
+    width: 32%;
+  }
+}
+@media screen and (min-width: 2200px) and (max-width: 2299px) {
+  .btnContainer {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 2300px) and (max-width: 2579px) {
+  .btnContainer {
+    width: 28%;
+  }
+}
+
+@media screen and (min-width: 2580px) and (max-width: 2869px) {
+  .btnContainer {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 2870px) and (max-width: 3100px) {
+  .btnContainer {
+    width: 23%;
+  }
+}
+@media screen and (min-width: 3101px)  {
+  .btnContainer {
+    width: 20%;
+  }
+}
+
+
+
