@@ -51,8 +51,8 @@
 }
 
 .uploadbtn button {
-  background-image: url("./assets/images/upload2.svg");
-  background-size: 75%;
+  background-image: url("./assets/images/upload8.svg");
+  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
   outline: none;
@@ -64,7 +64,7 @@
 }
 
 .uploadbtn button:hover {
-  background-image: url("./assets/images/upload3.svg");
+  background-image: url("./assets/images/upload10.svg");
 }
 
 
