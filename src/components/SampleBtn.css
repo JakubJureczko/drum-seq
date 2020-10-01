@@ -42,10 +42,11 @@
   height: 5em;
   cursor: pointer;
   border-radius: 10%;
-  border: 3px solid black;
+  border: 3px solid rgb(68, 68, 68);
   background-color: transparent;
   margin: 0.5em;
   outline: none;
+  color: rgb(68, 68, 68);
   
   transition: 0.5s ease;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
