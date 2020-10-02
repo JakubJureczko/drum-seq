@@ -5,13 +5,13 @@ import SoundName from "./SoundName";
 import Mute from "./Mute";
 import { VolumeContext } from "../volumeContext";
 
-import D1 from "../assets/drums/bd1.mp3";
-import D2 from "../assets/drums/bd2.mp3";
-import D3 from "../assets/drums/sd1.mp3";
-import D4 from "../assets/drums/ch1.mp3";
-import D5 from "../assets/drums/ch2.mp3";
-import D6 from "../assets/drums/ch2.mp3";
-import D7 from "../assets/drums/oh.mp3";
+import D1 from "../assets/drums/sp1200/kick.wav";
+import D2 from "../assets/drums/sp1200/kick2.wav";
+import D3 from "../assets/drums/sp1200/sn2.wav";
+import D4 from "../assets/drums/sp1200/sn4.wav";
+import D5 from "../assets/drums/sp1200/hat.wav";
+import D6 from "../assets/drums/sp1200/hat3.wav";
+import D7 from "../assets/drums/sp1200/snap.wav";
 
 const drums = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"];
 
@@ -77,6 +77,7 @@ const Sequencer = () => {
     seq.volume.value = vol;
   },[vol]);
 
+  
   
   return (
     <div>
