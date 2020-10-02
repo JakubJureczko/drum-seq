@@ -50,7 +50,7 @@
 }
 
 .hihat {
-  background-image: url("../assets/images/sound/hihat.svg");
+  background-image: url("../assets/images/sound/snare2.svg");
   background-size: cover;
   background-position: center;
   background-color: rgb(186, 255, 201);
@@ -62,13 +62,13 @@
   background-color: rgb(255, 255, 186);
 }
 .openhat {
-  background-image: url("../assets/images/sound/hihat1.svg");
+  background-image: url("../assets/images/sound/hihat.svg");
   background-size: cover;
   background-position: center;
   background-color: rgba(255, 223, 186);
 }
 .closehat {
-  background-image: url("../assets/images/sound/hihat3.svg");
+  background-image: url("../assets/images/sound/click.svg");
   background-size: cover;
   background-position: center;
   background-color: rgba(255, 179, 186);

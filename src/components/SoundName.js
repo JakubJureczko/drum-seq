@@ -4,13 +4,13 @@ import * as Tone from "tone";
 import "./SoundName.css"
 import classnames from "classnames";
 
-import D1 from "../assets/drums/bd1.mp3";
-import D2 from "../assets/drums/bd2.mp3";
-import D3 from "../assets/drums/sd1.mp3";
-import D4 from "../assets/drums/ch1.mp3";
-import D5 from "../assets/drums/ch2.mp3";
-import D6 from "../assets/drums/ch2.mp3";
-import D7 from "../assets/drums/oh.mp3";
+import D1 from "../assets/drums/sp1200/kick.wav";
+import D2 from "../assets/drums/sp1200/kick2.wav";
+import D3 from "../assets/drums/sp1200/sn2.wav";
+import D4 from "../assets/drums/sp1200/sn4.wav";
+import D5 from "../assets/drums/sp1200/hat.wav";
+import D6 from "../assets/drums/sp1200/hat3.wav";
+import D7 from "../assets/drums/sp1200/snap.wav";
 
 
 function SoundName(){
