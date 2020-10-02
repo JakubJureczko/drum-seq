@@ -43,3 +43,10 @@
     display: none;
   }
 }
+
+@media screen and (min-height: 950px) {
+  .amplifiers {
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+}
