@@ -7,7 +7,7 @@ import { VolumeContext } from "../volumeContext";
 
 import D1 from "../assets/drums/sp1200/bd3.wav";
 import D2 from "../assets/drums/sp1200/bd.wav";
-import D3 from "../assets/drums/sp1200/snare4";
+import D3 from "../assets/drums/sp1200/snare4.wav";
 import D4 from "../assets/drums/sp1200/snare2.wav";
 import D5 from "../assets/drums/sp1200/hh3.wav";
 import D6 from "../assets/drums/sp1200/hh2.wav";
