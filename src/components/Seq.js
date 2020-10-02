@@ -5,12 +5,12 @@ import SoundName from "./SoundName";
 import Mute from "./Mute";
 import { VolumeContext } from "../volumeContext";
 
-import D1 from "../assets/drums/sp1200/kick.wav";
-import D2 from "../assets/drums/sp1200/kick2.wav";
-import D3 from "../assets/drums/sp1200/sn2.wav";
-import D4 from "../assets/drums/sp1200/sn4.wav";
-import D5 from "../assets/drums/sp1200/hat.wav";
-import D6 from "../assets/drums/sp1200/hat3.wav";
+import D1 from "../assets/drums/sp1200/bd2.wav";
+import D2 from "../assets/drums/sp1200/bd.wav";
+import D3 from "../assets/drums/sp1200/snare.wav";
+import D4 from "../assets/drums/sp1200/snare2.wav";
+import D5 from "../assets/drums/sp1200/hh.wav";
+import D6 from "../assets/drums/sp1200/hh2.wav";
 import D7 from "../assets/drums/sp1200/snap.wav";
 
 const drums = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"];
@@ -54,7 +54,7 @@ const Sequencer = () => {
             // If active
             if (row[col]) {
               // Play based on which row
-              seq.triggerAttackRelease(drums[noteIndex], "8n", time);
+              seq.triggerAttackRelease(drums[noteIndex], "4n", time);
             }
           });
         },
