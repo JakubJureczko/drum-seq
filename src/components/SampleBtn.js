@@ -4,17 +4,18 @@ import { Sampler } from "tone";
 import styled from "styled-components";
 import "./SampleBtn.css";
 import * as Tone from "tone";
-import A1 from "../assets/samples/D1.wav";
-import A2 from "../assets/samples/D2.wav";
-import A3 from "../assets/samples/D3.wav";
-import A4 from "../assets/samples/D4.wav";
-import A5 from "../assets/samples/D5.wav";
-import A6 from "../assets/samples/D6.wav";
-import A7 from "../assets/samples/D7.wav";
-import A8 from "../assets/samples/D8.wav";
-import A9 from "../assets/samples/D9.wav";
-import A10 from "../assets/samples/D10.wav";
-
+import A1 from "../assets/samples/D1.WAV";
+import A2 from "../assets/samples/D2.WAV";
+import A3 from "../assets/samples/D3.WAV";
+import A4 from "../assets/samples/D4.WAV";
+import A5 from "../assets/samples/D5.WAV";
+import A6 from "../assets/samples/D6.WAV";
+import A7 from "../assets/samples/D7.WAV";
+import A8 from "../assets/samples/D8.WAV";
+import A9 from "../assets/samples/D9.WAV";
+import A10 from "../assets/samples/D10.WAV";
+import A11 from "../assets/samples/D11.WAV";
+import A12 from "../assets/samples/D12.WAV";
 const triggers = [
   {
     name: "A1",
@@ -78,13 +79,13 @@ const triggers = [
   },
   {
     name: "A11",
-    sound: A10,
+    sound: A11,
     displayName: "K",
     keyCode: "KeyK",
   },
   {
     name: "A12",
-    sound: A10,
+    sound: A12,
     displayName: "L",
     keyCode: "KeyL",
   }
