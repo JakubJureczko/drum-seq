@@ -75,7 +75,7 @@ function Upload() {
             <div className="post" key={post.title}>
               <div style={{ backgroundImage: "url(" + post.file + ")" }} />
               <h2>{post.title}</h2>
-              <p>{post.content}</p>
+              <audio src={post.file} controls></audio>
               <button className="delete" onClick={() => deletePost(post.title)}>
                 Delete
               </button>
@@ -116,7 +116,7 @@ function Upload() {
           </label>
           <input
             type="file"
-            id="cover"
+            
             name="file"
             onChange={(e) => getFile(e.target.files)}
           />
@@ -124,6 +124,7 @@ function Upload() {
 
         <input type="submit" value="Submit" />
       </form>
+      <audio src={"files"} controls></audio>
 
       {postData}
     </React.Fragment>
