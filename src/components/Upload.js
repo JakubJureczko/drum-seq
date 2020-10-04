@@ -56,6 +56,8 @@ function Upload() {
     }
   };
 
+  
+
   useEffect(() => {
     //get all posts from the database
     const getPosts = async () => {
