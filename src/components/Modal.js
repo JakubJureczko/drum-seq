@@ -4,6 +4,7 @@ import { Sampler } from "tone";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 import { VolumeContext } from "../volumeContext";
+import { defaultSounds } from './triggers';
 
 const Modal = ({ isShowing, hide }) => {
 
@@ -172,6 +173,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   L
                 </button>
+                <button onMouseDown={() => setSounds(defaultSounds)}></button>
               </div>
             </div>
           </div>
