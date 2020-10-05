@@ -5,29 +5,25 @@ import "./ModInfo.css"
 
  const ModInfo= ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
-    <div className="modal-overlay"/>
-    <div className="modal-wrapper">
-      <div className="modal">
-        <div className="modal-header">
-          <h3>Upload samples:</h3>
+    <div className="overlay"/>
+    <div className="wrapper">
+      <div className="mod">
+        <div className="mod-header">
+          <h3>Sink In Beats:</h3>
           <span onClick={hide}></span>
           {/* <button type="button" className="modal-close-button" data-dismiss="modal"  >
             
           </button> */}
         </div>
-        <div className="modalbtn">
-        <button>E</button>
-        <button>R</button>
-        <button>T</button>
-        <button>U</button>
-        <button>I</button>
-        <button>O</button>
-        <button>D</button>
-        <button>F</button>
-        <button>G</button>
-        <button>J</button>
-        <button>K</button>
-        <button>L</button>
+        <div className="modbtn">
+        <ul>
+          <li>Press "SPACE" to start/stop the sequencer (or mouse).</li>
+          <li>Press "LEFT SHIFT" to start/stop recording (or mouse).</li>
+          <li>You can change volume of buttons by sliding the yellow dot.</li>
+          <li>You can change Tempo, Volume and Swing of sequencer under the turntable. </li>
+          <li>Upload your samples</li>
+          <li>And spin that!!!</li>
+        </ul>
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@
 }
 
 .infobtn button {
-  opacity: 0.4;
+  opacity: 0.5;
   background-image: url("../assets/images/info.svg");
   background-size: 55%;
   background-repeat: no-repeat;
@@ -74,10 +74,10 @@
 }
 
 .infobtn button:focus {
-  opacity: 1;
+  opacity: 0.01;
   background-image: url("../assets/images/info6.svg");
   background-size: 60%;
-  transition: 0.5s;
+  
   transform: translateY(2.5em);
   
 }
