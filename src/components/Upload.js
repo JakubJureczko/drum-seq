@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Dexie from "dexie";
+import {Sampler} from "tone"
 
 function Upload() {
   //set the database
@@ -55,7 +56,24 @@ function Upload() {
       });
     }
   };
-
+  const [isLoaded, setLoaded] = useState(false);
+  const sampler = useRef(null);
+  
+  // const [currentSampler, setCurrentSampler] = useState();
+console.log(postFile)
+  useEffect(() => {
+    sampler.current = new Sampler( 
+      
+      {A1: postFile},
+      {
+        onload: () => {
+          setLoaded(true);
+        },
+      }
+    ).toDestination();
+  }, [postFile]);
+  // let reverb = new Tone.Reverb(0.8).connect(Tone.Master);
+  const handleClick = (sound) => sampler.current.triggerAttack(sound);
   
 
   useEffect(() => {
@@ -92,7 +110,7 @@ function Upload() {
       </div>
     );
   }
-
+console.log(postFile)
   return (
     <React.Fragment>
       <form onSubmit={getPostInfo}>
@@ -111,7 +129,7 @@ function Upload() {
 
         <input type="submit" value="Submit" />
       </form>
-     
+     <button onClick={() => handleClick("A1")}></button>
 
       {postData}
     </React.Fragment>

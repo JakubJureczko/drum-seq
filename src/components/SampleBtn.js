@@ -16,6 +16,7 @@ import A9 from "../assets/samples/D9.WAV";
 import A10 from "../assets/samples/D10.WAV";
 import A11 from "../assets/samples/D11.WAV";
 import A12 from "../assets/samples/D12.WAV";
+
 const triggers = [
   {
     name: "A1",

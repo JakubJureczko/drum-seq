@@ -17,10 +17,12 @@ function SoundName(){
   
   const [isLoaded, setLoaded] = useState(false);
   const sampler = useRef(null);
+  
   // const [currentSampler, setCurrentSampler] = useState();
 
   useEffect(() => {
-    sampler.current = new Sampler(
+    sampler.current = new Sampler( 
+      
       { D1, D2, D3, D4, D5, D6, D7 },
       {
         onload: () => {
