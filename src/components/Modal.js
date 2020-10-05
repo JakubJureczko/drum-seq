@@ -9,14 +9,14 @@ const Modal = ({ isShowing, hide }) => {
 
   const { sounds, setSounds } = useContext(VolumeContext);
 
-  const db = new Dexie("ReactDexie");
-  //create the database store
-  db.version(1).stores({
-    posts: "title, content, file",
-  });
-  db.open().catch((err) => {
-    console.log(err.stack || err);
-  });
+  // const db = new Dexie("ReactDexie");
+  // //create the database store
+  // db.version(1).stores({
+  //   posts: "title, content, file",
+  // });
+  // db.open().catch((err) => {
+  //   console.log(err.stack || err);
+  // });
 
   //set the state and property
 
@@ -34,31 +34,31 @@ const Modal = ({ isShowing, hide }) => {
     };
   };
 
-  const [isLoaded, setLoaded] = useState(false);
-  const sampler = useRef(null);
+  // const [isLoaded, setLoaded] = useState(false);
+  // const sampler = useRef(null);
 
-  // const [currentSampler, setCurrentSampler] = useState();
-  console.log(postFile);
-  useEffect(() => {
-    sampler.current = new Sampler(
-      { A1: postFile },
-      {
-        onload: () => {
-          setLoaded(true);
-        },
-      }
-    ).toDestination();
-  }, [postFile]);
-  // let reverb = new Tone.Reverb(0.8).connect(Tone.Master);
-  const handleClick = (sound) => sampler.current.triggerAttack(sound);
+  // // const [currentSampler, setCurrentSampler] = useState();
+  // console.log(postFile);
+  // useEffect(() => {
+  //   sampler.current = new Sampler(
+  //     { A1: postFile },
+  //     {
+  //       onload: () => {
+  //         setLoaded(true);
+  //       },
+  //     }
+  //   ).toDestination();
+  // }, [postFile]);
+  // // let reverb = new Tone.Reverb(0.8).connect(Tone.Master);
+  // const handleClick = (sound) => sampler.current.triggerAttack(sound);
 
-  useEffect(() => {
-    //get all posts from the database
-    const getPosts = async () => {
-      let allPosts = await db.posts.toArray();
-    };
-    getPosts();
-  }, []);
+  // useEffect(() => {
+  //   //get all posts from the database
+  //   const getPosts = async () => {
+  //     let allPosts = await db.posts.toArray();
+  //   };
+  //   getPosts();
+  // }, []);
 
   
 
