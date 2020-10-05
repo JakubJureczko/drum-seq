@@ -1,15 +1,20 @@
-import React, { useState, useRef, useEffect, useInterval, useContext } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useInterval,
+  useContext,
+} from "react";
 import classnames from "classnames";
 import { Sampler } from "tone";
 import "./SampleBtn.css";
 import { VolumeContext } from "../volumeContext";
-import ModInfo from "./ModInfo"
-import useModInfo from "./useModInfo"
+import ModInfo from "./ModInfo";
+import useModInfo from "./useModInfo";
 import * as Tone from "tone";
-import triggers from "./triggers"
+import { triggers, defaultSounds } from "./triggers";
 
 const validKeys = triggers.map(({ keyCode }) => keyCode);
-
 
 function SampleBtn() {
   const [isLoaded, setLoaded] = useState(false);
@@ -18,8 +23,7 @@ function SampleBtn() {
   const { sounds } = useContext(VolumeContext);
   const sampler = useRef(null);
 
-  const {modOn, toggler} = useModInfo();
-
+  const { modOn, toggler } = useModInfo();
 
   useEffect(() => {
     sampler.current = new Sampler(sounds, {
@@ -27,7 +31,7 @@ function SampleBtn() {
         setLoaded(true);
       },
     }).toDestination();
-  }, []);
+  }, [sounds]);
 
   //const rev = new Tone.Reverb(1).toDestination();
   //const distortion = new Tone.Distortion(0.6).toDestination();
@@ -71,34 +75,37 @@ function SampleBtn() {
     <div className="samplebtn">
       <div className="btnContainer">
         <div className="btnlogo">
-        <button className="btn2">
-          <input
-            onChange={volume}
-            value={vol}
-            id="volM"
-            type="range"
-            name="vol"
-            min={-30}
-            max={6}
-            step="1"
-          />
-          <div className="infobtn">
-                <button onMouseDown={toggler}></button>
-                <ModInfo isShowing={modOn} hide={toggler} />
-              </div>
-        </button>
+          <button className="btn2">
+            <input
+              onChange={volume}
+              value={vol}
+              id="volM"
+              type="range"
+              name="vol"
+              min={-30}
+              max={6}
+              step="1"
+            />
+            <div className="infobtn">
+              <button onMouseDown={toggler}></button>
+              <ModInfo isShowing={modOn} hide={toggler} />
+            </div>
+          </button>
         </div>
         <div classnames="btnsample">
-        {triggers.map(({ name, displayName }) => (
-          <button
-            className={classnames("btn", activeButton === name ? "active" : "")}
-            disabled={!isLoaded}
-            onMouseDown={() => play(name)}
-            onMouseUp={() => setTimeout(setActiveButton(""), 500)}
-          >
-            {displayName}
-          </button>
-        ))}
+          {triggers.map(({ name, displayName }) => (
+            <button
+              className={classnames(
+                "btn",
+                activeButton === name ? "active" : ""
+              )}
+              disabled={!isLoaded}
+              onMouseDown={() => play(name)}
+              onMouseUp={() => setTimeout(setActiveButton(""), 500)}
+            >
+              {displayName}
+            </button>
+          ))}
         </div>
       </div>
     </div>

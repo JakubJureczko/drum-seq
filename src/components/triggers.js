@@ -11,7 +11,6 @@ import A10 from "../assets/samples/D10.WAV";
 import A11 from "../assets/samples/D11.WAV";
 import A12 from "../assets/samples/D12.WAV";
 
-
 const triggers = [
   {
     name: "A1",
@@ -84,7 +83,14 @@ const triggers = [
     sound: A12,
     displayName: "L",
     keyCode: "KeyL",
-  }
+  },
 ];
 
-export default triggers;
+const defaultSounds = triggers.reduce((acc, { sound, name }) => {
+  return {
+    ...acc,
+    [name]: sound,
+  };
+}, {});
+
+export { triggers, defaultSounds };

@@ -23,14 +23,14 @@ const Modal = ({ isShowing, hide }) => {
   const [postFile, setFile] = useState("");
 
   //read the file and decode it
-  const getFile = (e) => {
+  const getFile = (name, e) => {
     console.log(e);
 
     let reader = new FileReader();
     reader.readAsDataURL(e[0]);
     reader.onload = (e) => {
       setFile(reader.result);
-      setSounds()
+      setSounds({...sounds, [name]: reader.result})
     };
   };
 
@@ -80,7 +80,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A1", e.target.files)}
                   />
                   E
                 </button>
@@ -88,7 +88,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A2", e.target.files)}
                   />
                   R
                 </button>
@@ -96,7 +96,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A3",e.target.files)}
                   />
                   T
                 </button>
@@ -104,7 +104,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A4",e.target.files)}
                   />
                   U
                 </button>
@@ -112,7 +112,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A5",e.target.files)}
                   />
                   I
                 </button>
@@ -120,7 +120,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A6",e.target.files)}
                   />
                   O
                 </button>
@@ -128,7 +128,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A7",e.target.files)}
                   />
                   D
                 </button>
@@ -136,7 +136,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A8",e.target.files)}
                   />
                   F
                 </button>
@@ -144,7 +144,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A9",e.target.files)}
                   />
                   G
                 </button>
@@ -152,7 +152,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A10",e.target.files)}
                   />
                   J
                 </button>
@@ -160,7 +160,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A11",e.target.files)}
                   />
                   K
                 </button>
@@ -168,7 +168,7 @@ const Modal = ({ isShowing, hide }) => {
                   <input
                     type="file"
                     name="file"
-                    onChange={(e) => getFile(e.target.files)}
+                    onChange={(e) => getFile("A12",e.target.files)}
                   />
                   L
                 </button>
