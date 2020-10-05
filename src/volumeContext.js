@@ -19,7 +19,7 @@ const VolumeContextProvider = ({ children }) => {
 
 
 return (
-  <VolumeContext.Provider value={{vol, setVol, sounds}}>
+  <VolumeContext.Provider value={{vol, setVol, sounds, setSounds}}>
     {children}
   </VolumeContext.Provider>
 )

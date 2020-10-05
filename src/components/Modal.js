@@ -1,10 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import Dexie from "dexie";
 import { Sampler } from "tone";
 import ReactDOM from "react-dom";
 import "./Modal.css";
+import { VolumeContext } from "../volumeContext";
 
 const Modal = ({ isShowing, hide }) => {
+
+  const { sounds, setSounds } = useContext(VolumeContext);
+
   const db = new Dexie("ReactDexie");
   //create the database store
   db.version(1).stores({
@@ -26,6 +30,7 @@ const Modal = ({ isShowing, hide }) => {
     reader.readAsDataURL(e[0]);
     reader.onload = (e) => {
       setFile(reader.result);
+      setSounds()
     };
   };
 

@@ -20,9 +20,9 @@ import "./ModInfo.css"
           <li>Press "SPACE" to start/stop the sequencer.</li>
           <li>Press "LEFT SHIFT" to start/stop recording.</li>
           <li>You can start/stop seq and rec with mouse click.</li>
-          <li>You can change volume of buttons by sliding the yellow dot.</li>
-          <li>You can change Tempo, Volume and Swing of sequencer under the turntable. </li>
-          <li>Upload your samples</li>
+          <li>Change volume of pads by sliding the yellow dot.</li>
+          <li>Change Tempo, Volume and Swing of sequencer under the turntable. </li>
+          <li>Upload your samples or use default</li>
           <li>And spin that!!!</li>
         </ul>
         </div>
