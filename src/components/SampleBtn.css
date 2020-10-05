@@ -19,7 +19,10 @@
 
 .btn2 {
   display: flex;
- justify-content: center;
+ justify-content: space-between;
+ align-items: center;
+ flex-direction: column;
+ 
 
   width: 10em;
   height: 10em;
@@ -36,6 +39,49 @@
    background-color: rgba(243, 65, 65, 0.8); /*rgba(243, 65, 65, 0.8); */ /*rgb(255, 112, 126)     rgba(220, 86, 144, 0.9)*/   /*rgba(236, 69, 90,0.8) */
    
 }
+
+
+.infobtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 4em;
+}
+
+.infobtn button {
+  opacity: 0.4;
+  background-image: url("../assets/images/info.svg");
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: bottom;
+  outline: none;
+  border: none;
+  height: 3em;
+  width: 4em;
+  background-color: transparent;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+}
+
+.infobtn button:hover {
+  opacity: 1;
+  background-image: url("../assets/images/info6.svg");
+  background-size: 60%;
+  transition: 0.5s;
+  
+}
+
+.infobtn button:focus {
+  opacity: 1;
+  background-image: url("../assets/images/info6.svg");
+  background-size: 60%;
+  transition: 0.5s;
+  transform: translateY(2.5em);
+  
+}
+
 
 .btn {
   width: 5em;

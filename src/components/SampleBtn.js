@@ -3,7 +3,8 @@ import classnames from "classnames";
 import { Sampler } from "tone";
 import "./SampleBtn.css";
 import { VolumeContext } from "../volumeContext";
-
+import ModInfo from "./ModInfo"
+import useModInfo from "./useModInfo"
 import * as Tone from "tone";
 import triggers from "./triggers"
 
@@ -16,6 +17,9 @@ function SampleBtn() {
   const [vol, setVol] = useState(0);
   const { sounds } = useContext(VolumeContext);
   const sampler = useRef(null);
+
+  const {modOn, toggler} = useModInfo();
+
 
   useEffect(() => {
     sampler.current = new Sampler(sounds, {
@@ -78,6 +82,10 @@ function SampleBtn() {
             max={6}
             step="1"
           />
+          <div className="infobtn">
+                <button onMouseDown={toggler}></button>
+                <ModInfo isShowing={modOn} hide={toggler} />
+              </div>
         </button>
         </div>
         <div classnames="btnsample">
