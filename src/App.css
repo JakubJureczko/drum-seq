@@ -11,6 +11,7 @@
 
 .app {
   text-align: center;
+  color: rgb(68, 68, 68);
 }
 /* .app::after  {
   content: "";
