@@ -106,6 +106,7 @@
   padding-bottom: 2em;
 }
 .modalbtn button {
+ 
   width: 4em;
   height: 4em;
   margin: 1em;
@@ -121,7 +122,11 @@
     0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
     0 15px 13px rgba(0, 0, 0, 0.12);
 }
+.mopdalbtn button input {
+  width: 2px;
 
+
+}
 .modalbtn button:hover {
   background-color: rgba(133, 65, 243, 0.8);
   transition: 0ms;

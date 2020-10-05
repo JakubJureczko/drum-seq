@@ -55,15 +55,7 @@ const Modal = ({ isShowing, hide }) => {
     getPosts();
   }, []);
 
-  function inputClick () {
-    return (
-      <input
-                    type="file"
-                    name="file"
-                    onChange={(e) => getFile(e.target.files)}
-                  />
-    )
-  }
+  
 
   return isShowing
     ? ReactDOM.createPortal(
@@ -79,18 +71,102 @@ const Modal = ({ isShowing, hide }) => {
               </button> */}
               </div>
               <div className="modalbtn">
-                <button>E</button>
-                <button>R</button>
-                <button>T</button>
-                <button>U</button>
-                <button>I</button>
-                <button>O</button>
-                <button>D</button>
-                <button>F</button>
-                <button>G</button>
-                <button>J</button>
-                <button>K</button>
-                <button>L</button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  E
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  R
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  T
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  U
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  I
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  O
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  D
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  F
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  G
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  J
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  K
+                </button>
+                <button>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => getFile(e.target.files)}
+                  />
+                  L
+                </button>
               </div>
             </div>
           </div>
