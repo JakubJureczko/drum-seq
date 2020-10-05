@@ -17,8 +17,9 @@ import "./ModInfo.css"
         </div>
         <div className="modbtn">
         <ul>
-          <li>Press "SPACE" to start/stop the sequencer (or mouse).</li>
-          <li>Press "LEFT SHIFT" to start/stop recording (or mouse).</li>
+          <li>Press "SPACE" to start/stop the sequencer.</li>
+          <li>Press "LEFT SHIFT" to start/stop recording.</li>
+          <li>You can start/stop seq and rec with mouse click.</li>
           <li>You can change volume of buttons by sliding the yellow dot.</li>
           <li>You can change Tempo, Volume and Swing of sequencer under the turntable. </li>
           <li>Upload your samples</li>
