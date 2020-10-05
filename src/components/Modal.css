@@ -40,8 +40,8 @@
 }
 
 @media screen and (max-width: 760px) {
-  .modal {
-    margin: 2em auto;
+  .modal-wrapper {
+  top: 5%;
   }
 }
 @media screen and (max-width: 400px) {

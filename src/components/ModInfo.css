@@ -40,12 +40,12 @@
 }
 
 @media screen and (max-width: 760px) {
-  .modal {
-    margin: 2em auto;
+  .wrapper {
+    top: 5%;
   }
 }
 @media screen and (max-width: 400px) {
-  .modal {
+  .mod {
     background-image: none;
   }
 }
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 95%;
+  width: 92%;
   margin: 0 auto;
   padding-top: 1em;
 }
@@ -100,14 +100,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 90%;
+  width: 88%;
   line-height: 1.8em;
-  
   padding-top: 0em;
   text-align: justify;
   padding-bottom: 1em;
 }
 .modbtn ul {
-  
+  list-style: none;
 }
-
