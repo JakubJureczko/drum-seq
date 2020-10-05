@@ -62,7 +62,7 @@
   width: 4em;
   background-color: transparent;
   cursor: pointer;
-  transition: ease-in-out 1s;
+  transition: ease-in-out 0.6s;
 }
 
 .infobtn button:hover {
