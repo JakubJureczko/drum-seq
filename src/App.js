@@ -10,8 +10,7 @@ import Swing from "./components/Swing";
 import Recorder from "./components/Recorder";
 import Modal from "./components/Modal";
 import useModal from "./components/useModal";
-import Bboy from "./components/Bboy"
-import Upload from "./components/Upload"
+
 
 import "./App.css";
 import VolumeContextProvider from "./volumeContext";
@@ -35,8 +34,6 @@ function App() {
                 <button onMouseDown={toggle}></button>
                 <Modal isShowing={isShowing} hide={toggle} />
               </div>
-              {/* <Bboy /> */}
-              <Upload />
             </div>
           </div>
         </div>
