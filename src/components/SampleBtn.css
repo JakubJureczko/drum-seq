@@ -134,9 +134,12 @@ transition: 0.5s;
 }
 .btn2 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 0.7em;
-  cursor: pointer;
+  height: 0.4em;
   
+  cursor: pointer;
+  background: hsla(0, 6%, 16%, 0.116);
+  
+
 
   border-radius: 5%;
   
