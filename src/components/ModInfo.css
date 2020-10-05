@@ -57,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   padding-top: 1em;
 }
@@ -66,16 +66,14 @@
   height: 3em;
   background-image: url("../assets/images/info.svg");
   background-size: 55%;
-
+  background-position-x: right;
   background-repeat: no-repeat;
   cursor: pointer;
 }
 
 .mod-header span:hover {
   background-image: url("../assets/images/info6.svg");
-  background-size: 55%;
-
-  background-repeat: no-repeat;
+ 
 }
 
 .mod-header h3 {
