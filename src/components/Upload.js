@@ -40,10 +40,10 @@ function Upload() {
   //submit
   const getPostInfo = (e) => {
     e.preventDefault();
-    if (postTitle !== "" && postContent !== "" && postFile !== "") {
+    if ( postFile !== "") {
       let post = {
-        title: postTitle,
-        content: postContent,
+        title: postFile,
+        content: postFile,
         file: postFile,
       };
 
@@ -75,8 +75,7 @@ function Upload() {
         {posts.map((post) => {
           return (
             <div className="post" key={post.title}>
-              <div style={{ backgroundImage: "url(" + post.file + ")" }} />
-              <h2>{post.title}</h2>
+              
               <audio src={post.file} controls></audio>
               <button className="delete" onClick={() => deletePost(post.title)}>
                 Delete
@@ -97,21 +96,7 @@ function Upload() {
   return (
     <React.Fragment>
       <form onSubmit={getPostInfo}>
-        <div className="control">
-          <label>Title</label>
-          <input
-            type="text"
-            name="title"
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </div>
-        <div className="control">
-          <label>Content</label>
-          <textarea
-            name="content"
-            onChange={(e) => setContent(e.target.value)}
-          />
-        </div>
+        
         <div className="control">
           <label htmlFor="cover" className="cover">
             Choose a file
@@ -126,7 +111,7 @@ function Upload() {
 
         <input type="submit" value="Submit" />
       </form>
-      <audio src={"files"} controls></audio>
+     
 
       {postData}
     </React.Fragment>
