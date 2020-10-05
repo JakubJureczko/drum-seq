@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useInterval, useContext } from "react";
 import classnames from "classnames";
 import { Sampler } from "tone";
-import styled from "styled-components";
 import "./SampleBtn.css";
 import { VolumeContext } from "../volumeContext";
 
