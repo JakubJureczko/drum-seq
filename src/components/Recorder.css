@@ -42,8 +42,3 @@ align-items: center;
   cursor: pointer;
 } */ 
 
-@media screen and (max-width: 628px) and (orientation: portrait)  {
-  .recordbtn {
-    margin-bottom: 1em;
-}
-}
