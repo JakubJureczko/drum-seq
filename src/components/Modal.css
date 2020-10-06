@@ -197,3 +197,10 @@ input[type="file"] {
   opacity: 1;
   transition: 0.5s;
 }
+
+@media screen and (max-width: 760px) {
+  .defaultbtn button {
+    opacity: 1;
+    
+  }
+  }
