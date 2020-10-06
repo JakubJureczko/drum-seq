@@ -138,7 +138,7 @@ const getColumnColor = (key) => {
     case 8:
       return "rgba(133, 65, 243, 0.2)";
     case 12:
-      return "#C7CCDB";
+      return "rgba(133, 65, 243, 0.2)";
     default:
       return "";
   }
