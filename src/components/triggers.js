@@ -1,15 +1,15 @@
-import A1 from "../assets/samples/D1.WAV";
-import A2 from "../assets/samples/D2.WAV";
-import A3 from "../assets/samples/D3.WAV";
-import A4 from "../assets/samples/D4.WAV";
-import A5 from "../assets/samples/D5.WAV";
-import A6 from "../assets/samples/D6.WAV";
-import A7 from "../assets/samples/D7.WAV";
-import A8 from "../assets/samples/D8.WAV";
-import A9 from "../assets/samples/D9.WAV";
-import A10 from "../assets/samples/D10.WAV";
-import A11 from "../assets/samples/D11.WAV";
-import A12 from "../assets/samples/D12.WAV";
+import A1 from "../assets/samples/D1.wav";
+import A2 from "../assets/samples/D2.wav";
+import A3 from "../assets/samples/D3.wav";
+import A4 from "../assets/samples/D4.wav";
+import A5 from "../assets/samples/D5.wav";
+import A6 from "../assets/samples/D6.wav";
+import A7 from "../assets/samples/D7.wav";
+import A8 from "../assets/samples/D8.wav";
+import A9 from "../assets/samples/D9.wav";
+import A10 from "../assets/samples/D10.wav";
+import A11 from "../assets/samples/D11.wav";
+import A12 from "../assets/samples/D12.wav";
 
 const triggers = [
   {
