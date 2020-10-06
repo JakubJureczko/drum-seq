@@ -77,7 +77,7 @@ const Modal = ({ isShowing, hide }) => {
               </button> */}
               </div>
               <div className="modalbtn">
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -85,7 +85,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   E
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -93,7 +93,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   R
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -101,7 +101,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   T
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -109,7 +109,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   U
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -117,7 +117,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   I
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -125,7 +125,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   O
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -133,7 +133,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   D
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -141,7 +141,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   F
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -149,7 +149,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   G
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -157,7 +157,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   J
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -165,7 +165,7 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   K
                 </label>
-                <label className="custom-file-upload">
+                <label className="fileupload">
                   <input
                     type="file"
                     name="file"
@@ -173,8 +173,11 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   L
                 </label>
-                <button onMouseDown={() => setSounds(defaultSounds)}></button>
+               
               </div>
+              <div className="defaultbtn">
+                <button onMouseDown={() => setSounds(defaultSounds)}>default</button>
+                </div>
             </div>
           </div>
         </React.Fragment>,
