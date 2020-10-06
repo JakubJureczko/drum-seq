@@ -73,26 +73,11 @@
 
 .mod-header span:hover {
   background-image: url("../assets/images/info6.svg");
- 
 }
 
 .mod-header h3 {
   margin-top: 0em;
 }
-
-/* .modal-close-button {
-  width: 2em;
-  height: 2em;
-  background-image: url("../assets/images/left-arrow.svg");
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat;
-  outline: none;
-  background-color: transparent;
-
-  cursor: pointer;
-  border: none;
-} */
 
 .modbtn {
   display: flex;
@@ -102,7 +87,6 @@
   line-height: 1.8em;
   padding-top: 0em;
   text-align: justify;
-  
 }
 .modbtn ul {
   list-style: none;
