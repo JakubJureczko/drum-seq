@@ -3,12 +3,12 @@ import {Sampler} from "tone";
 import "./SoundName.css"
 
 
-import D1 from "../assets/drums/sp1200/kick.wav";
-import D2 from "../assets/drums/sp1200/kick2.wav";
-import D3 from "../assets/drums/sp1200/sn2.wav";
-import D4 from "../assets/drums/sp1200/sn4.wav";
-import D5 from "../assets/drums/sp1200/hat.wav";
-import D6 from "../assets/drums/sp1200/hat3.wav";
+import D1 from "../assets/drums/sp1200/bd3.wav";
+import D2 from "../assets/drums/sp1200/bd.wav";
+import D3 from "../assets/drums/sp1200/snare4.wav";
+import D4 from "../assets/drums/sp1200/snare2.wav";
+import D5 from "../assets/drums/sp1200/hh3.wav";
+import D6 from "../assets/drums/sp1200/hh2.wav";
 import D7 from "../assets/drums/sp1200/snap.wav";
 
 
