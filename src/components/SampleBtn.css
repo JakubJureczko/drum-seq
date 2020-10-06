@@ -108,7 +108,7 @@ transition: 0.5s;
 }
 
 .btn.active {
-  background-color: #F7C59F;
+  background-color: rgba(133, 65, 243, 0.8);
   transition: 0ms;
   transform: translateY(2px);
 }
