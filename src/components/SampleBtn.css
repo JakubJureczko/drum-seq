@@ -113,6 +113,14 @@ transition: 0.5s;
   transform: translateY(2px);
 }
 
+@media screen and (max-width: 600px)  {
+  .btn.active {
+    background-color: none;
+    transition: none;
+    transform: none;
+  }
+}
+
 
 
 

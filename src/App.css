@@ -51,6 +51,12 @@
   width: 3em;
 }
 
+@media screen and (max-width: 415px) and (orientation: portrait)  {
+  .uploadbtn {
+    margin-bottom: 1em;
+}
+}
+
 .uploadbtn button {
   background-image: url("./assets/images/upload8.svg");
   background-size: 75%;
