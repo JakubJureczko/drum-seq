@@ -77,102 +77,102 @@ const Modal = ({ isShowing, hide }) => {
               </button> */}
               </div>
               <div className="modalbtn">
-                <button>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A1", e.target.files)}
                   />
                   E
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A2", e.target.files)}
                   />
                   R
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A3",e.target.files)}
                   />
                   T
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A4",e.target.files)}
                   />
                   U
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A5",e.target.files)}
                   />
                   I
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A6",e.target.files)}
                   />
                   O
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A7",e.target.files)}
                   />
                   D
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A8",e.target.files)}
                   />
                   F
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A9",e.target.files)}
                   />
                   G
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A10",e.target.files)}
                   />
                   J
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A11",e.target.files)}
                   />
                   K
-                </button>
-                <button>
+                </label>
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     name="file"
                     onChange={(e) => getFile("A12",e.target.files)}
                   />
                   L
-                </button>
+                </label>
                 <button onMouseDown={() => setSounds(defaultSounds)}></button>
               </div>
             </div>
