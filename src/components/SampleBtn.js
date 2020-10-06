@@ -2,7 +2,6 @@ import React, {
   useState,
   useRef,
   useEffect,
-  useInterval,
   useContext,
 } from "react";
 import classnames from "classnames";

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useRef } from "react";
+import React, { createContext, useState} from "react";
 import { triggers, defaultSounds } from "./components/triggers";
 
 export const VolumeContext = createContext({});

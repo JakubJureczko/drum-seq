@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useState, useContext } from "react";
 import Dexie from "dexie";
-import { Sampler } from "tone";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 import { VolumeContext } from "../volumeContext";
@@ -10,22 +9,10 @@ const Modal = ({ isShowing, hide }) => {
   const { sounds, setSounds } = useContext(VolumeContext);
 
   const [uploads, setUploads] = useState([]);
-  const [color, setColor] = useState("");
-
-  // const db = new Dexie("ReactDexie");
-  // //create the database store
-  // db.version(1).stores({
-  //   posts: "title, content, file",
-  // });
-  // db.open().catch((err) => {
-  //   console.log(err.stack || err);
-  // });
-
-  //set the state and property
 
   const [postFile, setFile] = useState("");
 
-  //read the file and decode it
+  
   const getFile = (name, e) => {
     console.log(e);
 
@@ -42,31 +29,6 @@ const Modal = ({ isShowing, hide }) => {
     setSounds(defaultSounds);
     setUploads([]);
   }
-  // const [isLoaded, setLoaded] = useState(false);
-  // const sampler = useRef(null);
-
-  // // const [currentSampler, setCurrentSampler] = useState();
-  // console.log(postFile);
-  // useEffect(() => {
-  //   sampler.current = new Sampler(
-  //     { A1: postFile },
-  //     {
-  //       onload: () => {
-  //         setLoaded(true);
-  //       },
-  //     }
-  //   ).toDestination();
-  // }, [postFile]);
-  // // let reverb = new Tone.Reverb(0.8).connect(Tone.Master);
-  // const handleClick = (sound) => sampler.current.triggerAttack(sound);
-
-  // useEffect(() => {
-  //   //get all posts from the database
-  //   const getPosts = async () => {
-  //     let allPosts = await db.posts.toArray();
-  //   };
-  //   getPosts();
-  // }, []);
 
   console.log(uploads);
 
@@ -79,15 +41,15 @@ const Modal = ({ isShowing, hide }) => {
               <div className="modal-header">
                 <h3>Upload samples:</h3>
                 <span onClick={hide}></span>
-                {/* <button type="button" className="modal-close-button" data-dismiss="modal"  >
-                
-              </button> */}
               </div>
               <div className="modalbtn">
                 <label
                   className="fileupload"
                   style={{
-                    backgroundColor: uploads.indexOf("A1") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
+                    backgroundColor:
+                      uploads.indexOf("A1") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
                   }}
                 >
                   <input
@@ -99,9 +61,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   E
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A2") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A2") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -109,9 +77,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   R
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A3") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A3") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -119,9 +93,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   T
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A4") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A4") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -129,9 +109,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   U
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A5") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A5") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -139,9 +125,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   I
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A6") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A6") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -149,9 +141,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   O
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A7") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A7") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -159,9 +157,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   D
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A8") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A8") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -169,9 +173,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   F
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A9") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A9") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -179,9 +189,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   G
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A10") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A10") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -189,9 +205,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   J
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A11") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}>
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A11") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -199,9 +221,15 @@ const Modal = ({ isShowing, hide }) => {
                   />
                   K
                 </label>
-                <label className="fileupload"  style={{
-                    backgroundColor: uploads.indexOf("A12") !== -1 ? "rgba(236, 70, 92, 0.8)" : "",
-                  }}> 
+                <label
+                  className="fileupload"
+                  style={{
+                    backgroundColor:
+                      uploads.indexOf("A12") !== -1
+                        ? "rgba(236, 70, 92, 0.8)"
+                        : "",
+                  }}
+                >
                   <input
                     type="file"
                     name="file"
@@ -211,9 +239,7 @@ const Modal = ({ isShowing, hide }) => {
                 </label>
               </div>
               <div className="defaultbtn">
-                <button onMouseDown={setDefault}>
-                  default
-                </button>
+                <button onMouseDown={setDefault}>default</button>
               </div>
             </div>
           </div>

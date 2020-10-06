@@ -1,8 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react'
 import {Sampler} from "tone";
-import * as Tone from "tone";
 import "./SoundName.css"
-import classnames from "classnames";
+
 
 import D1 from "../assets/drums/sp1200/kick.wav";
 import D2 from "../assets/drums/sp1200/kick2.wav";

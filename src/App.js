@@ -1,6 +1,4 @@
 import React from "react";
-
-import styled from "styled-components";
 import Sequencer from "./components/Seq";
 import SampleBtn from "./components/SampleBtn";
 import Actions from "./components/Actions";

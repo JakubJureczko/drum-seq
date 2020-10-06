@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
 import SoundName from "./SoundName";
-import Mute from "./Mute";
 import { VolumeContext } from "../volumeContext";
 
 import D1 from "../assets/drums/sp1200/bd3.wav";
