@@ -9,7 +9,7 @@ const Swing = () => {
   Tone.Transport.swingSubdivision = "16n";
 
   function swingUp() {
-    if (swinger < 1) {
+    if (swinger < 0.75) {
       setSwinger(swinger + 0.25);
     } else {
       setSwinger(swinger);

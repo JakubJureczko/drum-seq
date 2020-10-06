@@ -1,0 +1,32 @@
+.clear {
+  margin-left: 2em;
+  
+}
+
+.clearbutton  {
+  font-size: medium;
+  font-weight: 700;
+  width: 6em;
+  height: 3em;
+   outline: none; 
+   border: none; 
+  
+  position: relative;
+  background-color: inherit;
+  background-image: url('../assets/images/trash.svg');
+  background-position: left;
+  
+  background-size: 40%;
+  background-repeat: no-repeat;
+  
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 760px) {
+  .clear {
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
+}
+

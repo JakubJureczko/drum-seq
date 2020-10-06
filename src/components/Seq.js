@@ -1,24 +1,16 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import * as Tone from "tone";
 import "./Seq.css";
+import SoundName from "./SoundName";
+import { VolumeContext } from "../volumeContext";
 
-import SetBpm from "./SetBpm";
-import SetVol from "./SetVol";
-import Swing from "./Swing";
-
-import {
-  faRecordVinyl,
-  faCompactDisc,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import D1 from "../assets/drums/bd1.mp3";
-import D2 from "../assets/drums/bd2.mp3";
-import D3 from "../assets/drums/sd1.mp3";
-import D4 from "../assets/drums/ch1.mp3";
-import D5 from "../assets/drums/ch2.mp3";
-import D6 from "../assets/drums/ch2.mp3";
-import D7 from "../assets/drums/oh.mp3";
+import D1 from "../assets/drums/sp1200/bd3.wav";
+import D2 from "../assets/drums/sp1200/bd.wav";
+import D3 from "../assets/drums/sp1200/snare4.wav";
+import D4 from "../assets/drums/sp1200/snare2.wav";
+import D5 from "../assets/drums/sp1200/hh3.wav";
+import D6 from "../assets/drums/sp1200/hh2.wav";
+import D7 from "../assets/drums/sp1200/snap.wav";
 
 const drums = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"];
 
@@ -45,15 +37,9 @@ const seq = new Tone.Sampler({
 }).toDestination();
 
 const Sequencer = () => {
-  const [playState, setPlayState] = useState(false);
   const [activeColumn, setColumn] = useState(0);
   const [pattern, setPattern] = useState(initialPattern);
-
-  useEffect(() => {
-    document.addEventListener("keypress", (e) => {
-      handleKeyPressStart(e.code);
-    });
-  }, []);
+  const { vol } = useContext(VolumeContext);
 
   useEffect(
     () => {
@@ -67,7 +53,7 @@ const Sequencer = () => {
             // If active
             if (row[col]) {
               // Play based on which row
-              seq.triggerAttackRelease(drums[noteIndex], "8n", time);
+              seq.triggerAttackRelease(drums[noteIndex], "4n", time);
             }
           });
         },
@@ -76,32 +62,8 @@ const Sequencer = () => {
       ).start(0);
       return () => loop.dispose();
     },
-    [pattern] // Retrigger when pattern changes
+    [] //pattern  // Retrigger when pattern changes
   );
-
-  function handleStart() {
-    setPlayState(!playState);
-  }
-
-  function handleKeyPress2(e) {
-    if (e.keyCode === 32) {
-      toggle();
-      handleStart();
-      e.preventDefault();
-    }
-  }
-  function handleKeyPressStart(keyCode) {
-    if (keyCode === "Space") {
-      toggle();
-      handleStart();
-    }
-  }
-
-  // Toggle playing / stopped
-  const toggle = useCallback(() => {
-    Tone.Transport.toggle();
-    Tone.start();
-  }, []);
 
   // Update pattern by making a copy and inverting the value
   function updatePattern({ x, y, value }) {
@@ -110,64 +72,39 @@ const Sequencer = () => {
     setPattern(patternCopy);
   }
 
+  useEffect(() => {
+    seq.volume.value = vol;
+  },[vol]);
+
+  
+  
   return (
     <div>
-      <div className="seqBorder">
-        {pattern.map((row, y) => (
-          <div className="outter">
-            <div
-              key={y}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                cursor: "pointer",
-              }}
-            >
-              {row.map((value, x) => (
-                <Square
-                  col={x}
-                  row={y}
-                  active={activeColumn === x}
-                  selected={value}
-                  onClick={() => updatePattern({ x, y, value })}
-                />
-              ))}
+      <div className="backseq">
+        <SoundName />
+        <div className="seqBorder">
+          {pattern.map((row, y) => (
+            <div className="outter">
+              <div
+                key={y}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+              >
+                {row.map((value, x) => (
+                  <Square
+                    col={x}
+                    row={y}
+                    active={activeColumn === x}
+                    selected={value}
+                    onClick={() => updatePattern({ x, y, value })}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="amplifiers">
-        <button
-          className="startBtn"
-          onKeyDown={handleKeyPress2}
-          onClick={() => {
-            toggle();
-            handleStart();
-          }}
-        >
-          {playState ? (
-            <FontAwesomeIcon
-              icon={faCompactDisc}
-              size="8x"
-              style={{ color: "rgba(133, 65, 243, 0.8)" }}
-              transform="left-1"
-              spin
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={faRecordVinyl}
-              size="8x"
-              style={{ color: "rgba(133, 65, 243, 0.8)" }}
-              transform="left-1.1"
-            />
-          )}
-        </button>
-        <div className="mixer">
-          <div className="volBpmBtn">
-            <SetBpm />
-            <SetVol />
-            <Swing />
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -193,33 +130,28 @@ const getColor = (row) => {
   }
 };
 const getColumnColor = (key) => {
-  console.log(key);
   switch (key) {
     case 0:
-      return "#C7CCDB";
+      return "rgba(133, 65, 243, 0.2)";
     case 4:
-      return "#C7CCDB";
-      case 8:
-      return "#C7CCDB";
+      return "rgba(133, 65, 243, 0.2)";
+    case 8:
+      return "rgba(133, 65, 243, 0.2)";
     case 12:
       return "#C7CCDB";
     default:
       return "";
   }
 };
-
 const Square = ({ active, row, selected, onClick, col }) => {
   return (
     <div
+      className="square"
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         borderRadius: active ? "10%" : "10%",
-        width: 30,
-        height: 30,
-        margin: "0.1em",
-        border: active ? "2px solid #767B91" : "2px solid rgba(167, 167, 167, 0.3)", //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
+        border: active
+          ? "2px solid rgb(167, 167, 167)"
+          : "2px solid rgba(167, 167, 167, 0.4)", //`2px solid ${getColumnColor(key)}`,   //"2px solid #eee"
         //background: active ? "rgba(133, 65, 243, 0.9)" : "",
         background: selected ? getColor(row) : getColumnColor(col),
         backgroundColor: getColumnColor(col),
@@ -233,3 +165,9 @@ const Square = ({ active, row, selected, onClick, col }) => {
 // Tone.Transport.swingSubdivision = '16n';
 
 export default Sequencer;
+
+
+
+// synth.harmonicity.value = 0.2;
+//         const synth = new Tone.AMSynth().toDestination();
+// synth.triggerAttackRelease("C2", "16n");

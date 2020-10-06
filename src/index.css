@@ -8,7 +8,13 @@ body {
 
   /* background-color: #cfcfcf6c; */
   /* background-color: #cfcfcf4d; */
-  background-color: #E1E5EE;
+
+  /* rgba(235, 247, 247, 0.966) */
+
+  background-color: 	rgba(241, 241, 241, 0.137);  
+
+  /* rgba(255, 255, 255, 0.137) */
+
 }
 
 code {

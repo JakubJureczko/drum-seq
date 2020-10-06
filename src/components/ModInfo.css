@@ -1,0 +1,94 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(133, 65, 243);
+  opacity: 0.6;
+}
+
+.wrapper {
+  position: fixed;
+  top: 25%;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.mod {
+  z-index: 100;
+  background: rgb(255, 255, 255);
+  opacity: 0.9;
+  position: relative;
+  margin: 0 auto;
+
+  max-width: 30em;
+  padding: 0.5em;
+
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
+    0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 15px 13px rgba(0, 0, 0, 0.12);
+  border: 3px solid black;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 760px) {
+  .wrapper {
+    top: 5%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .mod {
+    background-image: none;
+  }
+}
+
+/* .modal::after{
+  
+} */
+.mod-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 1em;
+}
+.mod-header span {
+  width: 3em;
+  height: 3em;
+  background-image: url("../assets/images/info.svg");
+  background-size: 55%;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.mod-header span:hover {
+  background-image: url("../assets/images/info6.svg");
+}
+
+.mod-header h3 {
+  margin-top: 0em;
+}
+
+.modbtn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 88%;
+  line-height: 1.8em;
+  padding-top: 0em;
+  text-align: justify;
+}
+.modbtn ul {
+  list-style: none;
+  margin-top: -0.5em;
+}

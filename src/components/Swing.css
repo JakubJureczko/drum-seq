@@ -4,6 +4,7 @@
   width: 6em;
   height: 3em;
   margin-left: 2em;
+  margin-right: 2em;
 
   align-items: center;
 
@@ -17,6 +18,7 @@
 @media screen and (max-width: 760px) {
   .swing {
     margin-left: 1em;
+    margin-right: 1em;
   }
 }
 

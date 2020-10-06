@@ -4,10 +4,26 @@
 .btnContainer {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  margin: 1em auto;
+  width: 45%;
 }
+
+
+
+.btnlogo {
+  height: 10em;
+  align-self: center;
+  
+}
+
 .btn2 {
-  padding: 2em;
+  display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-direction: column;
+ 
+
   width: 10em;
   height: 10em;
 
@@ -17,23 +33,78 @@
   margin: 1em;
   transition: background-color 0.5s ease-in-out;
   outline: none;
-  background-image: url(../assets/images/graf3.svg);
-  background-size: contain;
+  background-image: url(../assets/images/drummachine2.svg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-color: salmon;
+   background-color: rgba(243, 65, 65, 0.8); /*rgba(243, 65, 65, 0.8); */ /*rgb(255, 112, 126)     rgba(220, 86, 144, 0.9)*/   /*rgba(236, 69, 90,0.8) */
+   
 }
 
+
+.infobtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 4em;
+}
+
+.infobtn button {
+  opacity: 0.5;
+  background-image: url("../assets/images/info.svg");
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: bottom;
+  outline: none;
+  border: none;
+  height: 3em;
+  width: 4em;
+  background-color: transparent;
+  cursor: pointer;
+  transition: ease-in-out 0.6s;
+}
+
+.infobtn button:hover {
+  opacity: 1;
+  background-image: url("../assets/images/info6.svg");
+  background-size: 60%;
+  transition: 0.5s;
+  
+}
+
+.infobtn button:focus {
+  opacity: 0.1;
+  background-image: url("../assets/images/info6.svg");
+  background-size: 60%;
+transition: 0.5s;
+  
+  
+}
+
+@media screen and (max-width: 760px) {
+  .infobtn button:focus {
+    transform: none;
+  }
+}
+
+
 .btn {
-  padding: 2em;
-  width: 10em;
-  height: 10em;
+  width: 5em;
+  height: 5em;
   cursor: pointer;
   border-radius: 10%;
-  border: 4px solid #2A324B;
+  border: 3px solid rgb(68, 68, 68);
   background-color: transparent;
-  margin: 1em;
+  margin: 0.5em;
   outline: none;
+  color: rgb(68, 68, 68);
+  
   transition: 0.5s ease;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
+    0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 15px 13px rgba(0, 0, 0, 0.12);
 }
 
 .btn.active {
@@ -41,3 +112,200 @@
   transition: 0ms;
   transform: translateY(2px);
 }
+
+
+
+
+.btn2 input {
+  width: 80%;
+}
+
+
+ input[type=range] {
+  -webkit-appearance: none;
+  margin: 0.6em 0;
+  width: 80%;
+  background: transparent;
+  border-radius: 10%;
+  
+}
+.btn2 input[type=range]:focus {
+  outline: none;
+}
+.btn2 input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.4em;
+  
+  cursor: pointer;
+  background: hsla(0, 6%, 16%, 0.116);
+  
+
+
+  border-radius: 5%;
+  
+  
+}
+.btn2 input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #2c2727;
+  border: 1px solid #fcd248;
+  height: 1em;
+  width: 1em;
+  border-radius: 30%;
+  background: #fcd248;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -0.3em;
+}
+
+@media screen and (min-height: 800px) and (max-height: 950px) {
+  .btnContainer {
+    margin-top: 4.5em;
+  }
+}
+@media screen and (min-height: 950px) {
+  .btnContainer {
+    margin-top: 4em;
+    margin-bottom: 3em;
+  }
+}
+
+@media screen  and (max-width: 467px) {
+  .btnContainer {
+    flex-wrap: wrap;
+    width: 100%;
+    
+  }
+  .btn {
+    margin: 1em;
+  }
+}
+@media screen  and (min-width: 467px) and (max-width: 593px) {
+  .btnContainer {
+    flex-wrap: wrap;
+    width: 90%;
+    
+  }
+  .btn {
+    margin: 1em 1.5em ;
+  }
+}
+@media screen  and (min-width: 593px) and (max-width: 667px) {
+  .btnContainer {
+    flex-wrap: wrap;
+    width: 90%;
+    
+  }
+  .btn {
+    margin: 1em 2em ;
+  }
+}
+@media screen  and (min-width: 667px) and (max-width: 712px) {
+  .btnContainer {
+    flex-wrap: wrap;
+    width: 85%;
+    
+  }
+  .btn {
+    margin: 1em 2.5em ;
+  }
+}
+
+
+
+@media screen and (min-width: 712px) and (max-width: 799px) {
+  .btnContainer {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 888px) {
+  .btnContainer {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 889px) and (max-width: 984px) {
+  .btnContainer {
+    width: 72%;
+  }
+}
+
+@media screen and (min-width: 985px) and (max-width: 1067px) {
+  .btnContainer {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width: 1067px) and (max-width: 1164px) {
+  .btnContainer {
+    width: 60%;
+  }
+}
+
+
+@media screen and (min-width: 1164px) and (max-width: 1280px) {
+  .btnContainer {
+    width: 55%;
+  }
+}
+
+
+@media screen and (min-width: 1280px) and (max-width: 1422px) {
+  .btnContainer {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1799px) {
+  .btnContainer {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1800px) and (max-width: 1829px) {
+  .btnContainer {
+    width: 38%;
+  }
+}
+
+
+@media screen and (min-width: 1830px) and (max-width: 1999px) {
+  .btnContainer {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2199px) {
+  .btnContainer {
+    width: 32%;
+  }
+}
+@media screen and (min-width: 2200px) and (max-width: 2299px) {
+  .btnContainer {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 2300px) and (max-width: 2579px) {
+  .btnContainer {
+    width: 28%;
+  }
+}
+
+@media screen and (min-width: 2580px) and (max-width: 2869px) {
+  .btnContainer {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 2870px) and (max-width: 3100px) {
+  .btnContainer {
+    width: 23%;
+  }
+}
+@media screen and (min-width: 3101px)  {
+  .btnContainer {
+    width: 20%;
+  }
+}
+
+
+

@@ -1,0 +1,206 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(236, 69, 90);
+  opacity: 0.7;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 25%;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background: rgb(255, 255, 255);
+  opacity: 0.9;
+  position: relative;
+  margin: 0 auto;
+
+  max-width: 30em;
+  padding: 0.5em;
+
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
+    0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 15px 13px rgba(0, 0, 0, 0.12);
+  border: 3px solid black;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 760px) {
+  .modal-wrapper {
+  top: 5%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .modal {
+    background-image: none;
+  }
+}
+
+/* .modal::after{
+  
+} */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 1em;
+}
+.modal-header span {
+  width: 3em;
+  height: 3em;
+  background-image: url("../assets/images/break-dance.svg");
+  background-size: 85%;
+
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal-header span:hover {
+  background-image: url("../assets/images/bboy1.svg");
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+
+.modal-header h3 {
+  margin-top: 0em;
+}
+
+.modal-close-button {
+  width: 2em;
+  height: 2em;
+  background-image: url("../assets/images/left-arrow.svg");
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: none;
+  background-color: transparent;
+
+  cursor: pointer;
+  border: none;
+}
+
+.modalbtn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+/* .modalbtn button {
+ 
+  width: 4em;
+  height: 4em;
+  margin: 1em;
+  cursor: pointer;
+  border-radius: 10%;
+  border: 3px solid black;
+  background-color: transparent;
+  outline: none;
+
+  transition: 0.5s ease;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
+    0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 15px 13px rgba(0, 0, 0, 0.12);
+}
+.mopdalbtn button input {
+  width: 2px;
+
+
+}
+.modalbtn button:hover {
+  background-color: rgba(133, 65, 243, 0.8);
+  transition: 0ms;
+  transform: translateY(1px);
+} */
+
+
+input[type="file"] {
+ display: none;
+}
+
+.fileupload {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  width: 3em;
+  height: 3em; 
+  margin: 0.5em;
+  cursor: pointer;
+  border-radius: 10%;
+  border: 3px solid black;
+  background-color: transparent;
+  outline: none;
+  transition: 0.5s ease;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
+    0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 15px 13px rgba(0, 0, 0, 0.12);
+}
+
+.fileupload:hover {
+  background-color:  rgba(236, 70, 92, 0.8);
+  transition: 0ms;
+  transform: translateY(1px);
+} 
+
+@media screen and (max-width: 760px) {
+  .fileupload:hover {
+    background-color: none;
+  }
+  .fileupload:focus {
+    background-color:  rgba(236, 69, 90, 0.8);
+  }
+}
+
+.defaultbtn {
+  display: flex;
+  justify-content: center;
+}
+.defaultbtn button {
+  opacity: 0.2;
+  width: 6em;
+  height: 3em;
+  cursor: pointer;
+  border-radius: 7%;
+  border: 3px solid black;
+  background-color: transparent;
+  outline: none;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 6.5px 10px rgba(0, 0, 0, 0.06),
+    0 9.3px 17.9px rgba(0, 0, 0, 0.072), 0 15.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 15px 13px rgba(0, 0, 0, 0.12);
+    margin-bottom: 1.5em;
+    transition: ease-in-out 0.5s;
+}
+
+.defaultbtn button:hover {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 760px) {
+  .defaultbtn button {
+    opacity: 1;
+    
+  }
+  }

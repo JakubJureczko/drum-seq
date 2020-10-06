@@ -9,8 +9,66 @@
        
 } */
 
-
-
 .app {
   text-align: center;
+  color: rgb(68, 68, 68);
 }
+/* .app::after  {
+  content: "";
+  background-image: url('./assets/images/speaker.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  top: 10em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+} */
+
+.volBpmBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2em;
+  align-items: center;
+}
+
+@media screen and (max-width: 760px) {
+  .volBpmBtn {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+.uploadbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 3em;
+}
+
+.uploadbtn button {
+  background-image: url("./assets/images/upload8.svg");
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: center;
+  outline: none;
+  border: none;
+  height: 3em;
+  width: 4em;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.uploadbtn button:hover {
+  background-image: url("./assets/images/upload10.svg");
+}
+
+
+
+

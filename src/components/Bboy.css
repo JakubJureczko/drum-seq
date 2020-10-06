@@ -1,0 +1,12 @@
+.bboy {
+  width: 4em;
+  height: 3em;
+  background-image: url("../assets/images/bboy1.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bboy:hover {
+  background-image: url("../assets/images/break-dance.svg");
+}

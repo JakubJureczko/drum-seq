@@ -1,0 +1,103 @@
+.soundname {
+  display: flex;
+  flex-direction: column;
+  
+  height: 100%;
+}
+
+@media screen and (max-width: 470px) {
+  .soundname {
+    display: none;
+  }
+}
+
+.soundname span {
+  border: 2px solid black;
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5em;
+  border-radius: 10%;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+@media screen and (max-width: 1000) {
+  .soundname span {
+    margin-right: 0em;
+  }
+}
+
+.bass1 {
+  background-image: url("../assets/images/sound/bass3.svg");
+  background-size: cover;
+  background-position: center;
+  background-color: #a374d5;
+}
+
+
+.bass2 {
+  background-image: url("../assets/images/sound/bass1.svg");
+  background-size: cover;
+  background-position: center;
+  background-color: #be97dc;
+}
+
+.snare {
+  background-image: url("../assets/images/sound/snare.svg");
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(186, 225, 255);
+}
+
+.hihat {
+  background-image: url("../assets/images/sound/snare2.svg");
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(186, 255, 201);
+}
+.hihat2 {
+  background-image: url("../assets/images/sound/hihat2.svg");
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(255, 255, 186);
+}
+.openhat {
+  background-image: url("../assets/images/sound/hihat.svg");
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255, 223, 186);
+}
+.closehat {
+  background-image: url("../assets/images/sound/click.svg");
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255, 179, 186);
+}
+
+.bass1:active,
+.bass2:active,
+.snare:active,
+.hihat:active,
+.hihat2:active,
+.openhat:active,
+.closehat:active 
+ {
+  background-color: inherit;
+  transition: 0s;
+  
+}
+.bass1,
+.bass2,
+.snare,
+.hihat,
+.hihat2,
+.openhat,
+.closehat 
+{
+  cursor: pointer;
+  transition:  ease-in-out 0.4s;
+  box-shadow: 0 2.8px 2.2px rgba(90, 90, 90, 0.034),
+    0 6.7px 5.3px rgba(151, 151, 151, 0.048), 0 12.5px 10px rgba(129, 129, 129, 0.06),
+    0 22.3px 17.9px rgba(158, 158, 158, 0.072), 0 41.8px 33.4px rgba(107, 107, 107, 0.086),
+    0 10px 7px rgba(119, 118, 118, 0.12);
+}
