@@ -10,7 +10,7 @@ import D3 from "../assets/drums/sp1200/snare4.wav";
 import D4 from "../assets/drums/sp1200/snare2.wav";
 import D5 from "../assets/drums/sp1200/hh3.wav";
 import D6 from "../assets/drums/sp1200/hh2.wav";
-import D7 from "../assets/drums/sp1200/snap.wav";
+import D7 from "../assets/drums/sp1200/clap.wav";
 
 const drums = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"];
 
