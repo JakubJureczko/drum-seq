@@ -8,8 +8,8 @@ import A7 from "../assets/samples/D7.wav";
 import A8 from "../assets/samples/D8.wav";
 import A9 from "../assets/samples/D9.wav";
 import A10 from "../assets/samples/D10.wav";
-import A11 from "../assets/samples/D11.wav";
-import A12 from "../assets/samples/D12.wav";
+import A11 from "../assets/samples/D11.WAV";
+import A12 from "../assets/samples/D12.WAV";
 
 const triggers = [
   {
