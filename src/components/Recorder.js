@@ -8,20 +8,15 @@ import "./Recorder.css";
 import recon from "../assets/images/recon.svg";
 import recoff from "../assets/images/recoff.svg";
 
-const { detect } = require('detect-browser');
-const browser = detect();
+
 
 const Recorder = () => {
   const [isRec, setIsRec] = useState(false);
   const [recorder, setRecorder] = useState(null);
 
-  const [dis, setDis] = useState("visible")
+  
 
-  useEffect(() => {
-    if (browser.name === "safari") {
-      setDis("none")
-    }
-  },[browser])
+  
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -81,7 +76,7 @@ const Recorder = () => {
   // document.body.removeChild(anchor);
 
   return (
-    <div className="recordbtn" style={{display: dis}}>
+    <div className="recordbtn">
       <div className="start">
         <button onMouseDown={toggleRec}>
           <img src={isRec ? recon : recoff} alt="record" />
