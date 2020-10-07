@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Sequencer from "./components/Seq";
 import SampleBtn from "./components/SampleBtn";
 import Actions from "./components/Actions";
@@ -9,26 +9,23 @@ import Recorder from "./components/Recorder";
 import Modal from "./components/Modal";
 import useModal from "./components/useModal";
 
-
 import "./App.css";
 import VolumeContextProvider from "./volumeContext";
 
 function App() {
-  const { detect } = require('detect-browser');
+  const { detect } = require("detect-browser");
   const browser = detect();
-  const [isSafari, setIsSafari] = useState(false)
+  const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
     if (browser.name === "safari") {
-      setIsSafari(true)
+      setIsSafari(true);
     }
-  },[browser])
+  }, []);
 
   const { isShowing, toggle } = useModal();
   return (
-    <>
-    {isSafari === false ? (
-      <div className="app">
+    <div className="app">
       <VolumeContextProvider>
         <SampleBtn />
         <Sequencer />
@@ -39,7 +36,7 @@ function App() {
               <SetBpm />
               <SetVol />
               <Swing />
-              <Recorder />
+              {!isSafari && <Recorder />}
               <div className="uploadbtn">
                 <button onMouseDown={toggle}></button>
                 <Modal isShowing={isShowing} hide={toggle} />
@@ -49,31 +46,6 @@ function App() {
         </div>
       </VolumeContextProvider>
     </div>
-    ) : ( 
-      <div className="app">
-      <VolumeContextProvider>
-        <SampleBtn />
-        <Sequencer />
-        <Actions />
-        <div>
-          <div className="mixer">
-            <div className="volBpmBtn">
-              <SetBpm />
-              <SetVol />
-              <Swing />
-              
-              <div className="uploadbtn">
-                <button onMouseDown={toggle}></button>
-                <Modal isShowing={isShowing} hide={toggle} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </VolumeContextProvider>
-    </div>
-    )}
-    
-    </>
   );
 }
 
