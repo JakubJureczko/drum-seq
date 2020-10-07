@@ -92,3 +92,25 @@
   list-style: none;
   margin-top: -0.5em;
 }
+
+.socialmedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ width: 95%;
+ margin: 0 auto;
+  
+}
+
+.socialmedia a {
+  margin-left: 2em;
+  margin-bottom: 0.8em;
+}
+
+.socialm {
+  opacity: 0.2;
+}
+
+.socialm:hover {
+  opacity: 0.8;
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import "./ModInfo.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 
  const ModInfo= ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
@@ -24,7 +26,13 @@ import "./ModInfo.css"
           <li>Change Tempo, Volume and Swing of sequencer under the turntable. </li>
           <li>Upload your samples or use default</li>
           <li>And spin that!!!</li>
+          <br></br>
+          <li>P.S. Don't use Safari.</li>
         </ul>
+        <div className="socialmedia">
+        <a href="https://github.com/JakubJureczko" target="_blank"> <FontAwesomeIcon className="socialm" icon={faGithub} size="2x" style={{color:"rgb(133, 65, 243)"}} /> </a>
+        <a href="https://twitter.com/jakub_jureczko" target="_blank"> <FontAwesomeIcon className="socialm" icon={faTwitter} size="2x" style={{color:"rgb(133, 65, 243)"}} /> </a>
+        </div>
         </div>
       </div>
     </div>
