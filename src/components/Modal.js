@@ -14,7 +14,7 @@ const Modal = ({ isShowing, hide }) => {
 
   
   const getFile = (name, e) => {
-    console.log(e);
+    
 
     let reader = new FileReader();
     reader.readAsDataURL(e[0]);
@@ -30,7 +30,7 @@ const Modal = ({ isShowing, hide }) => {
     setUploads([]);
   }
 
-  console.log(uploads);
+  
 
   return isShowing
     ? ReactDOM.createPortal(

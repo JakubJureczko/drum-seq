@@ -39,7 +39,6 @@ function SampleBtn() {
   //const feedbackDelay = new Tone.FeedbackDelay(0.1, 0.2).toDestination();
 
   const play = (sound) => {
-    console.log("playing");
     sampler.current.releaseAll();
     setActiveButton(sound);
     sampler.current.triggerAttack(sound);

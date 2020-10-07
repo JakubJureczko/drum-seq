@@ -39,7 +39,7 @@ const Actions = () => {
     Tone.start();
   }, []);
 
-  console.log("action re-rendering");
+
   return (
     <div className="amplifiers">
       <div className="turntable">
