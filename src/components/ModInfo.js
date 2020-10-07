@@ -30,8 +30,12 @@ import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
           <li>P.S. Don't use Safari.</li>
         </ul>
         <div className="socialmedia">
-        <a href="https://github.com/JakubJureczko" target="_blank"> <FontAwesomeIcon className="socialm" icon={faGithub} size="2x" style={{color:"rgb(133, 65, 243)"}} /> </a>
-        <a href="https://twitter.com/jakub_jureczko" target="_blank"> <FontAwesomeIcon className="socialm" icon={faTwitter} size="2x" style={{color:"rgb(133, 65, 243)"}} /> </a>
+        <a href="https://github.com/JakubJureczko" target="_blank"> 
+        <FontAwesomeIcon className="socialm" icon={faGithub} size="2x" style={{color:"rgb(133, 65, 243)"}} /> 
+        </a>
+        <a href="https://twitter.com/jakub_jureczko" target="_blank"> 
+        <FontAwesomeIcon className="socialm" icon={faTwitter} size="2x" style={{color:"rgb(133, 65, 243)"}} /> 
+        </a>
         </div>
         </div>
       </div>
