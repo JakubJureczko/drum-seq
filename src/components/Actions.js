@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import * as Tone from "tone";
 
-import "./Actions.css"
+import "./Actions.css";
 
 import speakerStop from "../assets/images/speakermoze.svg";
 import speakerPlay from "../assets/images/speaker.svg";
@@ -38,7 +38,6 @@ const Actions = () => {
     Tone.Transport.toggle();
     Tone.start();
   }, []);
-
 
   return (
     <div className="amplifiers">
